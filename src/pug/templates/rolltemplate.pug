@@ -1,0 +1,66 @@
+rolltemplate.sheet-rolltemplate-jet
+  div.sheet-template-main
+    div.sheet-template-charName {{characterName}}
+    | {{#rollname}}
+    div.sheet-template-title {{rollname}}
+    | {{/rollname}}
+    | {{#tSerie1}}{{#tSerie2}}
+    div.sheet-noCrit Série 1 : {{tSerie1}}
+    div.sheet-noCrit Série 2 : {{tSerie2}}
+    | {{/tSerie2}}{{/tSerie1}}
+    | {{^carac}}{{^arme}}
+    | {{#rollResult1}}{{^rollResult2}}
+    div.sheet-noCrit Résultat : {{rollResult1}}
+    | {{/rollResult2}}{{/rollResult1}}
+    | {{#rollResult1}}{{#rollResult2}}
+    div.sheet-enableCrit Résultat : {{rollResult1}} | {{rollResult2}}
+    | {{/rollResult2}}{{/rollResult1}}
+    | {{#jetChance}}
+    | {{#rollGreater() jetChance 4}}
+    div.sheet-noCrit Résultat :
+      span.sheet-template-success {{jetChance}}, Oui !
+    | {{/rollGreater() jetChance 4}}
+    | {{#rollLess() jetChance 5}}
+    div.sheet-noCrit Résultat :
+      span.sheet-template-failure {{jetChance}}, Non !
+    | {{/rollLess() jetChance 5}}
+    | {{/jetChance}}
+    | {{/arme}}{{/carac}}
+    | {{#carac}}
+    div Seuil : {{carac}}+
+      div.sheet-enableCrit Jet : 
+        | {{#rollGreater() rollResult1 carac}}
+        span.sheet-template-success {{rollResult1}}
+        | {{/rollGreater() rollResult1 carac}}
+
+        | {{#rollLess() rollResult1 carac}}
+        span.sheet-template-failure {{rollResult1}}
+        | {{/rollLess() rollResult1 carac}}
+
+        | {{#rollTotal() rollResult1 carac}}
+        span.sheet-template-success {{rollResult1}}
+        | {{/rollTotal() rollResult1 carac}}
+        span | 
+        | {{#rollGreater() rollResult2 carac}}
+        span.sheet-template-success {{rollResult2}}
+        | {{/rollGreater() rollResult2 carac}}
+
+        | {{#rollLess() rollResult2 carac}}
+        span.sheet-template-failure {{rollResult2}}
+        | {{/rollLess() rollResult2 carac}}
+
+        | {{#rollTotal() rollResult2 carac}}
+        span.sheet-template-success {{rollResult2}}
+        | {{/rollTotal() rollResult2 carac}}
+      	
+    | {{/carac}}
+    | {{#arme}}
+    div.sheet-template-title Attaque avec {{arme}}
+    div.sheet-enableCrit Touche une défense de {{rollResult1}} | {{rollResult2}}
+      | {{#coup}}{{#desdegats}}
+      div.sheet-noCrit Pour {{desdegats}} dégâts : {{coup}}
+      | {{/desdegats}}{{/coup}}
+    | {{/arme}}
+    | {{#tRollDesc}}
+    div.sheet-template-rollDesc {{tRollDesc}}
+    | {{/tRollDesc}}

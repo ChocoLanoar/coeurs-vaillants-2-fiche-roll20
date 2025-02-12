@@ -1,0 +1,90 @@
+.sheet-ligne
+  div.sheet-libel2(style="width: 65px;") Nom
+  input.sheet-long(type="text", name="attr_character_name")
+
+//- Données chiffrées 1
+.sheet-ligne
+  .sheet-libel1(style="width: 30px;") Niv
+  input.sheet-inpnum2cbig(type="number", name="attr_pnjNiv", style="width: 45px;", value='1', min="0")
+  .sheet-libel1(style="width: 30px;") PV+
+  input.sheet-short(type="number", name="attr_pnjPvBonus", value='0', min="0")
+  button.sheet-btRoll8(
+    type='roll'
+    name='roll_jetpvpnj'
+    value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=PV du PNJ}} {{rollResult1=[[{@{pnjNiv}d8,1d4}kh1+@{pnjPvBonus}]]}}'
+  )
+  .sheet-libel1(style="width: 20px;") PV
+  input.sheet-extrashort(type="number", name="attr_pnjpv", value='0')
+  span /
+  input.sheet-extrashort(type="number", name="attr_pnjpv_max", value='0')
+  select(name="attr_jetCache", id="attr_jetCache", style="width: 110px; margin-left: 15px;")
+    option(value="/w gm ") Jets cachés
+    option(value=" ") Jets publics
+
+//- Données chiffrées 2
+.sheet-ligne(style="margin-bottom: 10px;")
+  .sheet-libel1(style="width: 30px;") Déf
+  input.sheet-short(type="number", name="attr_pnjDef", value='10')
+  .sheet-libel1(style="width: 35px;") Vit
+  input.sheet-medium(type="text", name="attr_pnjVts", value='6')
+  .sheet-libel1(style="width: 40px; margin-left: 5px;") Svg
+  input.sheet-short(type="number", name="attr_pnjsvg", value='18')
+  button.sheet-btRoll20niv(
+    type='roll'
+    name='roll_jetsvgpnj'
+    value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=Sauvegarde PNJ}} {{carac=[[@{pnjsvg}]]}} {{rollResult1=[[1d20+@{pnjNiv}]]}} {{rollResult2=[[1d20+@{pnjNiv}]]}}'
+  )
+  .sheet-libel1(style="width: 75px;") Initiative
+  input.sheet-short(type="text", name="attr_initiative", value="1d8")
+  button.sheet-btRoll8(
+    type='roll'
+    name='roll_testinit'
+    value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=Initiative PNJ}} {{rollResult1=[[@{initiative}+[[{ {@{pnjNiv}}, {12}}kl1]] &{tracker}]]}}'
+  )
+
+.sheet-ligne
+  .sheet-libel2 ACTIONS
+
+.sheet-ligne
+  input(type="text", name="attr_pnjarm1", style="width: 30%;", placeholder="Arme/Attaque")
+  input.sheet-medium(type="text", name="attr_pnjdmgarm1", placeholder="1d8")
+  button.sheet-btRoll20niv(
+    type='roll'
+    name='roll_testpnjcombat1'
+    value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjarm1}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgarm1}]]}} {{desdegats=@{pnjdmgarm1}}} {{tRollDesc=@{pnjArmDesc1}}}'
+  )
+  input(type="text", name="attr_pnjArmDesc1", style="width: 50%;", placeholder="Description")
+
+.sheet-ligne
+  input(type="text", name="attr_pnjarm2", style="width: 30%;", placeholder="Arme/Attaque")
+  input.sheet-medium(type="text", name="attr_pnjdmgarm2", placeholder="1d8")
+  button.sheet-btRoll20niv(
+    type='roll'
+    name='roll_testpnjcombat2'
+    value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjarm2}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgarm2}]]}} {{desdegats=@{pnjdmgarm2}}} {{tRollDesc=@{pnjArmDesc2}}}'
+  )
+  input(type="text", name="attr_pnjArmDesc2", style="width: 50%;", placeholder="Description")
+
+.sheet-ligne
+  input(type="text", name="attr_pnjarm4", style="width: 30%;", placeholder="Arme/Attaque")
+  input.sheet-medium(type="text", name="attr_pnjdmgarm4", placeholder="1d8")
+  button.sheet-btRoll20niv(
+    type='roll'
+    name='roll_testpnjcombat4'
+    value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjarm4}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgarm4}]]}} {{desdegats=@{pnjdmgarm4}}} {{tRollDesc=@{pnjArmDesc4}}}'
+  )
+  input(type="text", name="attr_pnjArmDesc4", style="width: 50%;", placeholder="Description")
+
+.sheet-ligne
+  input(type="text", name="attr_pnjarm3", style="width: 30%;", placeholder="Autre action")
+  input.sheet-medium(type="text", name="attr_pnjdmgarm3", placeholder="macro")
+  button.sheet-btRoll20niv(
+    type='roll'
+    name='roll_testpnjcombat3'
+    value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=@{pnjarm3}}} {{rollResult1=[[@{pnjdmgarm3}]]}} {{tRollDesc=@{pnjArmDesc3}}}'
+  )
+  input(type="text", name="attr_pnjArmDesc3", style="width: 50%;", placeholder="Description")
+
+.sheet-ligne
+  .sheet-libel2 Capacités
+  textarea.sheet-text3col(name="attr_pnjPermanent", style="resize: vertical; height: 300px;", placeholder="Capacités")

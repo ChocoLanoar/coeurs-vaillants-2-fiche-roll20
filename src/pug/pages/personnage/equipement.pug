@@ -1,0 +1,22 @@
+.sheet-mycol(style="width: 49%;")
+  .sheet-ligne
+    .sheet-libel3(style="width: 100%;") Inventaire
+  
+  .sheet-ligne
+    textarea.sheet-text2col(name="attr_equip")
+      | Équipement :
+      | Consommables :
+      | Autres :
+
+  .sheet-ligne
+    .sheet-mycol
+      .sheet-libel1(style="text-align: left; width: 200px;") Points de trésor (commun)
+      input(type="text", name="attr_po", style="width: 40px; text-align: center;", value="0")
+
+.sheet-mycol(style="width: 49%;")
+  .sheet-ligne
+    .sheet-libel3(style="width: 100%;") Langues, Talents
+  .sheet-ligne
+    textarea(name="attr_bonus", class='sheet-text2col')
+      | Langues :
+      | Talents :

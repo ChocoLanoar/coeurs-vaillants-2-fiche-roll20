@@ -1,0 +1,54 @@
+.sheet-mycolbrd.sheet-borderRight(style="width: 33%; height: 270px; text-align: left;")
+  .sheet-ligne(style="margin-bottom: 8px;")
+    button.sheet-btRoll6.sheet-btSmall(
+      type='roll'
+      name='roll_testfor'
+      title='Tirer une nouvelle série de caracs'
+      value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Tirage de Caractéristiques}} {{tSerie1=[[3d6]] [[3d6]] [[3d6]] [[3d6]]}} {{tSerie2=[[3d6]] [[3d6]] [[3d6]] [[3d6]]}} {{tRollDesc=Plus c’est bas mieux c’est !}}'
+    ) Carac.
+  //- Ligne vig
+  .sheet-ligne
+    button.sheet-btRoll20deminiv.sheet-btBig(
+      type='roll'
+      name='roll_testvig'
+      value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Test de Vigueur}} {{carac=[[@{vig}]]}} {{rollResult1=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompVig})/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompVig})/2)]][Bonus]]]}}'
+    ) Vig
+    input.sheet-inpnum2cbig(type="number", name="attr_vig", style="margin-right: 10px; width: 45px", value='10', min="0", max="20")
+    input.check-button.check-buttonComp(type="checkbox", id="checkCompVig", value="1", name="attr_CompVig")
+    label(for="checkCompVig") Comp.
+  .sheet-infoDesc.sheet-marginCarac Vigueur
+  //- LIGNE DEX
+  .sheet-ligne
+    button.sheet-btRoll20deminiv.sheet-btBig(
+      type='roll'
+      name='roll_testDex'
+      value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Test de Dextérité (½Niveau)}} {{carac=[[@{dex}]]}} {{rollResult1=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompDex})/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompDex})/2)]][Bonus]]]}}'
+    ) Dex
+    input.sheet-inpnum2cbig(type="number", name="attr_dex", style="margin-right: 10px; width: 45px", value='10', min="0", max="20")
+    input.check-button.check-buttonComp(type="checkbox", id="checkCompDex", value="1", name="attr_CompDex")
+    label(for="checkCompDex") Comp.
+  .sheet-infoDesc.sheet-marginCarac Dextérité
+  //- LIGNE INT
+  .sheet-ligne
+    button.sheet-btRoll20deminiv.sheet-btBig(
+      type='roll'
+      name='roll_testInt'
+      value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Test d’Intelligence (½Niveau)}} {{carac=[[@{int}]]}} {{rollResult1=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompInt})/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompInt})/2)]][Bonus]]]}}'
+    ) Int
+    input.sheet-inpnum2cbig(type="number", name="attr_int", style="margin-right: 10px; width: 45px", value='10', min="0", max="20")
+    input.check-button.check-buttonComp(type="checkbox", id="checkCompInt", value="1", name="attr_CompInt")
+    label(for="checkCompInt") Comp.
+  .sheet-infoDesc.sheet-marginCarac Intelligence
+  //- LIGNE CHA
+  .sheet-ligne
+    button.sheet-btRoll20deminiv.sheet-btBig(
+      type='roll'
+      name='roll_testCha'
+      value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Test de Charisme (½Niveau)}} {{carac=[[@{cha}]]}} {{rollResult1=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompCha})/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompCha})/2)]][Bonus]]]}}'
+    ) Cha
+    input.sheet-inpnum2cbig(type="number", name="attr_cha", style="margin-right: 10px; width: 45px", value='10', min="0", max="20")
+    input.check-button.check-buttonComp(type="checkbox", id="checkCompCha", value="1", name="attr_CompCha")
+    label(for="checkCompCha") Comp.
+  .sheet-infoDesc.sheet-marginCarac Charisme
+  .sheet-libel1(style="margin: 10px 0px 0px 0px; padding: 0px;") Compensations
+  textarea(name="attr_compensations", style='margin: 0px; width: 270px; height: 40px;')

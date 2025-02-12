@@ -1,0 +1,123 @@
+.sheet-mycol(style="width: 66%;")
+  //- Ligne du haut
+  .sheet-ligne.sheet-borderBottom
+    //- CADRE PV
+    .sheet-mycolbrd.sheet-borderRight(style="width: 49%;")
+      .sheet-ligne(style="text-align: center;")
+        .sheet-libel3(style="width: 190px;") Points de Vie
+      .sheet-ligne(style="text-align: center; margin-bottom: 8px;")
+        input.sheet-inpnum2cbig(type="number", name="attr_pv", style="width: 53px; vertical-align: bottom;", value='0')
+        .sheet-libel1(style="width:10px; vertical-align: bottom;") /
+        input.sheet-inpnum2c(type="number", name="attr_pv_max", style="width: 45px; margin-right: 20px; vertical-align: bottom", value='0')
+        .sheet-mycol
+          .sheet-infoDesc(style="display: block;") Temp.
+          input.sheet-inpnum2c(type="number", name="attr_pvTemp", style="width:40px;", value='0')
+        .sheet-mycol
+          .sheet-infoDesc(style="display: block;") Aggr.
+          input.sheet-inpnum2c(type="number", name="attr_pvAggr", style="width:40px;", value='0')
+
+      .sheet-ligne(style="margin-bottom: 5px; text-align: center;")
+        button.sheet-btRoll8.sheet-btMid(
+          type='roll'
+          name='roll_jetdv'
+          style="width: 105px;"
+          value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Nouveaux PV}} {{rollResult1=[[@{niveau}d8+@{bonusPv}]]}}'
+        ) Jet PV max
+        .sheet-libel1(style="width:10px") +
+        input(type="text", name="attr_bonusPv", style="width: 35px; text-align: center;", value='8')
+      
+      .sheet-ligne(style="margin-bottom: 8px; text-align: center;")
+        button.sheet-btRoll4.sheet-btMid(
+          type='roll'
+          name='roll_testRepit'
+          style="width: 60px;" value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Récupération - répit}} {{rollResult1=[[@{niveau}d4]] PV}}'
+        ) Répit
+        button.sheet-btRoll8.sheet-btMid(
+          type='roll'
+          name='roll_testSecSouffle'
+          style="width: 105px;"
+          value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Second souffle}} {{rollResult1=[[@{niveau}d8]] PV}}'
+        ) 2nd souffle
+      
+    
+    //- CADRE PA
+    .sheet-mycolbrd(style="width: 49%;")
+      .sheet-ligne(style="margin-bottom: 0px; text-align: center;")
+        .sheet-libel3(style="width: 200px;") Points d`Aventure
+      
+      .sheet-ligne(style="margin-bottom: 0px; text-align: center;")
+        input.sheet-inpnum2cbig(type="number", name="attr_aventure", style="width: 40px; margin-right: 0px;", value='1', min="0")
+        .sheet-libel1(style="width: 5px; margin: 0px;") /
+        input.sheet-inpnum2c(type="number", name="attr_aventure_max", style="width: 35px; margin-right: 0px;", value='1', min="0")
+
+      .sheet-ligne(style="margin-top: 5px; text-align: right;")
+        .sheet-libeldesc Jet avec avantage
+        .sheet-libeldesc Une seconde action en combat
+        button.sheet-btRoll8.sheet-btSmall(
+          type='roll'
+          name='roll_testAvPV'
+          style="width: 162px; height: 15px;"
+          value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Regain de PV}} {{rollResult1=[[1d8+@{niveau}]]}}'
+        ) Récupérer 1d8 + niveau PV
+        .sheet-libeldesc Sortir un objet exeptionnel de son sac
+        .sheet-libeldesc Autre… selon univers
+
+  //- Ligne du bas
+  .sheet-ligne
+    //- CADRE DEF
+    .sheet-mycolbrd.sheet-borderRight(style="width: 49%;")
+      .sheet-ligne(style="text-align: center;")
+        .sheet-libel3(style="width: 80px; margin-bottom: 3px;") Défense
+      
+      .sheet-ligne(style="text-align: center; margin-bottom: 10px;")
+        .sheet-mycol
+          .sheet-ligne
+            .sheet-libel1(style="width: 55px; text-align: right;") Base
+            input.sheet-inpnum2c(type="number", name="attr_defBase", style="width: 35px;", value='10', min="0", max="40")
+          
+          .sheet-ligne
+            .sheet-libel1(style="width: 55px; text-align: right;") Armure
+            input.sheet-inpnum2c(type="number", name="attr_bonusArmu", style="width: 35px;", value='0', min="0", max="40")
+
+        input.sheet-inpnum2cbig(
+          type="number"
+          name="attr_ca"
+          style="width: 45px; margin-left: 15px; margin-top: 5px;"
+          value='10'
+          min="0"
+          max="40"
+        )
+
+      .sheet-ligne(style="margin-bottom: 20px; text-align: center;")
+        button.sheet-btRoll20deminiv.sheet-btMid(
+          type='roll'
+          name='roll_testMan'
+          style="width: 110px;"
+          value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Mouvement}} {{carac=[[@{mouvement}]]}} {{rollResult1=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}}'
+        ) Mouvement
+        input.sheet-inpnum2c(type="number", name="attr_mouvement", style="width: 35px; margin-right: 10px;", value='10')
+        input.check-button.check-buttonComp(type="checkbox", id="checkCompMou", value="1", name="attr_CompMou")
+        label(for="checkCompMou") Comp.
+
+    //- CADRE SAUVEGARDES
+    .sheet-mycolbrd(style="width: 49%;")
+      .sheet-ligne(style="padding-top: 8px; margin-bottom: 5px; text-align: center;")
+        button.sheet-btRoll20niv.sheet-btBig(
+          type='roll'
+          name='roll_testSave'
+          style="width: 170px;"
+          value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Sauvegarde}} {{carac=[[@{svg}]]}} {{rollResult1=[[1d20+@{niveau}]]}} {{rollResult2=[[1d20+@{niveau}]]}}'
+        ) Sauvegarde
+        input.sheet-inpnum2cbig(type="number", name="attr_svg", style="width: 45px", title='Seuil', value='15')
+      
+      .sheet-ligne(style="padding-top: 5px; margin-bottom: 5px; text-align: center;")
+        button.sheet-btRoll8.sheet-btBig(
+          type='roll'
+          name='roll_testChance'
+          style="width: 195px;"
+          value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Chance}} {{jetChance=[[1d8]]}}'
+        ) Jet de Chance
+      
+      .sheet-ligne(style="padding-top: 5px; margin-bottom: 5px; text-align: center;")
+        input.check-button.check-buttonExalt(type="checkbox", id="checkExalt", value="exalte", name="attr_exalte")
+        label(for="checkExalt") Exalté

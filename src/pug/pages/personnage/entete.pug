@@ -1,0 +1,56 @@
+.sheet-ligne(style="text-align: center;")
+  img(
+    title="Version 2.0 - 02/07/2022"
+    src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/CoeursVaillants-2/images/Logo.png"
+    width="30%"
+  )
+.sheet-mycolbrd(style="width: 71%;")
+  .sheet-mycol(style="width: 49%;")
+    .sheet-ligne(style="margin-bottom: 3px;")
+      .sheet-libel2(style="width: 65px;") Nom
+      input.sheet-biginp(type="text", name="attr_character_name")
+      .sheet-libel1(style="margin-bottom: 0px;") Origine
+      input(type="text", style="margin-bottom: 0px;", name="attr_peuple")
+      .sheet-libel1(style="margin-bottom: 0px") Métiers
+      input(type="text", name="attr_classe")
+  .sheet-mycol(style="vertical-align: top; width: 49%;")
+    .sheet-ligne(style="margin-top: 11px;")
+      .sheet-libel1(style="margin: 0px; padding: 0px;") Description
+      textarea(name="attr_charDesc", style="margin: 0px; width: 285px; height: 45px;")
+  .sheet-ligne(style="margin-top: 5px;")
+    .sheet-libel1(style="width: 65px; height: 45px; vertical-align: top; margin: 0px; padding: 0px;") Histor.
+    textarea(name="attr_historique", style="margin: 0px; width: 512px; height: 45px;")
+
+.sheet-mycolbrd(style="width: 28%;")
+  .sheet-ligne(style="vertical-align: top; text-align: right;")
+    .sheet-libel2(style="margin-right: 2px;") Niv
+    input.sheet-inpnum2cbig(
+      type="number"
+      name="attr_niveau"
+      style="width: 38px; margin-right: 5px;"
+      value='1'
+      min="1"
+      max="7"
+    )
+    .sheet-libel1(style="width: 18px; margin-right: 2px;") XP
+    input.sheet-inpnum2c(type="number", name="attr_xp", style="width: 38px;", value='0', min="0")
+    .sheet-infoDesc(style="vertical-align: middle; margin: 0px;") /
+    input.sheet-inpnum2c(type="number", name="attr_xpTotal", style="width: 45px;" value='0' min="0")
+  .sheet-ligne(style="margin-top: 3px; margin-bottom: 20px;")
+    .sheet-libeldesc 1XP : relancer avec Avantage
+    .sheet-libeldesc 3XP × Niveau : gain de niveau
+    .sheet-libeldesc 6XP : apprendre un nouveau Métier
+  div
+    button.sheet-btRoll20deminiv.sheet-btMid(
+      type="roll"
+      name="roll_testDemiNiv"
+      style="width: 105px; margin-right: 10px;"
+      value="&{template:jet} {{characterName=@{character_name}}} {{rollname=1D20 + ½Niv}} {{rollResult1=[[1d20+[[floor(@{niveau}/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor(@{niveau}/2)]][Bonus]]]}}"
+    ) D20+½Niv
+    button.sheet-btRoll20niv.sheet-btMid(
+      type="roll"
+      name="roll_testvig"
+      style="width: 90px;"
+      value="&{template:jet} {{characterName=@{character_name}}} {{rollname=1D20 + Niv}} {{rollResult1=[[1d20+@{niveau}[Bonus]]]}} {{rollResult2=[[1d20+@{niveau}[Bonus]]]}}"
+    ) D20+Niv
+

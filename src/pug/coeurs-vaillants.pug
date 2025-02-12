@@ -1,0 +1,23 @@
+include components/mixins
+
++hidden_attr("attr_sheet_version", "")
++hidden_attr("attr_pvmax", "")
++hidden_attr("attr_aventureMax", "")
++hidden_attr("attr_type_fiche", "personnage")
+
+.coeurs-vaillants
+  header(style="text-align: left;")
+    select.sheet-block_switch(name="attr_type_fiche")
+      option(selected="selected", value="personnage") Personnage
+      option(value="bestiaire") Bestiaire
+
+  main.sheet-personnage
+    include pages/personnage.pug
+
+  main.sheet-bestiaire
+    include pages/bestiaire.pug
+
+script(type='text/worker')
+  include ../js/migration.js
+
+include templates/rolltemplate
