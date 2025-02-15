@@ -417,6 +417,35 @@ html .charsheet input[name*=type_fiche][value=bestiaire] ~ * main.sheet-bestiair
   display: block;
 }
 
+/* ----------------------------- */
+/* --- SWITCH EDIT/VIEW MODE --- */
+/* ----------------------------- */
+html input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--view,
+html input[name*="attr_edit_mode"][value=on] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--edit,
+html .charsheet input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--view,
+html .charsheet input[name*="attr_edit_mode"][value=on] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--edit {
+  display: block;
+}
+html input[name*="attr_edit_mode"][value=on] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--view,
+html input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--edit,
+html .charsheet input[name*="attr_edit_mode"][value=on] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--view,
+html .charsheet input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--edit {
+  display: none;
+}
+html input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-bestiaire section.sheet-bestiaire--view,
+html input[name*="attr_edit_mode"][value=on] ~ div.coeurs-vaillants main.sheet-bestiaire section.sheet-bestiaire--edit,
+html .charsheet input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-bestiaire section.sheet-bestiaire--view,
+html .charsheet input[name*="attr_edit_mode"][value=on] ~ div.coeurs-vaillants main.sheet-bestiaire section.sheet-bestiaire--edit {
+  display: block;
+}
+html input[name*="attr_edit_mode"][value=on] ~ div.coeurs-vaillants main.sheet-bestiaire section.sheet-bestiaire--view,
+html input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-bestiaire section.sheet-bestiaire--edit,
+html .charsheet input[name*="attr_edit_mode"][value=on] ~ div.coeurs-vaillants main.sheet-bestiaire section.sheet-bestiaire--view,
+html .charsheet input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-bestiaire section.sheet-bestiaire--edit {
+  display: none;
+}
+
+
 /* --------------------- */
 /* ----- TEMPLATES ----- */
 /* --------------------- */

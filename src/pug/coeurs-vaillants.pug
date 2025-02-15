@@ -4,9 +4,12 @@ include components/mixins
 +hidden_attr("attr_pvmax", "")
 +hidden_attr("attr_aventureMax", "")
 +hidden_attr("attr_type_fiche", "personnage")
++hidden_attr("attr_edit_mode", "on")
 
 .coeurs-vaillants
   header(style="text-align: left;")
+    label Mode édition
+      input.edit_mode(id="edit_mode", name="attr_edit_mode", title="Activer/désactiver le mode édition", type="checkbox", checked)
     select.sheet-block_switch(name="attr_type_fiche")
       option(selected="selected", value="personnage") Personnage
       option(value="bestiaire") Bestiaire

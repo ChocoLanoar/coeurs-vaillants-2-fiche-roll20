@@ -1,11 +1,14 @@
-.sheet-ligne.sheet-borderBottom
-  include personnage/entete
-.sheet-ligne.sheet-borderBottom
-  include personnage/caracs
-  include personnage/compteurs
-.sheet-mycolbrd.sheet-borderBottom(style="width: 100%;")
-  include personnage/combat
-.sheet-mycolbrd.sheet-borderBottom(style="width: 100%;")
-  include personnage/ressources
-.sheet-mycolbrd(style="width: 100%;")
-  include personnage/equipement
+section.sheet-personnage--view
+  span toto
+section.sheet-personnage--edit
+  .sheet-ligne.sheet-borderBottom
+    include personnage/entete
+  .sheet-ligne.sheet-borderBottom
+    include personnage/caracs
+    include personnage/compteurs
+  .sheet-mycolbrd.sheet-borderBottom(style="width: 100%;")
+    include personnage/combat
+  .sheet-mycolbrd.sheet-borderBottom(style="width: 100%;")
+    include personnage/ressources
+  .sheet-mycolbrd(style="width: 100%;")
+    include personnage/equipement
