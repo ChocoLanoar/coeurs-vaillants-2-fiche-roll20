@@ -1,0 +1,66 @@
+-
+  structure.character.combat = {
+    view: [
+      {
+        name: 'combat_bonusCombat',
+        label: 'Bonus jets de combat : '
+      },
+      {
+        name: 'combat_testinit',
+        label: 'Initiative',
+        type: 'roll'
+      },
+      {
+        name: 'combat_initiative',
+      },
+      {
+        name: 'combat_niveau',
+        label: '+'
+      },
+      {
+        name: 'combat_testtruc',
+        label: 'Truc de combat',
+        type: 'roll'
+      },
+      {
+        name: 'combat_mvt',
+        label: 'Vitesse',
+        suffix: 'pas'
+      },
+      {
+        name: 'combat_vit_tips1',
+        label: 'Moitié : +1 attaque ou Déf',
+        type: 'tips'
+      },
+      {
+        name: 'combat_vit_tips2',
+        label: 'Double : -2 Déf',
+        type: 'tips'
+      }
+    ],
+    fields: [
+      {
+        name: 'combat_bonusCombat',
+        label: 'Bonus jets de combat : ',
+        type: 'number'
+      },
+      {
+        name: 'combat_initiative',
+        label: 'Jet d’initiative',
+        type: 'text'
+      },
+      {
+        name: 'combat_mvt',
+        label: 'Vitesse : ',
+        type: 'numper',
+        suffix: 'pas'
+      }
+    ],
+    repeating: [
+      {
+        name: 'combat_talent',
+        label: 'Nom et description',
+        type: 'text'
+      }
+    ]
+  }
