@@ -1,3 +1,4 @@
+include structure/structure
 include components/mixins
 
 +hidden_attr("attr_sheet_version", "")
@@ -15,10 +16,10 @@ include components/mixins
       option(value="bestiaire") Bestiaire
 
   main.sheet-personnage
-    include pages/personnage.pug
+    include pages/character.pug
 
   main.sheet-bestiaire
-    include pages/bestiaire.pug
+    include pages/bestiary.pug
 
 script(type='text/worker')
   include ../js/migration.js
