@@ -1,14 +1,24 @@
-section.sheet-personnage--view
-  span toto
-section.sheet-personnage--edit
-  .sheet-ligne.sheet-borderBottom
-    include character/header
-  .sheet-ligne.sheet-borderBottom
-    include character/attributes
-    include character/counters
-  .sheet-mycolbrd.sheet-borderBottom(style="width: 100%;")
-    include character/battle
-  .sheet-mycolbrd.sheet-borderBottom(style="width: 100%;")
-    include character/ressources
-  .sheet-mycolbrd(style="width: 100%;")
-    include character/equipement
+include character/header
+include character/attributes
+include character/counters
+include character/battle
+include character/ressources
+include character/equipement
+
+mixin character-view(struct)
+  section.sheet-personnage--view
+    +header-view(struct)
+
+mixin character-edit(struct)
+  section.sheet-personnage--edit
+    .sheet-ligne.sheet-borderBottom
+      +header-edit(struct)
+    .sheet-ligne.sheet-borderBottom
+      +caracs-edit(struct)
+      +counter-edit(struct)
+    .sheet-mycolbrd.sheet-borderBottom(style="width: 100%;")
+      +battle-edit(struct)
+    .sheet-mycolbrd.sheet-borderBottom(style="width: 100%;")
+      +ressources-edit(struct)
+    .sheet-mycolbrd(style="width: 100%;")
+      +equipement-edit(struct)

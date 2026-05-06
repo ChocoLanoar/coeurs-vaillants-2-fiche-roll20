@@ -1,5 +1,6 @@
 include structure/structure
 include components/mixins
+include pages/character
 
 +hidden_attr("attr_sheet_version", "")
 +hidden_attr("attr_pvmax", "")
@@ -16,7 +17,8 @@ include components/mixins
       option(value="bestiaire") Bestiaire
 
   main.sheet-personnage
-    include pages/character.pug
+    +character-view(structure.character)
+    +character-edit(structure.character)
 
   main.sheet-bestiaire
     include pages/bestiary.pug
