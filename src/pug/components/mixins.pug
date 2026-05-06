@@ -1,2 +1,48 @@
+-
+  const fieldDictionary = (fields, removePrefix='') => {
+    return fields.reduce((memo, val) => {
+      const key = removePrefix ? val.name.replace(`${removePrefix}_`, '') : val.name;
+      memo[key] = structuredClone(val);
+      return memo
+    }, {});
+  }
+
 mixin hidden_attr(field, value)
   input(name=field, value=value, type="hidden")
+
+mixin display-value(blob)
+  - const attr = `attr_${blob.name}`;
+  if blob.css
+    span(class=blob.css)
+      if blob.icon
+        img(class='default-icon', src=blob.icon alt='')
+      if blob.label
+        strong= blob.label
+      if blob.type
+        input(type=blob.type, name=attr, title=blob.title)
+      else
+        span(name=attr, title=blob.title)
+  else
+    if blob.icon
+      img(class='default-icon', src=blob.icon alt='')
+    if blob.label
+      strong= blob.label
+    if blob.type
+      input(type=blob.type, name=attr, title=blob.title)
+    else
+      span(name=attr, title=blob.title)
+
+mixin display-input(blob)
+  - const attr = `attr_${blob.name}`;
+  - const default_value = blob.value ? blob.value : ''
+  if blob.label
+    label= blob.label
+  case blob.type
+    when 'textarea'
+      textarea(name=attr)
+    when 'checkbox'
+      input(type=blob.type, name=attr)
+    when 'number'
+    when 'text'
+    default
+      input(type=blob.type, name=attr, value=default_value)

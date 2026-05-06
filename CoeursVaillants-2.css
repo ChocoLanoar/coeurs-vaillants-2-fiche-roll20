@@ -107,6 +107,16 @@ div.sheet-libel3{
 .sheet-darkmode div.sheet-libel3{
     color: white;
 }
+
+/* --------ICONS-------- */
+.charsheet .default-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
 /* --------------------- */
 /* --------FORMS-------- */
 /* --------------------- */
