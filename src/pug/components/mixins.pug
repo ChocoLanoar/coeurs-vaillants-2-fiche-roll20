@@ -16,16 +16,20 @@ mixin display-value(blob)
   p(class=default_class)
     if blob.icon
       img(class='default-icon', src=blob.icon alt='')
-    if blob.label
-      strong= blob.label
     if blob.type
       case blob.type
         when 'roll'
-          button(type=blob.type, name=attr, title=blob.title, value=blob.value)
+          button(type=blob.type, name=attr, title=blob.title, value=blob.value)= blob.label ? blob.label : ''
         default
+          if blob.label
+            strong= blob.label
           input(type=blob.type, name=attr, title=blob.title)
     else
+      if blob.label
+        strong= blob.label
       span(name=attr, title=blob.title)
+    if blob.suffix
+      span()= blob.suffix
 
 mixin display-input(blob)
   - const attr = `attr_${blob.name}`;
