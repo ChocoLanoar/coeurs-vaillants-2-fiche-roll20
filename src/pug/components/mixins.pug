@@ -13,7 +13,7 @@ mixin hidden_attr(field, value)
 mixin display-value(blob)
   - const attr = `attr_${blob.name}`;
   if blob.css
-    span(class=blob.css)
+    p(class=blob.css)
       if blob.icon
         img(class='default-icon', src=blob.icon alt='')
       if blob.label

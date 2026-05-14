@@ -15,7 +15,34 @@
     </select>
   </header>
   <main class="sheet-personnage">
-    <section class="sheet-personnage--view"><span>toto</span>
+    <section class="sheet-personnage--view">
+      <div class="header--view">
+        <div class="header-col-left">
+          <p class="trait"><strong>Nom</strong><span name="attr_character_name"></span>
+          </p>
+          <p class="trait"><strong>Description</strong><span name="attr_charDesc"></span>
+          </p>
+          <p class="trait"><strong>Langues connues : </strong><span name="attr_langues"></span>
+          </p>
+        </div>
+        <div class="header-col-right">
+          <div class="niveau">
+            <p class="niveau-valeur"><strong>Niv</strong><span name="attr_niveau"></span>
+            </p><strong>XP</strong>
+            <input type="number" name="attr_xp"/><span name="attr_xpTotal"></span>
+          </div>
+          <div class="tips-list">
+            <p class="tips"><strong>1XP : relancer avec Avantage</strong><span name="attr_niveau_tips1"></span>
+            </p>
+            <p class="tips"><strong>3 XP × Niveau : gain de niveau</strong><span name="attr_niveau_tips2"></span>
+            </p>
+            <p class="tips"><strong>6XP : apprendre un nouveau Métier</strong><span name="attr_niveau_tips3"></span>
+            </p>
+            <p class="tips"><strong>6XP : Point d’Aventure supplémentaire</strong><span name="attr_niveau_tips4"></span>
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="sheet-personnage--edit">
       <div class="sheet-ligne sheet-borderBottom">

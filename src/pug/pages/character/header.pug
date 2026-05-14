@@ -1,5 +1,25 @@
-mixin header-view(struct)
-  span toto
+mixin traits-view(traits_struct)
+  div(class=['header-col-left'])
+    each field in traits_struct.view
+      +display-value(field)
+
+mixin niveau-view(niveau_struct)
+  div(class=['header-col-right'])
+    - const niveau_view = fieldDictionary(niveau_struct.view, '')
+    .niveau
+      +display-value(niveau_view.niveau)
+      +display-value(niveau_view.xp)
+      +display-value(niveau_view.xpTotal)
+    .tips-list
+      +display-value(niveau_view.niveau_tips1)
+      +display-value(niveau_view.niveau_tips2)
+      +display-value(niveau_view.niveau_tips3)
+      +display-value(niveau_view.niveau_tips4)
+
+mixin header-view(character_struct)
+  .header--view
+    +traits-view(character_struct.traits)
+    +niveau-view(character_struct.niveau)
 
 mixin header-edit(struct)
   .sheet-ligne(style="text-align: center;")
