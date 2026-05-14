@@ -2,41 +2,52 @@
   structure.character.defense = {
     view: [
       {
-        name: 'defense_defBase'
+        name: 'defBase',
+        label: 'Déf base'
       },
       {
-        name: 'defense_ca'
-      },
-      {
-        name: 'defense_mouvementBase'
-      },
-      {
-        name: 'defense_mouvement'
+        name: 'ca',
+        label: 'Défense'
       }
     ],
     fields: [
       {
-        name: 'defense_defBase',
+        name: 'defBase',
         type: 'number',
         value: '10'
       },
       {
-        name: 'defense_ca',
+        name: 'ca',
+        type: 'number',
+        value: '10'
+      }
+    ]
+  }
+
+  structure.character.mouvement = {
+    view: [
+      {
+        name: 'mouvementBase',
+        label: 'Mvt base'
+      },
+      {
+        name: 'mouvement',
+        label: 'Mouvement'
+      }
+    ],
+    fields: [
+      {
+        name: 'mouvementBase',
         type: 'number',
         value: '10'
       },
       {
-        name: 'defense_mouvementBase',
+        name: 'mouvement',
         type: 'number',
         value: '10'
       },
       {
-        name: 'defense_mouvement',
-        type: 'number',
-        value: '10'
-      },
-      {
-        name: 'defense_CompMou',
+        name: 'CompMou',
         type: 'checkbox'
       }
     ]

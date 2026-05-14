@@ -19,12 +19,16 @@
         value: '0'
       },
       {
-        name: 'life_testRepit',
-        type: 'roll'
+        name: 'roll_testRepit',
+        label: 'Répit',
+        type: 'roll',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Récupération - répit}} {{rollResult1=[[@{niveau}d4]] PV}}'
       },
       {
-        name: 'life_testSecSouffle',
-        type: 'roll'
+        name: 'roll_testSecSouffle',
+        label: '2nd souffle',
+        type: 'roll',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Second souffle}} {{rollResult1=[[@{niveau}d8]] PV}}'
       }
     ],
     fields: [
@@ -33,12 +37,12 @@
         type: 'number'
       },
       {
-        name: 'life_bonusPv',
+        name: 'bonusPv',
         type: 'number',
         value: '8'
       },
       {
-        name: 'life_jetdv',
+        name: 'jetdv',
         type: 'roll'
       }
     ]
