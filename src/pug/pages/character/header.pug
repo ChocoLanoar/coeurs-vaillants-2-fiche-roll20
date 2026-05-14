@@ -1,10 +1,10 @@
 mixin traits-view(traits_struct)
-  div(class=['header-col-left'])
+  div(class=['column-left'])
     each field in traits_struct.view
       +display-value(field)
 
 mixin niveau-view(niveau_struct)
-  div(class=['header-col-right'])
+  div(class=['column-right'])
     - const niveau_view = fieldDictionary(niveau_struct.view, '')
     .niveau
       +display-value(niveau_view.niveau)

@@ -91,25 +91,26 @@ main{
 }
 
 /* --- Column --- */
-.header--view .header-col-left {
-    flex: 2;
-}
-
-.header--view .header-col-right {
-    flex: 1;
-}
-
-.header-col-left {
+.column-left {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
-.header-col-right {
+.column-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
     gap: 8px;
+}
+
+/* --- Header columns --- */
+.header--view .column-left {
+    flex: 2;
+}
+
+.header--view .column-right {
+    flex: 1;
 }
 
 /* --- Traits --- */
