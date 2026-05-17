@@ -29,7 +29,7 @@ mixin display-value(blob)
         strong= blob.label
       span(name=attr, title=blob.title)
     if blob.suffix
-      span()= blob.suffix
+      strong= blob.suffix
 
 mixin display-input(blob)
   - const attr = `attr_${blob.name}`;
