@@ -1,8 +1,51 @@
-mixin caracs-view(struct)
-  
+mixin caracs-view(caracs_struct)
+  .column-left
+    each field in caracs_struct.view
+      +display-value(field)
 
 mixin counters-view(struct)
+  .column-right
+    .row-top
+      .column-middle.life--view
+        - const life_view = fieldDictionary(struct.life.view, '')
+        h4 Points de Vie
+        .life-counter
+          +display-value(life_view.pv)
+          strong /
+          +display-value(life_view.pv_max)
+        .life-temp-aggr
+          +display-value(life_view.pvTemp)
+          +display-value(life_view.pvAggr)
+        .life-rolls
+          +display-value(life_view.roll_testRepit)
+          +display-value(life_view.roll_testSecSouffle)
+      .column-middle
+        - const aventure_view = fieldDictionary(struct.aventure.view, '')
+        h4 Points d’Aventure
+        .aventure-counter
+          +display-value(aventure_view.aventure)
+          strong /
+          +display-value(aventure_view.aventure_max)
+        .tips-list
+          +display-value(aventure_view.aventure_prouesse)
+    .row-bottom
+      .column-middle
+        - const defense_view = fieldDictionary(struct.defense.view, '')
+        h4 Défense
+        .defense-view
+          +display-value(defense_view.ca)
+          +display-value(defense_view.defBase)
+      .column-middle
+        - const mouvement_view = fieldDictionary(struct.mouvement.view, '')
+        h4 Mouvement
+        .mouvement-view
+          +display-value(mouvement_view.mouvement)
+          +display-value(mouvement_view.mouvementBase)
 
+mixin central-view(struct)
+  .central--view
+    +caracs-view(struct.caracs)
+    +counters-view(struct)
 
 mixin caracs-edit(struct)
   .sheet-mycolbrd.sheet-borderRight(style="width: 33%; height: 270px; text-align: left;")

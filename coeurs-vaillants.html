@@ -28,18 +28,98 @@
         <div class="column-right">
           <div class="niveau">
             <p class="niveau-valeur"><strong>Niv</strong><span name="attr_niveau"></span>
-            </p><strong>XP</strong>
-            <input type="number" name="attr_xp"/><span name="attr_xpTotal"></span>
+            </p>
+            <p><strong>XP</strong>
+              <input type="number" name="attr_xp"/>
+            </p>
+            <p><span name="attr_xpTotal"></span>
+            </p>
           </div>
           <div class="tips-list">
-            <p class="tips"><strong>1XP : relancer avec Avantage</strong><span name="attr_niveau_tips1"></span>
+            <p class="tips"><strong>1 XP : relancer avec Avantage</strong><span name="attr_niveau_tips1"></span>
             </p>
             <p class="tips"><strong>3 XP × Niveau : gain de niveau</strong><span name="attr_niveau_tips2"></span>
             </p>
-            <p class="tips"><strong>6XP : apprendre un nouveau Métier</strong><span name="attr_niveau_tips3"></span>
+            <p class="tips"><strong>6 XP : apprendre un nouveau Métier</strong><span name="attr_niveau_tips3"></span>
             </p>
-            <p class="tips"><strong>6XP : Point d’Aventure supplémentaire</strong><span name="attr_niveau_tips4"></span>
+            <p class="tips"><strong>6 XP : Point d’Aventure supplémentaire</strong><span name="attr_niveau_tips4"></span>
             </p>
+          </div>
+        </div>
+      </div>
+      <div class="central--view">
+        <div class="column-left">
+          <p><strong>Vig</strong><span name="attr_vig"></span><strong>+</strong>
+          </p>
+          <p><strong>Dex</strong><span name="attr_dex"></span><strong>+</strong>
+          </p>
+          <p><strong>Int</strong><span name="attr_int"></span><strong>+</strong>
+          </p>
+          <p><strong>Cha</strong><span name="attr_cha"></span><strong>+</strong>
+          </p>
+        </div>
+        <div class="column-right">
+          <div class="row-top">
+            <div class="column-middle life--view">
+              <h4>Points de Vie</h4>
+              <div class="life-counter">
+                <p>
+                  <input type="number" name="attr_pv"/>
+                </p><strong>/</strong>
+                <p><span name="attr_pv_max"></span>
+                </p>
+              </div>
+              <div class="life-temp-aggr">
+                <p><strong>PV temp.</strong>
+                  <input type="number" name="attr_pvTemp" title="Points de Vie temporaires"/>
+                </p>
+                <p>
+                  <input type="number" name="attr_pvAggr" title="Dégâts aggravés"/><strong>Dgts Aggr.</strong>
+                </p>
+              </div>
+              <div class="life-rolls">
+                <p>
+                  <button type="roll" name="attr_roll_testRepit" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Récupération - répit}} {{rollResult1=[[@{niveau}d4]] PV}}">Répit</button>
+                </p>
+                <p>
+                  <button type="roll" name="attr_roll_testSecSouffle" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Second souffle}} {{rollResult1=[[@{niveau}d8]] PV}}">2nd souffle</button>
+                </p>
+              </div>
+            </div>
+            <div class="column-middle">
+              <h4>Points d’Aventure</h4>
+              <div class="aventure-counter">
+                <p>
+                  <input type="number" name="attr_aventure"/>
+                </p><strong>/</strong>
+                <p><span name="attr_aventure_max"></span>
+                </p>
+              </div>
+              <div class="tips-list">
+                <p class="tips"><strong>Placeholder tips</strong><span name="attr_aventure_prouesse"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row-bottom">
+            <div class="column-middle">
+              <h4>Défense</h4>
+              <div class="defense-view">
+                <p><img class="default-icon" src="https://chocolanoar.github.io/coeurs-vaillants-2-fiche-roll20/assets/shield.svg" alt=""/><span name="attr_ca"></span>
+                </p>
+                <p><span name="attr_defBase"></span><strong>Base</strong>
+                </p>
+              </div>
+            </div>
+            <div class="column-middle">
+              <h4>Mouvement</h4>
+              <div class="mouvement-view">
+                <p><img class="default-icon" src="https://chocolanoar.github.io/coeurs-vaillants-2-fiche-roll20/assets/barefoot.svg" alt=""/><span name="attr_mouvement"></span><strong>+</strong>
+                </p>
+                <p><span name="attr_mouvementBase"></span><strong>+ Base</strong>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -73,8 +73,9 @@ main{
     gap: 12px;
 }
 
-/* --- Header container --- */
-.header--view {
+/* --- Section containers --- */
+.header--view,
+.central--view {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -90,10 +91,11 @@ main{
     text-align: justify;
 }
 
-/* --- Column --- */
+/* --- Generic column and row --- */
 .column-left {
     display: flex;
     flex-direction: column;
+    text-align: left;
     gap: 6px;
 }
 .column-right {
@@ -104,12 +106,40 @@ main{
     gap: 8px;
 }
 
+.column-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+}
+
+.row-top,
+.row-bottom {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
 /* --- Header columns --- */
 .header--view .column-left {
     flex: 2;
 }
 
 .header--view .column-right {
+    flex: 1;
+}
+
+/* --- Central columns --- */
+.central--view .column-left {
+    flex: 1;
+}
+
+.central--view .column-right {
+    flex: 2;
+}
+
+.central--view .column-middle {
     flex: 1;
 }
 
@@ -200,6 +230,44 @@ main{
   /*text-align: right;*/
 	/*vertical-align: middle;*/
 	margin-bottom: 0px;
+}
+
+/* --- Health --- */
+
+.health--view {
+  
+}
+
+.life--view strong,
+.life--view span,
+.life--view input {
+    display: inline-flex;
+    line-height: 20px;
+    height: 20px;
+    align-items: center;
+}
+
+.life-counter,
+.life-temp-aggr,
+.life-rolls,
+.aventure-counter,
+.defense-view,
+.mouvement-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: right;
+    gap: 10px;
+}
+
+.life-counter > *,
+.aventure-counter > * {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    line-height: 22px;
+    margin: 0;
+    padding: 0;
 }
 
 /* ------------------------ */
