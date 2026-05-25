@@ -19,10 +19,10 @@ mixin display-value(blob)
       case blob.type
         when 'roll'
           if blob.icon
-            button(class=default_roll_class type=blob.type, name=attr, title=blob.title, value=blob.value)
+            button(class=default_roll_class type=blob.type, name=blob.roll_name, title=blob.title, value=blob.value)
               img(class='default-icon', src=blob.icon alt='')
           else
-            button(class=default_roll_class type=blob.type, name=attr, title=blob.title, value=blob.value)= blob.label ? blob.label : ''
+            button(class=default_roll_class type=blob.type, name=blob.roll_name, title=blob.title, value=blob.value)= blob.label ? blob.label : ''
           if blob.display_attr
             span(name=attr, title=blob.title)
         default
