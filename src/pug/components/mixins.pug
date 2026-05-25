@@ -13,18 +13,27 @@ mixin hidden_attr(field, value)
 mixin display-value(blob)
   - const attr = `attr_${blob.name}`;
   - const default_class = blob.css ? blob.css : ''
+  - const default_roll_class = blob.css_roll ? blob.css_roll : ''
   p(class=default_class)
-    if blob.icon
-      img(class='default-icon', src=blob.icon alt='')
     if blob.type
       case blob.type
         when 'roll'
-          button(type=blob.type, name=attr, title=blob.title, value=blob.value)= blob.label ? blob.label : ''
+          if blob.icon
+            button(class=default_roll_class type=blob.type, name=attr, title=blob.title, value=blob.value)
+              img(class='default-icon', src=blob.icon alt='')
+          else
+            button(class=default_roll_class type=blob.type, name=attr, title=blob.title, value=blob.value)= blob.label ? blob.label : ''
+          if blob.display_attr
+            span(name=attr, title=blob.title)
         default
+          if blob.icon
+            img(class='default-icon', src=blob.icon alt='')
           if blob.label
             strong= blob.label
           input(type=blob.type, name=attr, title=blob.title)
     else
+      if blob.icon
+        img(class='default-icon', src=blob.icon alt='')
       if blob.label
         strong= blob.label
       span(name=attr, title=blob.title)

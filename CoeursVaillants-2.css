@@ -87,6 +87,11 @@ main{
     margin-bottom: 16px;
 }
 
+.central--view h4 {
+    font-size: 19px;
+    font-weight: 600;
+}
+
 .charsheet .header--view span {
     text-align: justify;
 }
@@ -132,11 +137,11 @@ main{
 
 /* --- Central columns --- */
 .central--view .column-left {
-    flex: 1;
+    flex: 2;
 }
 
 .central--view .column-right {
-    flex: 2;
+    flex: 8;
 }
 
 .central--view .column-middle {
@@ -169,6 +174,28 @@ main{
     color: #444;
 }
 
+/* --- Caracs --- */
+.carac-big {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.carac-big strong {
+    display: inline-block;
+    width: 50px;
+    align-items: left;
+    text-align: left;
+    font-variant: small-caps;
+}
+
+.carac-big span {
+    display: inline-block;
+    width: 25px;
+    align-items: center;
+    text-align: center;
+}
+
 /* --- Block Niveau --- */
 .niveau {
     display: flex;
@@ -178,11 +205,22 @@ main{
     gap: 4px;
 }
 
+.niveau > * {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    line-height: 22px;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+}
+
 .niveau strong,
 .niveau span,
 .niveau input {
     display: inline-flex;
     line-height: 1;
+    line-height: 20px;
     height: 20px;
     align-items: center;
 }
@@ -198,6 +236,7 @@ main{
     font-size: 26px;
     font-weight: 700;
     margin-right: 15px;
+    font-variant: small-caps;
 }
 
 .niveau-valeur strong {
@@ -215,6 +254,11 @@ main{
     align-items: flex-end;
     text-align: right;
     gap: 0px;
+}
+
+.column-middle .tips-list {
+    align-self: flex-end;
+    text-align: right;
 }
 
 .tips-list .tips {
@@ -247,6 +291,16 @@ main{
     align-items: center;
 }
 
+.life-counter strong,
+.life-counter span,
+.life-counter input,
+.aventure-counter strong,
+.aventure-counter span,
+.aventure-counter input {
+    font-size: 18px;
+    font-weight: 700;
+}
+
 .life-counter,
 .life-temp-aggr,
 .life-rolls,
@@ -261,13 +315,16 @@ main{
 }
 
 .life-counter > *,
-.aventure-counter > * {
+.aventure-counter > *,
+.defense-view > *,
+.mouvement-view > * {
     display: inline-flex;
     align-items: center;
     height: 22px;
     line-height: 22px;
     margin: 0;
     padding: 0;
+    gap: 4px;
 }
 
 /* ------------------------ */
@@ -536,7 +593,7 @@ label.sheet-avent2 {
     display: inline-block;
     font-size: 22px;
     height: 25px;
-    width: 75px;
+    /*width: 75px;*/
     line-height: 13px;
     font-weight: bold;
     text-align: left;
@@ -544,12 +601,14 @@ label.sheet-avent2 {
 	vertical-align: middle;
 	margin-bottom: 4px;
 }
+.central--view .column-left button[type=roll].sheet-btBig {
+    width: 75px;
+}
 .ui-dialog button[type=roll].sheet-btMid {
     display: inline-block;
     font-weight: bold;
     font-size: 14px;
     height: 16px;
-    width: 55px;
     line-height: 12px;
     text-align: left;
 	vertical-align: middle;

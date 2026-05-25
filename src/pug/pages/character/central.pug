@@ -39,6 +39,7 @@ mixin counters-view(struct)
         - const mouvement_view = fieldDictionary(struct.mouvement.view, '')
         h4 Mouvement
         .mouvement-view
+          +display-value(mouvement_view.roll_testMan)
           +display-value(mouvement_view.mouvement)
           +display-value(mouvement_view.mouvementBase)
 

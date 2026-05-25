@@ -7,7 +7,8 @@
       },
       {
         name: 'ca',
-        icon: 'https://chocolanoar.github.io/coeurs-vaillants-2-fiche-roll20/assets/shield.svg'
+        icon: 'https://chocolanoar.github.io/coeurs-vaillants-2-fiche-roll20/assets/shield.svg',
+        css: 'carac-big'
       }
     ],
     fields: [
@@ -31,9 +32,17 @@
         suffix: '+ Base'
       },
       {
-        name: 'mouvement',
+        name: 'roll_testMan',
         icon: 'https://chocolanoar.github.io/coeurs-vaillants-2-fiche-roll20/assets/barefoot.svg',
-        suffix: '+'
+        css: 'carac-big',
+        css_roll: 'sheet-btRoll20deminiv sheet-btBig',
+        type: 'roll',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Mouvement}} {{carac=[[@{mouvement}]]}} {{rollResult1=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}}'
+      },
+      {
+        name: 'mouvement',
+        suffix: '+',
+        css: 'carac-big'
       }
     ],
     fields: [
