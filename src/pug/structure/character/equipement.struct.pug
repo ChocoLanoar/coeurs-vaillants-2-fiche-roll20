@@ -1,4 +1,31 @@
 -
+  structure.character.weapons = {
+    repeating: [
+      {
+        name: 'testcombat1',
+        roll_name: 'roll_testcombat1',
+        css_roll: 'sheet-btRoll20niv sheet-btBig',
+        type: 'roll',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{arme=@{invArme1}}} {{rollResult1=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{rollResult2=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{coup=[[@{dmgArme1}]]}} {{desdegats=@{dmgArme1}}} {{tRollDesc=@{armDesc1}}}'
+      },
+      {
+        name: 'invArme1',
+        css: 'text-strong'
+      },
+      {
+        name: 'bonusArme1',
+        label: '+'
+      },
+      {
+        name: 'dmgArme1'
+      },
+      {
+        name: 'armDesc1',
+        css: 'text-italic'
+      }
+    ]
+  }
+
   structure.character.technique = {
     view: [
       {

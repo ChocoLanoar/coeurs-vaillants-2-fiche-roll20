@@ -128,7 +128,77 @@
           </div>
         </div>
       </div>
-      <div class="battle--view"></div>
+      <div class="battle--view">
+        <div class="column-left">
+          <h4>Équipement</h4>
+          <div class="armure-view">
+            <p><strong>Armure : </strong><span name="attr_armure_nameArmu"></span>
+            </p>
+            <p><span name="attr_armure_bonusArmu"></span>
+            </p>
+            <p><span name="attr_armure_descArmu"></span>
+            </p>
+          </div>
+          <fieldset class="repeating_inventory">
+            <div class="weapons-view">
+              <p>
+                <button class="sheet-btRoll20niv sheet-btBig" type="roll" name="roll_testcombat1" value="&amp;{template:jet} {{characterName=@{character_name}}} {{arme=@{invArme1}}} {{rollResult1=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{rollResult2=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{coup=[[@{dmgArme1}]]}} {{desdegats=@{dmgArme1}}} {{tRollDesc=@{armDesc1}}}"></button>
+              </p>
+              <p class="text-strong"><span name="attr_invArme1"></span>
+              </p>
+              <p><strong>+</strong><span name="attr_bonusArme1"></span>
+              </p>
+              <p><span name="attr_dmgArme1"></span>
+              </p>
+              <p class="text-italic"><span name="attr_armDesc1"></span>
+              </p>
+            </div>
+            <div class="weapons-edit">
+              <input type="text" name="attr_invArme1" value=""/>
+              <label>+</label>
+              <input type="text" name="attr_bonusArme1" value=""/>
+              <input type="text" name="attr_dmgArme1" value=""/>
+              <input type="text" name="attr_armDesc1" value=""/>
+            </div>
+          </fieldset>
+        </div>
+        <div class="column-middle">
+          <h4>
+            <div>Combat</div>
+            <p><strong>(+</strong><span name="attr_bonusCombat"></span><strong>)</strong>
+            </p>
+          </h4>
+          <p>
+            <button class="sheet-btRoll8 sheet-btMid" type="roll" name="roll_testinit" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet d’Initiative}} {{rollResult1=[[@{initiative}+@{niveau} &amp;{tracker}]]}}">Initiative</button>
+          </p>
+          <div class="trucs-view"><strong>Trucs de combat</strong>
+            <div class="view-grid-4">
+              <p>
+                <button class="sheet-btRoll20niv sheet-btMid" type="roll" name="roll_testtrucVig" title="Bousculer, frapper, pousser, écarter, brutaliser, intimider, percuter…" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Truc de combat (Vigueur)}} {{carac=[[@{vig}]]}} {{rollResult1=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}} {{rollResult2=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}}">Vig</button>
+              </p>
+              <p>
+                <button class="sheet-btRoll20niv sheet-btMid" type="roll" name="roll_testtrucDex" title="Faucher, déséquilibrer, aveugler, désorienter, divertir, accélérer, rompre…" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Truc de combat (Dextérité)}} {{carac=[[@{dex}]]}} {{rollResult1=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}} {{rollResult2=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}}">Dex</button>
+              </p>
+              <p>
+                <button class="sheet-btRoll20niv sheet-btMid" type="roll" name="roll_testtrucInt" title="Ruser, leurrer, surprendre, détourner, anticiper, surpasser, duper…" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Truc de combat (Intelligence)}} {{carac=[[@{int}]]}} {{rollResult1=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}} {{rollResult2=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}}">Int</button>
+              </p>
+              <p>
+                <button class="sheet-btRoll20niv sheet-btMid" type="roll" name="roll_testtrucCha" title="Subjuguer, humilier, insulter, jouer, berner, défier, rabattre…" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Truc de combat (Charisme)}} {{carac=[[@{cha}]]}} {{rollResult1=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}} {{rollResult2=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}}">Cha</button>
+              </p>
+            </div>
+          </div>
+          <div class="vitesse-and-tips">
+            <p class="vitesse-view"><strong>Vitesse</strong><span name="attr_mvt"></span><strong>pas</strong>
+            </p>
+            <div class="vitesse-tips">
+              <p><strong>Moitié : +1 attaque ou Déf</strong><span name="attr_vit_tips1"></span>
+              </p>
+              <p><strong>Double : -2 Déf</strong><span name="attr_vit_tips2"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="sheet-personnage--edit">
       <div class="sheet-ligne sheet-borderBottom">
@@ -324,7 +394,7 @@
         <div class="sheet-ligne"><span class="sheet-infoDesc" style="margin-right: 192px;">Arme</span><span class="sheet-infoDesc" style="margin-right: 5px;">Bonus</span><span class="sheet-infoDesc" style="margin-right: 53px;">Dégâts</span><span class="sheet-infoDesc">Description</span></div>
         <div class="sheet-ligne">
           <fieldset class="repeating_inventory">
-            <button class="sheet-btRoll20niv sheet-btBig" type="roll" name="roll_testcombat1" style="width: 25px; padding: 2px 2px 0 2px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{arme=@{invArme1}}} {{rollResult1=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{rollResult2=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{coup=[[@{dmgArme1}]]}} {{desdegats=@{dmgArme1}}} {{tRollDesc=@{armDesc1}}}"></button>
+            <button class="sheet-btRoll20niv sheet-btBig" type="roll" name="roll_testcombat" style="width: 25px; padding: 2px 2px 0 2px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{arme=@{invArme1}}} {{rollResult1=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{rollResult2=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{coup=[[@{dmgArme1}]]}} {{desdegats=@{dmgArme1}}} {{tRollDesc=@{armDesc1}}}"></button>
             <input class="sheet-biginp" type="text" name="attr_invArme1" style="width: 195px;" placeholder="Arme/Attaque"/>
             <input class="sheet-inpnum2c" type="number" name="attr_bonusArme1" style="border: 1px solid;" value="0" title="Bonus à l’attaque" min="0"/>
             <input type="text" name="attr_dmgArme1" style="width: 100px; text-align: center;" placeholder="1d8" title="Dés de dégâts"/>

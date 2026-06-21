@@ -2,55 +2,85 @@
   structure.character.combat = {
     view: [
       {
-        name: 'combat_bonusCombat',
-        label: 'Bonus jets de combat : '
+        name: 'bonusCombat',
+        label: '(+',
+        suffix: ')'
       },
       {
-        name: 'combat_testinit',
+        name: 'testinit',
+        roll_name: 'roll_testinit',
         label: 'Initiative',
-        type: 'roll'
+        type: 'roll',
+        css_roll: 'sheet-btRoll8 sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet d’Initiative}} {{rollResult1=[[@{initiative}+@{niveau} &{tracker}]]}}'
       },
       {
-        name: 'combat_initiative'
+        name: 'initiative'
       },
       {
-        name: 'combat_niveau',
-        label: '+'
+        name: 'testtrucVig',
+        roll_name: 'roll_testtrucVig',
+        title: 'Bousculer, frapper, pousser, écarter, brutaliser, intimider, percuter…',
+        label: 'Vig',
+        type: 'roll',
+        css_roll: 'sheet-btRoll20niv sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Truc de combat (Vigueur)}} {{carac=[[@{vig}]]}} {{rollResult1=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}} {{rollResult2=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}}'
       },
       {
-        name: 'combat_testtruc',
-        label: 'Truc de combat',
-        type: 'roll'
+        name: 'testtrucDex',
+        roll_name: 'roll_testtrucDex',
+        title: 'Faucher, déséquilibrer, aveugler, désorienter, divertir, accélérer, rompre…',
+        label: 'Dex',
+        type: 'roll',
+        css_roll: 'sheet-btRoll20niv sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Truc de combat (Dextérité)}} {{carac=[[@{dex}]]}} {{rollResult1=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}} {{rollResult2=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}}'
       },
       {
-        name: 'combat_mvt',
+        name: 'testtrucInt',
+        roll_name: 'roll_testtrucInt',
+        title: 'Ruser, leurrer, surprendre, détourner, anticiper, surpasser, duper…',
+        label: 'Int',
+        type: 'roll',
+        css_roll: 'sheet-btRoll20niv sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Truc de combat (Intelligence)}} {{carac=[[@{int}]]}} {{rollResult1=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}} {{rollResult2=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}}'
+      },
+      {
+        name: 'testtrucCha',
+        roll_name: 'roll_testtrucCha',
+        title: 'Subjuguer, humilier, insulter, jouer, berner, défier, rabattre…',
+        label: 'Cha',
+        type: 'roll',
+        css_roll: 'sheet-btRoll20niv sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Truc de combat (Charisme)}} {{carac=[[@{cha}]]}} {{rollResult1=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}} {{rollResult2=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}}'
+      },
+      {
+        name: 'mvt',
         label: 'Vitesse',
-        suffix: 'pas'
+        suffix: 'pas',
+        css: 'vitesse-view'
       },
       {
-        name: 'combat_vit_tips1',
-        label: 'Moitié : +1 attaque ou Déf',
-        type: 'tips'
+        name: 'vit_tips1',
+        label: 'Moitié : +1 attaque ou Déf'
       },
       {
-        name: 'combat_vit_tips2',
-        label: 'Double : -2 Déf',
-        type: 'tips'
+        name: 'vit_tips2',
+        label: 'Double : -2 Déf'
       }
     ],
     fields: [
       {
-        name: 'combat_bonusCombat',
-        label: 'Bonus jets de combat : ',
+        name: 'bonusCombat',
+        label: 'Bonus aux jets de combat : ',
         type: 'number'
       },
       {
-        name: 'combat_initiative',
+        name: 'initiative',
         label: 'Jet d’initiative',
         type: 'text'
       },
       {
-        name: 'combat_mvt',
+        name: 'mvt',
         label: 'Vitesse : ',
         type: 'numper',
         suffix: 'pas'
@@ -58,7 +88,7 @@
     ],
     repeating: [
       {
-        name: 'combat_talent',
+        name: 'talent',
         label: 'Nom et description',
         type: 'text'
       }

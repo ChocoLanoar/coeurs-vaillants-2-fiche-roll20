@@ -29,6 +29,13 @@ main{
 /* --- NEW LAYOUT --- */
 /* ------------------ */
 
+h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
 /* --- Section container --- */
 .view-section {
     border: 1px solid #ccc;
@@ -62,8 +69,9 @@ main{
 
 .view-grid-4 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 2px 1px;
 }
 
 /* --- Reusable flex --- */
@@ -73,9 +81,19 @@ main{
     gap: 12px;
 }
 
+/* --- Text formating --- */
+.text-strong {
+    font-weight: 600;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
 /* --- Section containers --- */
 .header--view,
-.central--view {
+.central--view,
+.battle--view {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -146,6 +164,16 @@ main{
 
 .central--view .column-middle {
     flex: 1;
+}
+
+/* --- Battle columns --- */
+.battle--view .column-left {
+    flex: 3;
+    border-right: 1px solid #888;
+}
+
+.battle--view .column-middle {
+    flex: 2;
 }
 
 /* --- Traits --- */
@@ -325,6 +353,94 @@ main{
     margin: 0;
     padding: 0;
     gap: 4px;
+}
+
+/* --- Weapons repeater --- */
+.battle--view .repcontrol {
+    display: none !important;
+}
+
+.battle--view .repcontrol_add,
+.battle--view .repcontrol_edit,
+.battle--view .repcontrol_del,
+.battle--view .repcontrol_move {
+    display: none !important;
+}
+
+.battle--view fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.battle--view .repcontainer[data-groupname="repeating_inventory"] {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.battle--view .repcontainer[data-groupname="repeating_inventory"] .repitem {
+    display: block;
+    width: 100%;
+}
+
+.battle--view .weapons-view,
+.battle--view .armure-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.battle--view .weapons-view p {
+    margin: 0;
+    padding: 0;
+}
+
+.sheet-personnage--view .weapons-edit {
+    display: none !important;
+}
+
+/* --- Combat --- */
+.trucs-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.trucs-view .view-grid-4 p {
+    margin: 0;
+    padding: 0;
+    line-height: 1; /* optionnel mais utile */
+}
+
+.vitesse-and-tips {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.vitesse-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.vitesse-tips {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2px;
+}
+
+.vitesse-tips p {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
 }
 
 /* ------------------------ */

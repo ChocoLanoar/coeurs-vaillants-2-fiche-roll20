@@ -1,3 +1,51 @@
+mixin equipement-view(struct)
+  .column-left
+    h4 Équipement
+    - const armor_view = fieldDictionary(struct.armure.view, '')
+    .armure-view
+      +display-value(armor_view.armure_nameArmu)
+      +display-value(armor_view.armure_bonusArmu)
+      +display-value(armor_view.armure_descArmu)
+    - const weapons_view = fieldDictionary(struct.weapons.repeating, '')
+    +display-repeater('inventory')
+      .weapons-view
+        +display-value(weapons_view.testcombat1)
+        +display-value(weapons_view.invArme1)
+        +display-value(weapons_view.bonusArme1)
+        +display-value(weapons_view.dmgArme1)
+        +display-value(weapons_view.armDesc1)
+      .weapons-edit
+        +display-input(weapons_view.invArme1)
+        +display-input(weapons_view.bonusArme1)
+        +display-input(weapons_view.dmgArme1)
+        +display-input(weapons_view.armDesc1)
+
+mixin battle-data-view(struct)
+  .column-middle
+    - const combat_view = fieldDictionary(struct.combat.view, '')
+    h4
+      div Combat
+      +display-value(combat_view.bonusCombat)
+    +display-value(combat_view.testinit)
+    .trucs-view
+      strong Trucs de combat
+      .view-grid-4
+        +display-value(combat_view.testtrucVig)
+        +display-value(combat_view.testtrucDex)
+        +display-value(combat_view.testtrucInt)
+        +display-value(combat_view.testtrucCha)
+    .vitesse-and-tips
+      +display-value(combat_view.mvt)
+      .vitesse-tips
+        +display-value(combat_view.vit_tips1)
+        +display-value(combat_view.vit_tips2)
+
+mixin battle-view(struct)
+  .battle--view
+    +equipement-view(struct)
+    +battle-data-view(struct)
+    
+
 mixin battle-edit(struct)
   .sheet-ligne
     .sheet-libel2(style="width: 80px; margin-right: 50px;") Combat
@@ -43,7 +91,7 @@ mixin battle-edit(struct)
     fieldset.repeating_inventory
       button.sheet-btRoll20niv.sheet-btBig(
         type='roll'
-        name='roll_testcombat1'
+        name='roll_testcombat'
         style="width: 25px; padding: 2px 2px 0 2px;"
         value='&{template:jet} {{characterName=@{character_name}}} {{arme=@{invArme1}}} {{rollResult1=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{rollResult2=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{coup=[[@{dmgArme1}]]}} {{desdegats=@{dmgArme1}}} {{tRollDesc=@{armDesc1}}}'
       )

@@ -52,5 +52,10 @@ mixin display-input(blob)
       input(type=blob.type, name=attr)
     when 'number'
     when 'text'
-    default
       input(type=blob.type, name=attr, value=default_value)
+    default
+      input(type='text', name=attr, value=default_value)
+
+mixin display-repeater(fieldset)
+  fieldset(class=`repeating_${fieldset}`)
+    block
