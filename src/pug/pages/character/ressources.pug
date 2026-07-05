@@ -1,3 +1,15 @@
+mixin origine-view(struct)
+  .column-left
+    - const origine_view = fieldDictionary(struct.origine.view, '')
+    +display-value(origine_view.orig_name)
+    +display-value(origine_view.orig_atour)
+    +display-value(origine_view.orig_prouesse)
+    +display-value(origine_view.donNaiss)
+
+mixin ressources-view(struct)
+  .origine--view
+    +origine-view(struct)
+
 mixin ressources-edit(struct)
   .sheet-ligne
     .sheet-libel2 Origine

@@ -90,10 +90,15 @@ h4 {
     font-style: italic;
 }
 
+.text-big {
+    font-size: 16px;
+}
+
 /* --- Section containers --- */
 .header--view,
 .central--view,
-.battle--view {
+.battle--view,
+.origine--view {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
