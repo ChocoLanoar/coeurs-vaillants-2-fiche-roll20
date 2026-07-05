@@ -1,14 +1,18 @@
-mixin origine-view(struct)
-  .column-left
-    - const origine_view = fieldDictionary(struct.origine.view, '')
-    +display-value(origine_view.orig_name)
-    +display-value(origine_view.orig_atour)
-    +display-value(origine_view.orig_prouesse)
-    +display-value(origine_view.donNaiss)
+mixin origine-view(struct_origine)
+  .column-left.border-bottom
+    each field in struct_origine.view
+      +display-value(field)
+
+mixin metiers-view(struct_metiers)
+  +display-repeater('capacite')
+    .column-left
+      each field in struct_metiers.view
+        +display-value(field)
 
 mixin ressources-view(struct)
-  .origine--view
-    +origine-view(struct)
+  .ressources--view
+    +origine-view(struct.origine)
+    +metiers-view(struct.metiers)
 
 mixin ressources-edit(struct)
   .sheet-ligne

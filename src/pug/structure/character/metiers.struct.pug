@@ -2,19 +2,24 @@
   structure.character.metiers = {
     view: [
       {
-        name: 'metier_capaName'
+        name: 'capaName',
+        label: 'Métier : ',
+        css: 'text-big'
       },
       {
-        name: 'metier_capaAtour'
+        name: 'capaAtour'
       },
       {
-        name: 'metier_capaUsuel'
+        name: 'capaUsuel',
+        icon: 'https://chocolanoar.github.io/coeurs-vaillants-2-fiche-roll20/assets/anvil.svg'
       },
       {
-        name: 'metier_capaProuesse'
+        name: 'capaProuesse',
+        icon: 'https://chocolanoar.github.io/coeurs-vaillants-2-fiche-roll20/assets/polar-star.svg',
+        css: 'text-strong'
       },
       {
-        name: 'metier_utilUsuel',
+        name: 'utilUsuel',
         type: 'radio',
         value: '11',
         radio_class: 'check-utilUsuel'
@@ -22,22 +27,22 @@
     ],
     fields: [
       {
-        name: 'metier_capaName',
+        name: 'capaName',
         type: 'text',
         placeholder: 'Nom du métier'
       },
       {
-        name: 'metier_capaAtour',
+        name: 'capaAtour',
         type: 'textarea',
         placeholder: 'Atour'
       },
       {
-        name: 'metier_capaUsuel',
+        name: 'capaUsuel',
         type: 'textarea',
         placeholder: 'Usuel'
       },
       {
-        name: 'metier_capaProuesse',
+        name: 'capaProuesse',
         type: 'textarea',
         placeholder: 'Prouesse'
       }
