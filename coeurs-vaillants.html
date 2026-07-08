@@ -154,8 +154,7 @@
               </p>
             </div>
             <div class="weapons-edit">
-              <input type="text" name="attr_invArme1" value=""/>
-              <label>+</label>
+              <input type="text" name="attr_invArme1" value=""/><strong>+</strong>
               <input type="text" name="attr_bonusArme1" value=""/>
               <input type="text" name="attr_dmgArme1" value=""/>
               <input type="text" name="attr_armDesc1" value=""/>
@@ -225,6 +224,19 @@
             </p>
           </div>
         </fieldset>
+      </div>
+      <div class="inventaire--view">
+        <div class="row-top">
+          <div class="column-middle"><strong>Consommables</strong>
+            <textarea name="attr_bonus"></textarea>
+          </div>
+          <div class="column-middle"><strong>Objets divers</strong>
+            <textarea name="attr_equip">Sac d’aventurier, rations, réserve de projectiles.</textarea>
+          </div>
+        </div>
+        <div class="row-bottom"><strong>Points de trésor : </strong>
+          <input type="number" name="attr_po" value="0"/>
+        </div>
       </div>
     </section>
     <section class="sheet-personnage--edit">
@@ -468,9 +480,7 @@
             <div class="sheet-libel3" style="width: 100%;">Inventaire</div>
           </div>
           <div class="sheet-ligne">
-            <textarea class="sheet-text2col" name="attr_equip">Équipement :
-Consommables :
-Autres :</textarea>
+            <textarea class="sheet-text2col" name="attr_equip"></textarea>
           </div>
           <div class="sheet-ligne">
             <div class="sheet-mycol">
@@ -484,8 +494,7 @@ Autres :</textarea>
             <div class="sheet-libel3" style="width: 100%;">Langues, Talents</div>
           </div>
           <div class="sheet-ligne">
-            <textarea class="sheet-text2col" name="attr_bonus">Langues :
-Talents :</textarea>
+            <textarea class="sheet-text2col" name="attr_bonus"></textarea>
           </div>
         </div>
       </div>

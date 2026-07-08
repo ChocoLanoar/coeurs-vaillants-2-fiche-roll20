@@ -44,10 +44,10 @@ mixin display-input(blob)
   - const attr = `attr_${blob.name}`;
   - const default_value = blob.value ? blob.value : ''
   if blob.label
-    label= blob.label
+    strong= blob.label
   case blob.type
     when 'textarea'
-      textarea(name=attr)
+      textarea(name=attr)=default_value
     when 'checkbox'
       input(type=blob.type, name=attr)
     when 'number'

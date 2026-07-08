@@ -10,6 +10,7 @@ mixin character-view(struct)
     +central-view(struct)
     +battle-view(struct)
     +ressources-view(struct)
+    +inventaire-view(struct)
 
 mixin character-edit(struct)
   section.sheet-personnage--edit
@@ -23,4 +24,4 @@ mixin character-edit(struct)
     .sheet-mycolbrd.sheet-borderBottom(style="width: 100%;")
       +ressources-edit(struct)
     .sheet-mycolbrd(style="width: 100%;")
-      +equipement-edit(struct)
+      +inventaire-edit(struct)

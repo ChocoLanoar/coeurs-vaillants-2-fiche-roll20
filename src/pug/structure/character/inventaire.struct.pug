@@ -1,19 +1,22 @@
 -
-  structure.character.consomables = {
-    view: [
-      {
-        name: 'consomable_text_conso',
-        type: 'textarea'
-      }
-    ]
-  }
-
   structure.character.inventaire = {
-    view: [
+    fields: [
       {
-        name: 'inventaire_equip',
+        name: 'equip',
+        label: 'Objets divers',
         type: 'textarea',
-        value: 'Sac d’aventurier, réserve de projectiles.'
+        value: 'Sac d’aventurier, rations, réserve de projectiles.'
+      },
+      {
+        name: 'bonus',
+        label: 'Consommables',
+        type: 'textarea'
+      },
+      {
+        name: 'po',
+        label: 'Points de trésor : ',
+        type: 'number',
+        value: '0'
       }
     ]
   }

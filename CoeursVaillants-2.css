@@ -103,7 +103,8 @@ h4 {
 .header--view,
 .central--view,
 .battle--view,
-.ressources--view {
+.ressources--view,
+.inventaire--view {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -115,7 +116,8 @@ h4 {
     margin-bottom: 16px;
 }
 
-.ressources--view {
+.ressources--view,
+.inventaire--view {
     flex-direction: column;
 }
 
@@ -189,6 +191,11 @@ h4 {
 
 .battle--view .column-middle {
     flex: 2;
+}
+
+/* --- Inventaire columns --- */
+.inventaire--view .column-middle {
+    flex: 1;
 }
 
 /* --- Traits --- */
