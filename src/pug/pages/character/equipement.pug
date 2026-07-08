@@ -27,3 +27,6 @@ mixin inventaire-edit(struct)
       .sheet-libel3(style="width: 100%;") Langues, Talents
     .sheet-ligne
       textarea(name="attr_bonus", class='sheet-text2col')
+  .sheet-ligne
+    fieldset.repeating_talents
+      input(type="text", name="attr_talent")

@@ -42,10 +42,21 @@ mixin counters-view(struct)
           +display-value(mouvement_view.mouvement)
           +display-value(mouvement_view.mouvementBase)
 
+mixin talents-view(struct)
+  - const talents_view = fieldDictionary(struct.repeating, '')
+  strong Talents :
+  +display-repeater('talents')
+    .talents-view
+      +display-value(talents_view.talent)
+    
+
 mixin central-view(struct)
   .central--view
-    +caracs-view(struct.caracs)
-    +counters-view(struct)
+    .row-top.border-bottom
+      +caracs-view(struct.caracs)
+      +counters-view(struct)
+    .row-bottom
+      +talents-view(struct.combat)
 
 mixin caracs-edit(struct)
   .sheet-mycolbrd.sheet-borderRight(style="width: 33%; height: 270px; text-align: left;")

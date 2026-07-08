@@ -80,6 +80,10 @@ mixin battle-edit(struct)
       .sheet-libeldesc(style="text-align: left; display: block;") Moitié : +1 attaque ou Déf
       .sheet-libeldesc(style="text-align: left; display: block;") Double : -2 Déf
     
+  .sheet-ligne
+    input(type="text", name="attr_armure_nameArmu", placeholder="nom")
+    input(type="text", name="attr_armure_bonusArmu", placeholder="bonus")
+    input(type="text", name="attr_armure_descArmu", placeholder="description")
 
   .sheet-ligne
     span.sheet-infoDesc(style="margin-right: 192px;") Arme

@@ -117,7 +117,8 @@ h4 {
 }
 
 .ressources--view,
-.inventaire--view {
+.inventaire--view,
+.central--view {
     flex-direction: column;
 }
 
@@ -481,6 +482,43 @@ h4 {
     border: none;
     padding: 0;
     margin: 0;
+}
+
+/* --- Talents repeater --- */
+.central--view .repcontrol {
+    display: none !important;
+}
+
+.central--view .repcontrol_add,
+.central--view .repcontrol_edit,
+.central--view .repcontrol_del,
+.central--view .repcontrol_move {
+    display: none !important;
+}
+
+.central--view fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.central--view .repcontainer[data-groupname="repeating_talents"] {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.central--view .repcontainer[data-groupname="repeating_talents"] .repitem {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.central--view .repcontainer[data-groupname="repeating_talents"] .repitem:not(:last-child)::after {
+    content: "/";
+    margin-left: 4px;
+    margin-right: 4px;
+    opacity: 0.8; /* optionnel : léger */
 }
 
 /* ------------------------ */
