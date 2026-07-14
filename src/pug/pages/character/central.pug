@@ -210,6 +210,10 @@ mixin counter-edit(struct)
           input.check-button.check-buttonComp(type="checkbox", id="checkCompMou", value="1", name="attr_CompMou")
           label(for="checkCompMou") Comp.
 
+        .sheet-ligne(style="margin-bottom: 20px; text-align: center;")
+          .sheet-libel1(style="width: 55px; text-align: right;") Mouvement base
+          input.sheet-inpnum2c(type="number", name="attr_mouvementBase", style="width: 35px; margin-right: 10px;", value='10')
+
       //- CADRE SAUVEGARDES
       .sheet-mycolbrd(style="width: 49%;")
         .sheet-ligne(style="padding-top: 8px; margin-bottom: 5px; text-align: center;")
