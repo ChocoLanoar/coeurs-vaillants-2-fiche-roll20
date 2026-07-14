@@ -216,7 +216,7 @@ h4 {
 }
 
 .trait-nom {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
 }
 
@@ -308,9 +308,13 @@ h4 {
     gap: 0px;
 }
 
-.column-middle .tips-list {
+.column-middle .tips-list,
+.repeating_prouesses .tips-list {
     align-self: flex-end;
     text-align: right;
+}
+.repeating_prouesses .tips {
+    font-size: 10px;
 }
 
 .tips-list .tips {
@@ -566,6 +570,28 @@ h4 {
     margin-left: 4px;
     margin-right: 4px;
     opacity: 0.8; /* optionnel : léger */
+}
+
+.repcontainer[data-groupname="repeating_prouesses"] {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.repcontainer[data-groupname="repeating_prouesses"] .repitem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.repcontainer[data-groupname="repeating_prouesses"] .tips {
+    font-size: 11px;
+}
+
+.repcontainer[data-groupname="repeating_prouesses"] .default-icon {
+    width: 12px !important;
+    height: 12px !important;
+    margin-right: 3px !important;
 }
 
 /* ------------------------ */

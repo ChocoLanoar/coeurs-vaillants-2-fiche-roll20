@@ -26,8 +26,9 @@ mixin counters-view(struct)
           +display-value(aventure_view.aventure)
           strong /
           +display-value(aventure_view.aventure_max)
-        .tips-list
-          +display-value(aventure_view.aventure_prouesse)
+        +display-repeater('prouesses')
+          .tips-list
+            +display-value(aventure_view.aventure_prouesse)
     .row-bottom
       .column-middle
         - const defense_view = fieldDictionary(struct.defense.view, '')
@@ -168,16 +169,9 @@ mixin counter-edit(struct)
           input.sheet-inpnum2c(type="number", name="attr_aventure_max", style="width: 35px; margin-right: 0px;", value='1', min="0")
 
         .sheet-ligne(style="margin-top: 5px; text-align: right;")
-          .sheet-libeldesc Jet avec avantage
-          .sheet-libeldesc Une seconde action en combat
-          button.sheet-btRoll8.sheet-btSmall(
-            type='roll'
-            name='roll_testAvPV'
-            style="width: 162px; height: 15px;"
-            value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Regain de PV}} {{rollResult1=[[1d8+@{niveau}]]}}'
-          ) Récupérer 1d8 + niveau PV
-          .sheet-libeldesc Sortir un objet exeptionnel de son sac
-          .sheet-libeldesc Autre… selon univers
+          fieldset.repeating_prouesses
+            input(type="text", name="attr_aventure_prouesse")
+
 
     //- Ligne du bas
     .sheet-ligne

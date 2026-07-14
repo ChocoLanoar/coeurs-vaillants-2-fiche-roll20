@@ -18,11 +18,11 @@
     <section class="sheet-personnage--view">
       <div class="header--view">
         <div class="column-left">
-          <p class="trait"><strong>Nom</strong><span name="attr_character_name"></span>
+          <p class="trait trait-nom"><span name="attr_character_name"></span>
           </p>
-          <p class="trait"><strong>Description</strong><span name="attr_charDesc"></span>
+          <p class="trait"><strong>Description :</strong><span name="attr_charDesc"></span>
           </p>
-          <p class="trait"><strong>Langues connues : </strong><span name="attr_langues"></span>
+          <p class="trait"><strong>Langues connues : </strong><span name="attr_langues"></span>
           </p>
         </div>
         <div class="column-right">
@@ -100,10 +100,12 @@
                   <p><span name="attr_aventure_max"></span>
                   </p>
                 </div>
-                <div class="tips-list">
-                  <p class="tips"><strong>Placeholder tips</strong><span name="attr_aventure_prouesse"></span>
-                  </p>
-                </div>
+                <fieldset class="repeating_prouesses">
+                  <div class="tips-list">
+                    <p class="tips"><img class="default-icon" src="https://chocolanoar.github.io/coeurs-vaillants-2-fiche-roll20/assets/polar-star.svg" alt=""/><span name="attr_aventure_prouesse"></span>
+                    </p>
+                  </div>
+                </fieldset>
               </div>
             </div>
             <div class="row-bottom">
@@ -420,11 +422,9 @@
                 <input class="sheet-inpnum2c" type="number" name="attr_aventure_max" style="width: 35px; margin-right: 0px;" value="1" min="0"/>
               </div>
               <div class="sheet-ligne" style="margin-top: 5px; text-align: right;">
-                <div class="sheet-libeldesc">Jet avec avantage</div>
-                <div class="sheet-libeldesc">Une seconde action en combat</div>
-                <button class="sheet-btRoll8 sheet-btSmall" type="roll" name="roll_testAvPV" style="width: 162px; height: 15px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Regain de PV}} {{rollResult1=[[1d8+@{niveau}]]}}">Récupérer 1d8 + niveau PV</button>
-                <div class="sheet-libeldesc">Sortir un objet exeptionnel de son sac</div>
-                <div class="sheet-libeldesc">Autre… selon univers</div>
+                <fieldset class="repeating_prouesses">
+                  <input type="text" name="attr_aventure_prouesse"/>
+                </fieldset>
               </div>
             </div>
           </div>
