@@ -4,10 +4,15 @@ mixin origine-view(struct_origine)
       +display-value(field)
 
 mixin metiers-view(struct_metiers)
+  - const metier_view = fieldDictionary(struct_metiers.view, '')
   +display-repeater('capacite')
-    .column-left
-      each field in struct_metiers.view
-        +display-value(field)
+    .row-top
+      .column-left
+        +display-value(metier_view.capaName)
+        +display-value(metier_view.capaAtour)
+        +display-value(metier_view.capaUsuel)
+        +display-value(metier_view.capaProuesse)
+      +display-input(metier_view.utilUsuel)
 
 mixin ressources-view(struct)
   .ressources--view

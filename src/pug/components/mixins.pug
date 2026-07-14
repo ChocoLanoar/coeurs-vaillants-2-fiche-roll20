@@ -12,8 +12,8 @@ mixin hidden_attr(field, value)
 
 mixin display-value(blob)
   - const attr = `attr_${blob.name}`;
-  - const default_class = blob.css ? blob.css : ''
-  - const default_roll_class = blob.css_roll ? blob.css_roll : ''
+  - const default_class = blob.css ? blob.css : '';
+  - const default_roll_class = blob.css_roll ? blob.css_roll : '';
   p(class=default_class)
     if blob.type
       case blob.type
@@ -40,21 +40,31 @@ mixin display-value(blob)
     if blob.suffix
       strong= blob.suffix
 
+mixin display-counter(attr, count)
+  - for (var x = 0; x < count; x++)
+      label
+        input(type='radio', name=attr, value=x)
+        span=x
+
 mixin display-input(blob)
   - const attr = `attr_${blob.name}`;
-  - const default_value = blob.value ? blob.value : ''
-  if blob.label
-    strong= blob.label
-  case blob.type
-    when 'textarea'
-      textarea(name=attr)=default_value
-    when 'checkbox'
-      input(type=blob.type, name=attr)
-    when 'number'
-    when 'text'
-      input(type=blob.type, name=attr, value=default_value)
-    default
-      input(type='text', name=attr, value=default_value)
+  - const default_value = blob.value ? blob.value : '';
+  - const default_class = blob.css ? blob.css : '';
+  p(class=default_class)
+    if blob.label
+      strong= blob.label
+    case blob.type
+      when 'textarea'
+        textarea(name=attr)=default_value
+      when 'checkbox'
+        input(type=blob.type, name=attr)
+      when 'number'
+      when 'text'
+        input(type=blob.type, name=attr, value=default_value)
+      when 'radio'
+        +display-counter(attr, default_value)
+      default
+        input(type='text', name=attr, value=default_value)
 
 mixin display-repeater(fieldset)
   fieldset(class=`repeating_${fieldset}`)
