@@ -248,6 +248,13 @@ h4 {
     text-align: center;
 }
 
+.central--view .toggle[value="1"] ~ button {
+    border: 2px solid #AAA !important;
+}
+.central--view .toggle[value="1"] ~ button:before {
+    content: "T" !important;
+}
+
 /* --- Block Niveau --- */
 .niveau {
     display: flex;
@@ -1033,6 +1040,28 @@ html .charsheet input[name*="attr_edit_mode"][value=on] ~ div.coeurs-vaillants m
 html .charsheet input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-bestiaire section.sheet-bestiaire--edit {
   display: none;
 }
+/* html input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--view { */
+    /* opacity: 1; */
+    /* height: auto; */
+    /* pointer-events: auto; */
+/* } */
+/* html input[name*="attr_edit_mode"][value="0"] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--edit { */
+    /* opacity: 0; */
+    /* height: 0; */
+    /* overflow: hidden; */
+    /* pointer-events: none; */
+/* } */
+/* html input[name*="attr_edit_mode"][value="on"] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--view { */
+    /* opacity: 0; */
+    /* height: 0; */
+    /* overflow: hidden; */
+    /* pointer-events: none; */
+/* } */
+/* html input[name*="attr_edit_mode"][value="on"] ~ div.coeurs-vaillants main.sheet-personnage section.sheet-personnage--edit { */
+    /* opacity: 1; */
+    /* height: auto; */
+    /* pointer-events: auto; */
+/* } */
 
 
 /* --------------------- */

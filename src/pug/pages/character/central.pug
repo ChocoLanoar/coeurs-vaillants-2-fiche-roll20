@@ -1,7 +1,11 @@
 mixin caracs-view(caracs_struct)
   .column-left
     each field in caracs_struct.view
-      +display-value(field)
+      case field.type
+        when 'hidden'
+          +hidden_attr(field.name)
+        default
+          +display-value(field)
 
 mixin counters-view(struct)
   .column-right
