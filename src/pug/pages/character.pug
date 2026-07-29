@@ -14,8 +14,7 @@ mixin character-view(struct)
 
 mixin character-edit(struct)
   section.sheet-personnage--edit
-    .sheet-ligne.sheet-borderBottom
-      +header-edit(struct)
+    +header-edit(struct)
     .sheet-ligne.sheet-borderBottom
       +caracs-edit(struct)
       +counter-edit(struct)

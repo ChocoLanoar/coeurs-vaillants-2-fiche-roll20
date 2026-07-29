@@ -308,48 +308,33 @@
       </div>
     </section>
     <section class="sheet-personnage--edit">
-      <div class="sheet-ligne sheet-borderBottom">
+      <div class="header--edit">
         <div class="sheet-ligne" style="text-align: center;"><img title="Version 2.0 - 02/07/2022" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/CoeursVaillants-2/images/Logo.png" width="30%"/></div>
-        <div class="sheet-mycolbrd" style="width: 71%;">
-          <div class="sheet-mycol" style="width: 49%;">
-            <div class="sheet-ligne" style="margin-bottom: 3px;">
-              <div class="sheet-libel2" style="width: 65px;">Nom</div>
-              <input class="sheet-biginp" type="text" name="attr_character_name"/>
-              <div class="sheet-libel1" style="margin-bottom: 0px;">Origine</div>
-              <input type="text" style="margin-bottom: 0px;" name="attr_peuple"/>
-              <div class="sheet-libel1" style="margin-bottom: 0px">Métiers</div>
-              <input type="text" name="attr_classe"/>
-            </div>
+        <div class="column-left">
+          <div class="row-top">
+            <p><strong>Nom</strong>
+              <input type="text" name="attr_character_name" value=""/>
+            </p>
+            <p><strong>Langues connues </strong>
+              <input type="text" name="attr_langues" value=""/>
+            </p>
           </div>
-          <div class="sheet-mycol" style="vertical-align: top; width: 49%;">
-            <div class="sheet-ligne" style="margin-top: 11px;">
-              <div class="sheet-libel1" style="margin: 0px; padding: 0px;">Description</div>
-              <textarea name="attr_charDesc" style="margin: 0px; width: 285px; height: 45px;"></textarea>
-            </div>
-          </div>
-          <div class="sheet-ligne" style="margin-top: 5px;">
-            <div class="sheet-libel1" style="width: 65px; height: 45px; vertical-align: top; margin: 0px; padding: 0px;">Histor.</div>
-            <textarea name="attr_historique" style="margin: 0px; width: 512px; height: 45px;"></textarea>
+          <div class="row-top">
+            <p class="sheet-text3col"><strong>Description</strong>
+              <textarea name="attr_charDesc"></textarea>
+            </p>
           </div>
         </div>
-        <div class="sheet-mycolbrd" style="width: 28%;">
-          <div class="sheet-ligne" style="vertical-align: top; text-align: right;">
-            <div class="sheet-libel2" style="margin-right: 2px;">Niv</div>
-            <input class="sheet-inpnum2cbig" type="number" name="attr_niveau" style="width: 38px; margin-right: 5px;" value="1" min="1" max="7"/>
-            <div class="sheet-libel1" style="width: 18px; margin-right: 2px;">XP</div>
-            <input class="sheet-inpnum2c" type="number" name="attr_xp" style="width: 38px;" value="0" min="0"/>
-            <div class="sheet-infoDesc" style="vertical-align: middle; margin: 0px;">/</div>
-            <input class="sheet-inpnum2c" type="number" name="attr_xpTotal" style="width: 45px;" value="0" min="0"/>
-          </div>
-          <div class="sheet-ligne" style="margin-top: 3px; margin-bottom: 20px;">
-            <div class="sheet-libeldesc">1XP : relancer avec Avantage</div>
-            <div class="sheet-libeldesc">3XP × Niveau : gain de niveau</div>
-            <div class="sheet-libeldesc">6XP : apprendre un nouveau Métier</div>
-          </div>
-          <div>
-            <button class="sheet-btRoll20deminiv sheet-btMid" type="roll" name="roll_testDemiNiv" style="width: 105px; margin-right: 10px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=1D20 + ½Niv}} {{rollResult1=[[1d20+[[floor(@{niveau}/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor(@{niveau}/2)]][Bonus]]]}}">D20+½Niv</button>
-            <button class="sheet-btRoll20niv sheet-btMid" type="roll" name="roll_testvig" style="width: 90px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=1D20 + Niv}} {{rollResult1=[[1d20+@{niveau}[Bonus]]]}} {{rollResult2=[[1d20+@{niveau}[Bonus]]]}}">D20+Niv</button>
-          </div>
+        <div class="row-top">
+          <p><strong>Niveau</strong>
+            <input type="number" name="attr_niveau" value=""/>
+          </p>
+          <p><strong>Points d’expérience</strong>
+            <input type="number" name="attr_xp" value=""/>
+          </p>
+          <p><strong>Total XP acquis</strong>
+            <input type="number" name="attr_xpTotal" value=""/>
+          </p>
         </div>
       </div>
       <div class="sheet-ligne sheet-borderBottom">

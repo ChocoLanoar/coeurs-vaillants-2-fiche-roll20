@@ -131,6 +131,18 @@ h4 {
     text-align: justify;
 }
 
+.header--edit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fcfcfc;
+    margin-bottom: 16px;
+}
+
 /* --- Generic column and row --- */
 .column-left {
     display: flex;
@@ -789,6 +801,11 @@ textarea.sheet-text2col {
     width: 400px;
 }
 textarea.sheet-text3col {
+    width: 95%;
+}
+
+.sheet-text3col,
+.sheet-text3col textarea {
     width: 95%;
 }
 
