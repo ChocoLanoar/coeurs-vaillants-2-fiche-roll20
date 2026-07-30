@@ -310,21 +310,6 @@
     <section class="sheet-personnage--edit">
       <div class="header--edit">
         <div class="sheet-ligne" style="text-align: center;"><img title="Version 2.0 - 02/07/2022" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/CoeursVaillants-2/images/Logo.png" width="30%"/></div>
-        <div class="column-left">
-          <div class="row-top">
-            <p><strong>Nom</strong>
-              <input type="text" name="attr_character_name" value=""/>
-            </p>
-            <p><strong>Langues connues </strong>
-              <input type="text" name="attr_langues" value=""/>
-            </p>
-          </div>
-          <div class="row-top">
-            <p class="sheet-text3col"><strong>Description</strong>
-              <textarea name="attr_charDesc"></textarea>
-            </p>
-          </div>
-        </div>
         <div class="row-top">
           <p><strong>Niveau</strong>
             <input type="number" name="attr_niveau" value=""/>
@@ -336,6 +321,19 @@
             <input type="number" name="attr_xpTotal" value=""/>
           </p>
         </div>
+        <p><strong>Pense-bête de montée de niveau : points de vie, points d’aventure, défense (½Niv), mouvement (½Niv), sauvegarde, usuels, talent.</strong><span name="attr_niveauHelper"></span>
+        </p>
+        <div class="row-top">
+          <p><strong>Nom</strong>
+            <input type="text" name="attr_character_name" value=""/>
+          </p>
+          <p><strong>Langues connues </strong>
+            <input type="text" name="attr_langues" value=""/>
+          </p>
+        </div>
+        <p class="sheet-text3col"><strong>Description</strong>
+          <textarea name="attr_charDesc"></textarea>
+        </p>
       </div>
       <div class="sheet-ligne sheet-borderBottom">
         <div class="sheet-mycolbrd sheet-borderRight" style="width: 33%; height: 270px; text-align: left;">

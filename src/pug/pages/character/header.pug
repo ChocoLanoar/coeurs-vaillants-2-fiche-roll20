@@ -23,18 +23,20 @@ mixin header-view(character_struct)
     +niveau-view(character_struct.niveau)
 
 mixin traits-edit(traits_struct)
-  .column-left
-    - const trait_edit = fieldDictionary(traits_struct.fields, '')
-    .row-top
-      +display-input(trait_edit.character_name)
-      +display-input(trait_edit.langues)
-    .row-top
-      +display-input(trait_edit.charDesc)
+  - const trait_edit = fieldDictionary(traits_struct.fields, '')
+  .row-top
+    +display-input(trait_edit.character_name)
+    +display-input(trait_edit.langues)
+  +display-input(trait_edit.charDesc)
 
 mixin niveau-edit(niveau_struct)
+  - const niveau_edit = fieldDictionary(niveau_struct.fields, '')
   .row-top
-    each field in niveau_struct.fields
-      +display-input(field)
+    +display-input(niveau_edit.niveau)
+    +display-input(niveau_edit.xp)
+    +display-input(niveau_edit.xpTotal)
+  +display-value(niveau_edit.niveauHelper)
+      
 
 mixin header-edit(character_struct)
   .header--edit
@@ -44,5 +46,5 @@ mixin header-edit(character_struct)
         src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/CoeursVaillants-2/images/Logo.png"
         width="30%"
       )
-    +traits-edit(character_struct.traits)
     +niveau-edit(character_struct.niveau)
+    +traits-edit(character_struct.traits)
