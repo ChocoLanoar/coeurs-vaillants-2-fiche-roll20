@@ -34,9 +34,7 @@ mixin niveau-edit(niveau_struct)
   .row-top
     +display-input(niveau_edit.niveau)
     +display-input(niveau_edit.xp)
-    +display-input(niveau_edit.xpTotal)
-  +display-value(niveau_edit.niveauHelper)
-      
+    +display-input(niveau_edit.xpTotal)      
 
 mixin header-edit(character_struct)
   .header--edit
@@ -47,4 +45,5 @@ mixin header-edit(character_struct)
         width="30%"
       )
     +niveau-edit(character_struct.niveau)
+    p Pense-bête de montée de niveau : points de vie, points d’aventure, défense (½Niv), mouvement (½Niv), sauvegarde, usuels, talent.
     +traits-edit(character_struct.traits)
