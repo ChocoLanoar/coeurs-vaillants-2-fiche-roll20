@@ -15,8 +15,8 @@ mixin character-view(struct)
 mixin character-edit(struct)
   section.sheet-personnage--edit
     +header-edit(struct)
+    +central-edit(struct)
     .sheet-ligne.sheet-borderBottom
-      +caracs-edit(struct)
       +counter-edit(struct)
     .sheet-mycolbrd.sheet-borderBottom(style="width: 100%;")
       +battle-edit(struct)

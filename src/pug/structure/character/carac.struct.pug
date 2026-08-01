@@ -59,7 +59,9 @@
       },
       {
         name: 'CompVig',
-        type: 'checkbox'
+        type: 'checkbox',
+        value: '1',
+        title: 'Cocher pour le talent Compétent'
       },
       {
         name: 'dex',
@@ -69,7 +71,9 @@
       },
       {
         name: 'CompDex',
-        type: 'checkbox'
+        type: 'checkbox',
+        value: '1',
+        title: 'Cocher pour le talent Compétent'
       },
       {
         name: 'int',
@@ -79,7 +83,9 @@
       },
       {
         name: 'CompInt',
-        type: 'checkbox'
+        type: 'checkbox',
+        value: '1',
+        title: 'Cocher pour le talent Compétent'
       },
       {
         name: 'cha',
@@ -89,11 +95,18 @@
       },
       {
         name: 'CompCha',
-        type: 'checkbox'
+        type: 'checkbox',
+        value: '1',
+        title: 'Cocher pour le talent Compétent'
       },
       {
         name: 'rollCarac',
-        type: 'roll'
+        roll_name: 'roll_rollCarac',
+        label: 'Caractéristiques',
+        title: 'Tirer une nouvelle série de caracs',
+        type: 'roll',
+        css_roll: 'sheet-btRoll6 sheet-btMid',
+        value: '&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Tirage de Caractéristiques}} {{tSerie1=[[3d6]] [[3d6]] [[3d6]] [[3d6]]}} {{tSerie2=[[3d6]] [[3d6]] [[3d6]] [[3d6]]}} {{tRollDesc=Plus c’est bas mieux c’est !}}'
       }
     ]
   }
