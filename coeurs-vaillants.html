@@ -336,10 +336,10 @@
       </div>
       <div class="central--edit">
         <p>
-          <button class="sheet-btRoll6 sheet-btMid" type="roll" name="roll_rollCarac" title="Tirer une nouvelle série de caracs" value="&amp;amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Tirage de Caractéristiques}} {{tSerie1=[[3d6]] [[3d6]] [[3d6]] [[3d6]]}} {{tSerie2=[[3d6]] [[3d6]] [[3d6]] [[3d6]]}} {{tRollDesc=Plus c’est bas mieux c’est !}}">Caractéristiques</button>
+          <button class="sheet-btRoll6 sheet-btMid" type="roll" name="roll_rollCarac" title="Tirer une nouvelle série de caracs" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Tirage de Caractéristiques}} {{tSerie1=[[3d6]] [[3d6]] [[3d6]] [[3d6]]}} {{tSerie2=[[3d6]] [[3d6]] [[3d6]] [[3d6]]}} {{tRollDesc=Plus c’est bas mieux c’est !}}">Caractéristiques</button>
         </p>
         <p>Cocher en face de chaque Caractéristique pour le talent Compétent.</p>
-        <div class="row-top">
+        <div class="row-top border-bottom">
           <p>
             <p><strong>Vigueur</strong>
               <input type="number" name="attr_vig" value="10"/>
@@ -373,95 +373,67 @@
             </p>
           </p>
         </div>
-        <!--+counters-edit(character_struct)-->
-      </div>
-      <div class="sheet-ligne sheet-borderBottom">
-        <div class="sheet-mycol" style="width: 66%;">
-          <div class="sheet-ligne sheet-borderBottom">
-            <div class="sheet-mycolbrd sheet-borderRight" style="width: 49%;">
-              <div class="sheet-ligne" style="text-align: center;">
-                <div class="sheet-libel3" style="width: 190px;">Points de Vie</div>
-              </div>
-              <div class="sheet-ligne" style="text-align: center; margin-bottom: 8px;">
-                <input class="sheet-inpnum2cbig" type="number" name="attr_pv" style="width: 53px; vertical-align: bottom;" value="0"/>
-                <div class="sheet-libel1" style="width:10px; vertical-align: bottom;">/</div>
-                <input class="sheet-inpnum2c" type="number" name="attr_pv_max" style="width: 45px; margin-right: 20px; vertical-align: bottom" value="0"/>
-                <div class="sheet-mycol">
-                  <div class="sheet-infoDesc" style="display: block;">Temp.</div>
-                  <input class="sheet-inpnum2c" type="number" name="attr_pvTemp" style="width:40px;" value="0"/>
-                </div>
-                <div class="sheet-mycol">
-                  <div class="sheet-infoDesc" style="display: block;">Aggr.</div>
-                  <input class="sheet-inpnum2c" type="number" name="attr_pvAggr" style="width:40px;" value="0"/>
-                </div>
-              </div>
-              <div class="sheet-ligne" style="margin-bottom: 5px; text-align: center;">
-                <button class="sheet-btRoll8 sheet-btMid" type="roll" name="roll_jetdv" style="width: 105px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Nouveaux PV}} {{rollResult1=[[@{niveau}d8+@{bonusPv}]]}}">Jet PV max</button>
-                <div class="sheet-libel1" style="width:10px">+</div>
-                <input type="text" name="attr_bonusPv" style="width: 35px; text-align: center;" value="8"/>
-              </div>
-              <div class="sheet-ligne" style="margin-bottom: 8px; text-align: center;">
-                <button class="sheet-btRoll4 sheet-btMid" type="roll" name="roll_testRepit" style="width: 60px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Récupération - répit}} {{rollResult1=[[@{niveau}d4]] PV}}">Répit</button>
-                <button class="sheet-btRoll8 sheet-btMid" type="roll" name="roll_testSecSouffle" style="width: 105px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Second souffle}} {{rollResult1=[[@{niveau}d8]] PV}}">2nd souffle</button>
-              </div>
+        <div class="row-top border-bottom">
+          <p><strong>Total Points de Vie max</strong>
+            <input type="number" name="attr_pv_max" value=""/>
+          </p>
+          <p>
+            <button class="sheet-btRoll8 sheet-btMid" type="roll" name="roll_jetdv" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Nouveaux PV}} {{rollResult1=[[@{niveau}d8+@{bonusPv}]]}}">Jet PV max</button>
+          </p>
+          <p><strong>Bonus aux PV max</strong>
+            <input type="number" name="attr_bonusPv" value="8"/>
+          </p>
+        </div>
+        <div class="row-top border-bottom">
+          <p><strong>Points d’Aventure max</strong>
+            <input type="number" name="attr_aventure_max" value="1"/>
+          </p>
+          <fieldset class="repeating_prouesses">
+            <p>
+              <input type="text" name="attr_aventure_prouesse" value=""/>
+            </p>
+          </fieldset>
+        </div>
+        <div class="sheet-ligne">
+          <div class="sheet-mycolbrd sheet-borderRight" style="width: 49%;">
+            <div class="sheet-ligne" style="text-align: center;">
+              <div class="sheet-libel3" style="width: 80px; margin-bottom: 3px;">Défense</div>
             </div>
-            <div class="sheet-mycolbrd" style="width: 49%;">
-              <div class="sheet-ligne" style="margin-bottom: 0px; text-align: center;">
-                <div class="sheet-libel3" style="width: 200px;">Points d`Aventure</div>
+            <div class="sheet-ligne" style="text-align: center; margin-bottom: 10px;">
+              <div class="sheet-mycol">
+                <div class="sheet-ligne">
+                  <div class="sheet-libel1" style="width: 55px; text-align: right;">Base</div>
+                  <input class="sheet-inpnum2c" type="number" name="attr_defBase" style="width: 35px;" value="10" min="0" max="40"/>
+                </div>
+                <div class="sheet-ligne">
+                  <div class="sheet-libel1" style="width: 55px; text-align: right;">Armure</div>
+                  <input class="sheet-inpnum2c" type="number" name="attr_bonusArmu" style="width: 35px;" value="0" min="0" max="40"/>
+                </div>
               </div>
-              <div class="sheet-ligne" style="margin-bottom: 0px; text-align: center;">
-                <input class="sheet-inpnum2cbig" type="number" name="attr_aventure" style="width: 40px; margin-right: 0px;" value="1" min="0"/>
-                <div class="sheet-libel1" style="width: 5px; margin: 0px;">/</div>
-                <input class="sheet-inpnum2c" type="number" name="attr_aventure_max" style="width: 35px; margin-right: 0px;" value="1" min="0"/>
-              </div>
-              <div class="sheet-ligne" style="margin-top: 5px; text-align: right;">
-                <fieldset class="repeating_prouesses">
-                  <input type="text" name="attr_aventure_prouesse"/>
-                </fieldset>
-              </div>
+              <input class="sheet-inpnum2cbig" type="number" name="attr_ca" style="width: 45px; margin-left: 15px; margin-top: 5px;" value="10" min="0" max="40"/>
+            </div>
+            <div class="sheet-ligne" style="margin-bottom: 20px; text-align: center;">
+              <button class="sheet-btRoll20deminiv sheet-btMid" type="roll" name="roll_testMan" style="width: 110px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Mouvement}} {{carac=[[@{mouvement}]]}} {{rollResult1=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}}">Mouvement</button>
+              <input class="sheet-inpnum2c" type="number" name="attr_mouvement" style="width: 35px; margin-right: 10px;" value="10"/>
+              <input class="check-button check-buttonComp" type="checkbox" id="checkCompMou" value="1" name="attr_CompMou"/>
+              <label for="checkCompMou">Comp.</label>
+            </div>
+            <div class="sheet-ligne" style="margin-bottom: 20px; text-align: center;">
+              <div class="sheet-libel1" style="width: 55px; text-align: right;">Mouvement base</div>
+              <input class="sheet-inpnum2c" type="number" name="attr_mouvementBase" style="width: 35px; margin-right: 10px;" value="10"/>
             </div>
           </div>
-          <div class="sheet-ligne">
-            <div class="sheet-mycolbrd sheet-borderRight" style="width: 49%;">
-              <div class="sheet-ligne" style="text-align: center;">
-                <div class="sheet-libel3" style="width: 80px; margin-bottom: 3px;">Défense</div>
-              </div>
-              <div class="sheet-ligne" style="text-align: center; margin-bottom: 10px;">
-                <div class="sheet-mycol">
-                  <div class="sheet-ligne">
-                    <div class="sheet-libel1" style="width: 55px; text-align: right;">Base</div>
-                    <input class="sheet-inpnum2c" type="number" name="attr_defBase" style="width: 35px;" value="10" min="0" max="40"/>
-                  </div>
-                  <div class="sheet-ligne">
-                    <div class="sheet-libel1" style="width: 55px; text-align: right;">Armure</div>
-                    <input class="sheet-inpnum2c" type="number" name="attr_bonusArmu" style="width: 35px;" value="0" min="0" max="40"/>
-                  </div>
-                </div>
-                <input class="sheet-inpnum2cbig" type="number" name="attr_ca" style="width: 45px; margin-left: 15px; margin-top: 5px;" value="10" min="0" max="40"/>
-              </div>
-              <div class="sheet-ligne" style="margin-bottom: 20px; text-align: center;">
-                <button class="sheet-btRoll20deminiv sheet-btMid" type="roll" name="roll_testMan" style="width: 110px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Mouvement}} {{carac=[[@{mouvement}]]}} {{rollResult1=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}}">Mouvement</button>
-                <input class="sheet-inpnum2c" type="number" name="attr_mouvement" style="width: 35px; margin-right: 10px;" value="10"/>
-                <input class="check-button check-buttonComp" type="checkbox" id="checkCompMou" value="1" name="attr_CompMou"/>
-                <label for="checkCompMou">Comp.</label>
-              </div>
-              <div class="sheet-ligne" style="margin-bottom: 20px; text-align: center;">
-                <div class="sheet-libel1" style="width: 55px; text-align: right;">Mouvement base</div>
-                <input class="sheet-inpnum2c" type="number" name="attr_mouvementBase" style="width: 35px; margin-right: 10px;" value="10"/>
-              </div>
+          <div class="sheet-mycolbrd" style="width: 49%;">
+            <div class="sheet-ligne" style="padding-top: 8px; margin-bottom: 5px; text-align: center;">
+              <button class="sheet-btRoll20niv sheet-btBig" type="roll" name="roll_testSave" style="width: 170px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Sauvegarde}} {{carac=[[@{svg}]]}} {{rollResult1=[[1d20+@{niveau}]]}} {{rollResult2=[[1d20+@{niveau}]]}}">Sauvegarde</button>
+              <input class="sheet-inpnum2cbig" type="number" name="attr_svg" style="width: 45px" title="Seuil" value="15"/>
             </div>
-            <div class="sheet-mycolbrd" style="width: 49%;">
-              <div class="sheet-ligne" style="padding-top: 8px; margin-bottom: 5px; text-align: center;">
-                <button class="sheet-btRoll20niv sheet-btBig" type="roll" name="roll_testSave" style="width: 170px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Sauvegarde}} {{carac=[[@{svg}]]}} {{rollResult1=[[1d20+@{niveau}]]}} {{rollResult2=[[1d20+@{niveau}]]}}">Sauvegarde</button>
-                <input class="sheet-inpnum2cbig" type="number" name="attr_svg" style="width: 45px" title="Seuil" value="15"/>
-              </div>
-              <div class="sheet-ligne" style="padding-top: 5px; margin-bottom: 5px; text-align: center;">
-                <button class="sheet-btRoll8 sheet-btBig" type="roll" name="roll_testChance" style="width: 195px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Chance}} {{jetChance=[[1d8]]}}">Jet de Chance</button>
-              </div>
-              <div class="sheet-ligne" style="padding-top: 5px; margin-bottom: 5px; text-align: center;">
-                <input class="check-button check-buttonExalt" type="checkbox" id="checkExalt" value="exalte" name="attr_exalte"/>
-                <label for="checkExalt">Exalté</label>
-              </div>
+            <div class="sheet-ligne" style="padding-top: 5px; margin-bottom: 5px; text-align: center;">
+              <button class="sheet-btRoll8 sheet-btBig" type="roll" name="roll_testChance" style="width: 195px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Chance}} {{jetChance=[[1d8]]}}">Jet de Chance</button>
+            </div>
+            <div class="sheet-ligne" style="padding-top: 5px; margin-bottom: 5px; text-align: center;">
+              <input class="check-button check-buttonExalt" type="checkbox" id="checkExalt" value="exalte" name="attr_exalte"/>
+              <label for="checkExalt">Exalté</label>
             </div>
           </div>
         </div>

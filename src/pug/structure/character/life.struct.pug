@@ -40,16 +40,22 @@
     fields: [
       {
         name: 'pv_max',
+        label: 'Total Points de Vie max',
         type: 'number'
       },
       {
-        name: 'bonusPv',
-        type: 'number',
-        value: '8'
+        name: 'jetdv',
+        label: 'Jet PV max',
+        roll_name: 'roll_jetdv',
+        type: 'roll',
+        css_roll: 'sheet-btRoll8 sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Nouveaux PV}} {{rollResult1=[[@{niveau}d8+@{bonusPv}]]}}'
       },
       {
-        name: 'jetdv',
-        type: 'roll'
+        name: 'bonusPv',
+        label: 'Bonus aux PV max',
+        type: 'number',
+        value: '8'
       }
     ]
   }
