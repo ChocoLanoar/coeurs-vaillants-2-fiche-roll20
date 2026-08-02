@@ -50,3 +50,7 @@ Boutons pour jets de dés simples : d20, d8, d4.
 
 ## Métier
 Afficher le bouton de la macro sans le champ pour l’expression.
+
+boutons Compétent
+        input.check-button.check-buttonComp(type="checkbox", id="checkCompMou", value="1", name="attr_CompMou")
+        label(for="checkCompMou") Comp.
