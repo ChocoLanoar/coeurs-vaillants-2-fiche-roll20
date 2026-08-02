@@ -94,69 +94,15 @@ mixin counter-edit(struct)
       +display-repeater(field.repeater_name)
         +display-input(field)
 
-  //- Ligne du bas
-  .sheet-ligne
-    //- CADRE DEF
-    .sheet-mycolbrd.sheet-borderRight(style="width: 49%;")
-      .sheet-ligne(style="text-align: center;")
-        .sheet-libel3(style="width: 80px; margin-bottom: 3px;") Défense
-      
-      .sheet-ligne(style="text-align: center; margin-bottom: 10px;")
-        .sheet-mycol
-          .sheet-ligne
-            .sheet-libel1(style="width: 55px; text-align: right;") Base
-            input.sheet-inpnum2c(type="number", name="attr_defBase", style="width: 35px;", value='10', min="0", max="40")
-          
-          .sheet-ligne
-            .sheet-libel1(style="width: 55px; text-align: right;") Armure
-            input.sheet-inpnum2c(type="number", name="attr_bonusArmu", style="width: 35px;", value='0', min="0", max="40")
+  h4 Défense
+  .row-top.border-bottom
+    each field in struct.defense.fields
+      +display-input(field)
 
-        input.sheet-inpnum2cbig(
-          type="number"
-          name="attr_ca"
-          style="width: 45px; margin-left: 15px; margin-top: 5px;"
-          value='10'
-          min="0"
-          max="40"
-        )
-
-      .sheet-ligne(style="margin-bottom: 20px; text-align: center;")
-        button.sheet-btRoll20deminiv.sheet-btMid(
-          type='roll'
-          name='roll_testMan'
-          style="width: 110px;"
-          value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Mouvement}} {{carac=[[@{mouvement}]]}} {{rollResult1=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}}'
-        ) Mouvement
-        input.sheet-inpnum2c(type="number", name="attr_mouvement", style="width: 35px; margin-right: 10px;", value='10')
-        input.check-button.check-buttonComp(type="checkbox", id="checkCompMou", value="1", name="attr_CompMou")
-        label(for="checkCompMou") Comp.
-
-      .sheet-ligne(style="margin-bottom: 20px; text-align: center;")
-        .sheet-libel1(style="width: 55px; text-align: right;") Mouvement base
-        input.sheet-inpnum2c(type="number", name="attr_mouvementBase", style="width: 35px; margin-right: 10px;", value='10')
-
-    //- CADRE SAUVEGARDES
-    .sheet-mycolbrd(style="width: 49%;")
-      .sheet-ligne(style="padding-top: 8px; margin-bottom: 5px; text-align: center;")
-        button.sheet-btRoll20niv.sheet-btBig(
-          type='roll'
-          name='roll_testSave'
-          style="width: 170px;"
-          value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Sauvegarde}} {{carac=[[@{svg}]]}} {{rollResult1=[[1d20+@{niveau}]]}} {{rollResult2=[[1d20+@{niveau}]]}}'
-        ) Sauvegarde
-        input.sheet-inpnum2cbig(type="number", name="attr_svg", style="width: 45px", title='Seuil', value='15')
-      
-      .sheet-ligne(style="padding-top: 5px; margin-bottom: 5px; text-align: center;")
-        button.sheet-btRoll8.sheet-btBig(
-          type='roll'
-          name='roll_testChance'
-          style="width: 195px;"
-          value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Chance}} {{jetChance=[[1d8]]}}'
-        ) Jet de Chance
-      
-      .sheet-ligne(style="padding-top: 5px; margin-bottom: 5px; text-align: center;")
-        input.check-button.check-buttonExalt(type="checkbox", id="checkExalt", value="exalte", name="attr_exalte")
-        label(for="checkExalt") Exalté
+  h4 Mouvement
+  .row-top
+    each field in struct.mouvement.fields
+      +display-input(field)
 
 mixin central-edit(character_struct)
   .central--edit

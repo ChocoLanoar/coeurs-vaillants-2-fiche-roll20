@@ -14,11 +14,13 @@
     fields: [
       {
         name: 'defBase',
+        label: 'Défense de base',
         type: 'number',
         value: '10'
       },
       {
         name: 'ca',
+        label: 'Seuil de défense (avec armure)',
         type: 'number',
         value: '10'
       }
@@ -48,17 +50,22 @@
     fields: [
       {
         name: 'mouvementBase',
+        label: 'Seuil de mouvement de base',
         type: 'number',
         value: '10'
       },
       {
         name: 'mouvement',
+        label: 'Seuil de mouvement (avec armure)',
         type: 'number',
         value: '10'
       },
       {
         name: 'CompMou',
-        type: 'checkbox'
+        label: 'Compétent : ',
+        type: 'checkbox',
+        value: '1',
+        title: 'Cocher pour le talent Compétent'
       }
     ]
   }

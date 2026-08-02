@@ -394,48 +394,26 @@
             </p>
           </fieldset>
         </div>
-        <div class="sheet-ligne">
-          <div class="sheet-mycolbrd sheet-borderRight" style="width: 49%;">
-            <div class="sheet-ligne" style="text-align: center;">
-              <div class="sheet-libel3" style="width: 80px; margin-bottom: 3px;">Défense</div>
-            </div>
-            <div class="sheet-ligne" style="text-align: center; margin-bottom: 10px;">
-              <div class="sheet-mycol">
-                <div class="sheet-ligne">
-                  <div class="sheet-libel1" style="width: 55px; text-align: right;">Base</div>
-                  <input class="sheet-inpnum2c" type="number" name="attr_defBase" style="width: 35px;" value="10" min="0" max="40"/>
-                </div>
-                <div class="sheet-ligne">
-                  <div class="sheet-libel1" style="width: 55px; text-align: right;">Armure</div>
-                  <input class="sheet-inpnum2c" type="number" name="attr_bonusArmu" style="width: 35px;" value="0" min="0" max="40"/>
-                </div>
-              </div>
-              <input class="sheet-inpnum2cbig" type="number" name="attr_ca" style="width: 45px; margin-left: 15px; margin-top: 5px;" value="10" min="0" max="40"/>
-            </div>
-            <div class="sheet-ligne" style="margin-bottom: 20px; text-align: center;">
-              <button class="sheet-btRoll20deminiv sheet-btMid" type="roll" name="roll_testMan" style="width: 110px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Mouvement}} {{carac=[[@{mouvement}]]}} {{rollResult1=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor((@{niveau}+@{niveau}*@{CompMou})/2)]][Bonus]]]}}">Mouvement</button>
-              <input class="sheet-inpnum2c" type="number" name="attr_mouvement" style="width: 35px; margin-right: 10px;" value="10"/>
-              <input class="check-button check-buttonComp" type="checkbox" id="checkCompMou" value="1" name="attr_CompMou"/>
-              <label for="checkCompMou">Comp.</label>
-            </div>
-            <div class="sheet-ligne" style="margin-bottom: 20px; text-align: center;">
-              <div class="sheet-libel1" style="width: 55px; text-align: right;">Mouvement base</div>
-              <input class="sheet-inpnum2c" type="number" name="attr_mouvementBase" style="width: 35px; margin-right: 10px;" value="10"/>
-            </div>
-          </div>
-          <div class="sheet-mycolbrd" style="width: 49%;">
-            <div class="sheet-ligne" style="padding-top: 8px; margin-bottom: 5px; text-align: center;">
-              <button class="sheet-btRoll20niv sheet-btBig" type="roll" name="roll_testSave" style="width: 170px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Sauvegarde}} {{carac=[[@{svg}]]}} {{rollResult1=[[1d20+@{niveau}]]}} {{rollResult2=[[1d20+@{niveau}]]}}">Sauvegarde</button>
-              <input class="sheet-inpnum2cbig" type="number" name="attr_svg" style="width: 45px" title="Seuil" value="15"/>
-            </div>
-            <div class="sheet-ligne" style="padding-top: 5px; margin-bottom: 5px; text-align: center;">
-              <button class="sheet-btRoll8 sheet-btBig" type="roll" name="roll_testChance" style="width: 195px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de Chance}} {{jetChance=[[1d8]]}}">Jet de Chance</button>
-            </div>
-            <div class="sheet-ligne" style="padding-top: 5px; margin-bottom: 5px; text-align: center;">
-              <input class="check-button check-buttonExalt" type="checkbox" id="checkExalt" value="exalte" name="attr_exalte"/>
-              <label for="checkExalt">Exalté</label>
-            </div>
-          </div>
+        <h4>Défense</h4>
+        <div class="row-top border-bottom">
+          <p><strong>Défense de base</strong>
+            <input type="number" name="attr_defBase" value="10"/>
+          </p>
+          <p><strong>Seuil de défense (avec armure)</strong>
+            <input type="number" name="attr_ca" value="10"/>
+          </p>
+        </div>
+        <h4>Mouvement</h4>
+        <div class="row-top">
+          <p><strong>Seuil de mouvement de base</strong>
+            <input type="number" name="attr_mouvementBase" value="10"/>
+          </p>
+          <p><strong>Seuil de mouvement (avec armure)</strong>
+            <input type="number" name="attr_mouvement" value="10"/>
+          </p>
+          <p><strong>Compétent : </strong>
+            <input type="checkbox" name="attr_CompMou" value="1" title="Cocher pour le talent Compétent"/>
+          </p>
         </div>
       </div>
       <div class="sheet-mycolbrd sheet-borderBottom" style="width: 100%;">
