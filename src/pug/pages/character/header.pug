@@ -38,12 +38,6 @@ mixin niveau-edit(niveau_struct)
 
 mixin header-edit(character_struct)
   .header--edit
-    .sheet-ligne(style="text-align: center;")
-      img(
-        title="Version 2.0 - 02/07/2022"
-        src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/CoeursVaillants-2/images/Logo.png"
-        width="30%"
-      )
     +niveau-edit(character_struct.niveau)
     p Pense-bête de montée de niveau : points de vie, points d’aventure, défense (½Niv), mouvement (½Niv), sauvegarde, usuels, talent.
     +traits-edit(character_struct.traits)

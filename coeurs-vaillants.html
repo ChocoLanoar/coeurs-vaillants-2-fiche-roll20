@@ -5,14 +5,17 @@
 <input name="attr_type_fiche" value="personnage" type="hidden"/>
 <input name="attr_edit_mode" value="on" type="hidden"/>
 <div class="coeurs-vaillants">
-  <header style="text-align: left;">
-    <label>Mode édition
-      <input class="edit_mode" id="edit_mode" name="attr_edit_mode" title="Activer/désactiver le mode édition" type="checkbox" checked="checked"/>
-    </label>
-    <select class="sheet-block_switch" name="attr_type_fiche">
-      <option selected="selected" value="personnage">Personnage</option>
-      <option value="bestiaire">Bestiaire</option>
-    </select>
+  <header>
+    <div class="column-left">
+      <label>Mode édition
+        <input class="edit_mode" id="edit_mode" name="attr_edit_mode" title="Activer/désactiver le mode édition" type="checkbox" checked="checked"/>
+      </label>
+      <select class="sheet-block_switch" name="attr_type_fiche">
+        <option selected="selected" value="personnage">Personnage</option>
+        <option value="bestiaire">Bestiaire</option>
+      </select>
+    </div>
+    <div class="column-middle"><img title="Version 2.0 - 02/07/2022" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/CoeursVaillants-2/images/Logo.png" width="50%"/></div>
   </header>
   <main class="sheet-personnage">
     <section class="sheet-personnage--view">
@@ -309,7 +312,6 @@
     </section>
     <section class="sheet-personnage--edit">
       <div class="header--edit">
-        <div class="sheet-ligne" style="text-align: center;"><img title="Version 2.0 - 02/07/2022" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/CoeursVaillants-2/images/Logo.png" width="30%"/></div>
         <div class="row-top">
           <p><strong>Niveau</strong>
             <input type="number" name="attr_niveau" value=""/>

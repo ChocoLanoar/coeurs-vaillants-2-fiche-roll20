@@ -29,6 +29,12 @@ main{
 /* --- NEW LAYOUT --- */
 /* ------------------ */
 
+header {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
 h4 {
     display: flex;
     justify-content: space-between;
@@ -175,6 +181,15 @@ h4 {
     flex-direction: row;
     gap: 16px;
     width: 100%;
+}
+
+/* --- Top --- */
+header .column-left {
+    flex: 1;
+}
+
+header .column-middle {
+    flex: 2;
 }
 
 /* --- Header columns --- */
