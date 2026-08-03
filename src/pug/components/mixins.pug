@@ -57,17 +57,19 @@ mixin display-input(blob)
       strong= blob.label
     case blob.type
       when 'textarea'
-        textarea(name=attr, title=blob.title)=default_value
+        textarea(name=attr, title=blob.title, placeholder=blob.placeholder)=default_value
       when 'checkbox'
       when 'number'
       when 'text'
-        input(type=blob.type, name=attr, value=default_value, title=blob.title)
+        input(type=blob.type, name=attr, value=default_value, title=blob.title, placeholder=blob.placeholder)
       when 'radio'
         +display-counter(attr, default_value)
       when 'hidden'
         +hidden_attr(attr, '')
       default
-        input(type='text', name=attr, value=default_value, title=blob.title)
+        input(type='text', name=attr, value=default_value, title=blob.title, placeholder=blob.placeholder)
+    if blob.suffix
+      span= blob.suffix
 
 mixin display-repeater(fieldset)
   fieldset(class=`repeating_${fieldset}`)

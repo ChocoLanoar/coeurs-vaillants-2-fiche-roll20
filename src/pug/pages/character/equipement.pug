@@ -8,25 +8,3 @@ mixin inventaire-view(struct)
         +display-input(inventaire_view.equip)
     .row-bottom
       +display-input(inventaire_view.po)
-
-mixin inventaire-edit(struct)
-  .sheet-mycol(style="width: 49%;")
-    .sheet-ligne
-      .sheet-libel3(style="width: 100%;") Inventaire
-    
-    .sheet-ligne
-      textarea.sheet-text2col(name="attr_equip")
-
-    .sheet-ligne
-      .sheet-mycol
-        .sheet-libel1(style="text-align: left; width: 200px;") Points de trésor (commun)
-        input(type="text", name="attr_po", style="width: 40px; text-align: center;", value="0")
-
-  .sheet-mycol(style="width: 49%;")
-    .sheet-ligne
-      .sheet-libel3(style="width: 100%;") Langues, Talents
-    .sheet-ligne
-      textarea(name="attr_bonus", class='sheet-text2col')
-  .sheet-ligne
-    fieldset.repeating_talents
-      input(type="text", name="attr_talent")

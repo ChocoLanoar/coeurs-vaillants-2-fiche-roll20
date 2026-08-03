@@ -3,11 +3,12 @@ mixin equipement-view(struct)
     h4 Équipement
     - const armor_view = fieldDictionary(struct.armure.view, '')
     .armure-view
-      +display-value(armor_view.armure_nameArmu)
-      +display-value(armor_view.armure_bonusArmu)
-      +display-value(armor_view.armure_descArmu)
-    - const weapons_view = fieldDictionary(struct.weapons.repeating, '')
-    +display-repeater('inventory')
+      +display-value(armor_view.nameArmu)
+      +display-value(armor_view.bonusArmu)
+      +display-value(armor_view.descArmu)
+    - const weapons_repeater = fieldDictionary(struct.weapons.repeating, '')
+    - const weapons_view = fieldDictionary(struct.weapons.view, '')
+    +display-repeater(weapons_repeater.invReapeaterName.repeater_name)
       .weapons-view
         +display-value(weapons_view.testcombat1)
         +display-value(weapons_view.invArme1)
@@ -44,62 +45,27 @@ mixin battle-view(struct)
   .battle--view
     +equipement-view(struct)
     +battle-data-view(struct)
-    
 
-mixin battle-edit(struct)
-  .sheet-ligne
-    .sheet-libel2(style="width: 80px; margin-right: 50px;") Combat
-    span.sheet-infoDesc Bonus aux jets de combat
-    input.sheet-inpnum2c(type="number", name="attr_bonusCombat", value='0')
+mixin battle-data-edit(combat_struct)
+  h4 Combat
+  .row-top.border-bottom
+    each field in combat_struct.fields
+      +display-input(field)
 
-  .sheet-ligne(style="text-align: left; margin-bottom: 10px;")
-    .sheet-mycol(style="margin-right: 30px;")
-      button.sheet-btRoll8.sheet-btMid(
-        type='roll'
-        name='roll_testinit'
-        style="width: 90px;"
-        value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet d’Initiative}} {{rollResult1=[[@{initiative}+@{niveau} &{tracker}]]}}'
-      ) Initiative
-      input(type="text", name="attr_initiative", style="width: 45px; text-align: center;", value='1d8')
-      span.sheet-infoDesc +Niv
-    
-    .sheet-mycol(style="margin-right: 30px;")
-      button.sheet-btRoll20niv.sheet-btMid(
-        type='roll'
-        name='roll_testtruc'
-        style="width: 140px;"
-        value='&{template:jet} {{characterName=@{character_name}}} {{rollname=Truc de combat}} {{carac=[[?{Carac|Vigueur,@{vig}|Dextérité,@{dex}|Intelligence,@{int}|Charisme,@{cha}}]]}} {{rollResult1=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}} {{rollResult2=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}}'
-      ) Truc de combat
-    
-    .sheet-mycol
-      .sheet-libel1(style="width: 50px; margin-right: 5px;") Vitesse
-      input.sheet-inpnum2c(type="number", name="attr_mvt", value='6')
-      span.sheet-infoDesc pas
-    
-    .sheet-mycol
-      .sheet-libeldesc(style="text-align: left; display: block;") Moitié : +1 attaque ou Déf
-      .sheet-libeldesc(style="text-align: left; display: block;") Double : -2 Déf
-    
-  .sheet-ligne
-    input(type="text", name="attr_armure_nameArmu", placeholder="nom")
-    input(type="text", name="attr_armure_bonusArmu", placeholder="bonus")
-    input(type="text", name="attr_armure_descArmu", placeholder="description")
+mixin equipement-edit(struct)
+  h4 Équipement
+  .row-top
+    each field in struct.armure.fields
+      +display-input(field)
+  - const weapons_repeater = fieldDictionary(struct.weapons.repeating, '')
+  +display-repeater(weapons_repeater.invReapeaterName.repeater_name)
+    .row-top
+      +display-input(weapons_repeater.invArme1)
+      +display-input(weapons_repeater.bonusArme1)
+      +display-input(weapons_repeater.dmgArme1)
+      +display-input(weapons_repeater.armDesc1)
 
-  .sheet-ligne
-    span.sheet-infoDesc(style="margin-right: 192px;") Arme
-    span.sheet-infoDesc(style="margin-right: 5px;") Bonus
-    span.sheet-infoDesc(style="margin-right: 53px;") Dégâts
-    span.sheet-infoDesc Description
-
-  .sheet-ligne
-    fieldset.repeating_inventory
-      button.sheet-btRoll20niv.sheet-btBig(
-        type='roll'
-        name='roll_testcombat'
-        style="width: 25px; padding: 2px 2px 0 2px;"
-        value='&{template:jet} {{characterName=@{character_name}}} {{arme=@{invArme1}}} {{rollResult1=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{rollResult2=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{coup=[[@{dmgArme1}]]}} {{desdegats=@{dmgArme1}}} {{tRollDesc=@{armDesc1}}}'
-      )
-      input.sheet-biginp(type="text", name="attr_invArme1", style="width: 195px;", placeholder="Arme/Attaque")
-      input.sheet-inpnum2c(type="number", name="attr_bonusArme1", style="border: 1px solid;", value="0", title="Bonus à l’attaque", min="0")
-      input(type="text", name="attr_dmgArme1", style="width: 100px; text-align: center;", placeholder="1d8", title="Dés de dégâts")
-      input(type="text", name="attr_armDesc1", style="width: 445px;", placeholder="Description")
+mixin battle-edit(character_struct)
+  .battle--edit
+    +battle-data-edit(character_struct.combat)
+    +equipement-edit(character_struct)

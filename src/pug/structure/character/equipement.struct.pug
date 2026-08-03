@@ -1,6 +1,6 @@
 -
   structure.character.weapons = {
-    repeating: [
+    view: [
       {
         name: 'testcombat1',
         roll_name: 'roll_testcombat1',
@@ -22,6 +22,33 @@
       {
         name: 'armDesc1',
         css: 'text-italic'
+      }
+    ],
+    repeating: [
+      {
+        name: 'invReapeaterName',
+        repeater_name: 'inventory'
+      },
+      {
+        name: 'invArme1',
+        label: 'Arme',
+        type: 'text'
+      },
+      {
+        name: 'bonusArme1',
+        label: 'Bonus',
+        type: 'number',
+        value: '0'
+      },
+      {
+        name: 'dmgArme1',
+        label: 'Dégâts',
+        type: 'text'
+      },
+      {
+        name: 'armDesc1',
+        label: 'Description',
+        type: 'text'
       }
     ]
   }
@@ -146,30 +173,33 @@
   structure.character.armure = {
     view: [
       {
-        name: 'armure_nameArmu',
-        label: 'Armure : '
+        name: 'nameArmu',
+        label: 'Armure : '
       },
       {
-        name: 'armure_bonusArmu'
+        name: 'bonusArmu'
       },
       {
-        name: 'armure_descArmu'
+        name: 'descArmu'
       }
     ],
     fields: [
       {
-        name: 'armure_nameArmu',
+        name: 'nameArmu',
         label: 'Armure',
-        type: 'text'
+        type: 'text',
+        placeholder: 'Armure de cuir…'
       },
       {
-        name: 'armure_bonusArmu',
+        name: 'bonusArmu',
         label: 'Bonus d’armure',
-        type: 'number'
+        type: 'number',
+        value: '0'
       },
       {
-        name: 'armure_descArmu',
-        type: 'text'
+        name: 'descArmu',
+        type: 'text',
+        placeholder: 'Armure ouvragée solide…'
       }
     ]
   }

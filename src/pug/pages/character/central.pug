@@ -48,9 +48,10 @@ mixin counters-view(struct)
           +display-value(mouvement_view.mouvementBase)
 
 mixin talents-view(struct)
-  - const talents_view = fieldDictionary(struct.repeating, '')
+  - const talents_repeater = fieldDictionary(struct.repeating, '')
+  - const talents_view = fieldDictionary(struct.view, '')
   strong Talents :
-  +display-repeater('talents')
+  +display-repeater(talents_repeater.talent.repeater_name)
     .talents-view
       +display-value(talents_view.talent)
 
@@ -100,11 +101,19 @@ mixin counter-edit(struct)
       +display-input(field)
 
   h4 Mouvement
-  .row-top
+  .row-top.border-bottom
     each field in struct.mouvement.fields
       +display-input(field)
+
+mixin talents-edit(combat_struct)
+  - const talents_repeater = fieldDictionary(combat_struct.repeating, '')
+  h4 Talents
+  +display-repeater(talents_repeater.talent.repeater_name)
+    .talents-edit
+      +display-value(talents_repeater.talent)
 
 mixin central-edit(character_struct)
   .central--edit
     +caracs-edit(character_struct.caracs)
     +counter-edit(character_struct)
+    +talents-edit(character_struct.combat)

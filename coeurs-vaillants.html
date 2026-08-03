@@ -149,11 +149,11 @@
         <div class="column-left">
           <h4>Équipement</h4>
           <div class="armure-view">
-            <p><strong>Armure : </strong><span name="attr_armure_nameArmu"></span>
+            <p><strong>Armure : </strong><span name="attr_nameArmu"></span>
             </p>
-            <p><span name="attr_armure_bonusArmu"></span>
+            <p><span name="attr_bonusArmu"></span>
             </p>
-            <p><span name="attr_armure_descArmu"></span>
+            <p><span name="attr_descArmu"></span>
             </p>
           </div>
           <fieldset class="repeating_inventory">
@@ -404,7 +404,7 @@
           </p>
         </div>
         <h4>Mouvement</h4>
-        <div class="row-top">
+        <div class="row-top border-bottom">
           <p><strong>Seuil de mouvement de base</strong>
             <input type="number" name="attr_mouvementBase" value="10"/>
           </p>
@@ -415,44 +415,56 @@
             <input type="checkbox" name="attr_CompMou" value="1" title="Cocher pour le talent Compétent"/>
           </p>
         </div>
+        <h4>Talents</h4>
+        <fieldset class="repeating_talents">
+          <div class="talents-edit">
+            <p>
+              <input type="text" name="attr_talent"/>
+            </p>
+          </div>
+        </fieldset>
       </div>
-      <div class="sheet-mycolbrd sheet-borderBottom" style="width: 100%;">
-        <div class="sheet-ligne">
-          <div class="sheet-libel2" style="width: 80px; margin-right: 50px;">Combat</div><span class="sheet-infoDesc">Bonus aux jets de combat</span>
-          <input class="sheet-inpnum2c" type="number" name="attr_bonusCombat" value="0"/>
+      <div class="battle--edit">
+        <h4>Combat</h4>
+        <div class="row-top border-bottom">
+          <p><strong>Bonus aux jets de combat</strong>
+            <input type="number" name="attr_bonusCombat" value="0"/>
+          </p>
+          <p><strong>Initiative</strong>
+            <input type="text" name="attr_initiative" value="1d8"/>
+          </p>
+          <p><strong>Vitesse</strong>
+            <input type="number" name="attr_mvt" value="6"/><span> pas</span>
+          </p>
         </div>
-        <div class="sheet-ligne" style="text-align: left; margin-bottom: 10px;">
-          <div class="sheet-mycol" style="margin-right: 30px;">
-            <button class="sheet-btRoll8 sheet-btMid" type="roll" name="roll_testinit" style="width: 90px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet d’Initiative}} {{rollResult1=[[@{initiative}+@{niveau} &amp;{tracker}]]}}">Initiative</button>
-            <input type="text" name="attr_initiative" style="width: 45px; text-align: center;" value="1d8"/><span class="sheet-infoDesc">+Niv</span>
-          </div>
-          <div class="sheet-mycol" style="margin-right: 30px;">
-            <button class="sheet-btRoll20niv sheet-btMid" type="roll" name="roll_testtruc" style="width: 140px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Truc de combat}} {{carac=[[?{Carac|Vigueur,@{vig}|Dextérité,@{dex}|Intelligence,@{int}|Charisme,@{cha}}]]}} {{rollResult1=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}} {{rollResult2=[[1d20+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]]]}}">Truc de combat</button>
-          </div>
-          <div class="sheet-mycol">
-            <div class="sheet-libel1" style="width: 50px; margin-right: 5px;">Vitesse</div>
-            <input class="sheet-inpnum2c" type="number" name="attr_mvt" value="6"/><span class="sheet-infoDesc">pas</span>
-          </div>
-          <div class="sheet-mycol">
-            <div class="sheet-libeldesc" style="text-align: left; display: block;">Moitié : +1 attaque ou Déf</div>
-            <div class="sheet-libeldesc" style="text-align: left; display: block;">Double : -2 Déf</div>
-          </div>
+        <h4>Équipement</h4>
+        <div class="row-top">
+          <p><strong>Armure</strong>
+            <input type="text" name="attr_nameArmu" value="" placeholder="Armure de cuir…"/>
+          </p>
+          <p><strong>Bonus d’armure</strong>
+            <input type="number" name="attr_bonusArmu" value="0"/>
+          </p>
+          <p>
+            <input type="text" name="attr_descArmu" value="" placeholder="Armure ouvragée solide…"/>
+          </p>
         </div>
-        <div class="sheet-ligne">
-          <input type="text" name="attr_armure_nameArmu" placeholder="nom"/>
-          <input type="text" name="attr_armure_bonusArmu" placeholder="bonus"/>
-          <input type="text" name="attr_armure_descArmu" placeholder="description"/>
-        </div>
-        <div class="sheet-ligne"><span class="sheet-infoDesc" style="margin-right: 192px;">Arme</span><span class="sheet-infoDesc" style="margin-right: 5px;">Bonus</span><span class="sheet-infoDesc" style="margin-right: 53px;">Dégâts</span><span class="sheet-infoDesc">Description</span></div>
-        <div class="sheet-ligne">
-          <fieldset class="repeating_inventory">
-            <button class="sheet-btRoll20niv sheet-btBig" type="roll" name="roll_testcombat" style="width: 25px; padding: 2px 2px 0 2px;" value="&amp;{template:jet} {{characterName=@{character_name}}} {{arme=@{invArme1}}} {{rollResult1=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{rollResult2=[[1d20[D20]+@{niveau}[Niveau]+@{bonusCombat}[Bonus de combat]+@{bonusArme1}[Bonus arme]]]}} {{coup=[[@{dmgArme1}]]}} {{desdegats=@{dmgArme1}}} {{tRollDesc=@{armDesc1}}}"></button>
-            <input class="sheet-biginp" type="text" name="attr_invArme1" style="width: 195px;" placeholder="Arme/Attaque"/>
-            <input class="sheet-inpnum2c" type="number" name="attr_bonusArme1" style="border: 1px solid;" value="0" title="Bonus à l’attaque" min="0"/>
-            <input type="text" name="attr_dmgArme1" style="width: 100px; text-align: center;" placeholder="1d8" title="Dés de dégâts"/>
-            <input type="text" name="attr_armDesc1" style="width: 445px;" placeholder="Description"/>
-          </fieldset>
-        </div>
+        <fieldset class="repeating_inventory">
+          <div class="row-top">
+            <p><strong>Arme</strong>
+              <input type="text" name="attr_invArme1" value=""/>
+            </p>
+            <p><strong>Bonus</strong>
+              <input type="number" name="attr_bonusArme1" value="0"/>
+            </p>
+            <p><strong>Dégâts</strong>
+              <input type="text" name="attr_dmgArme1" value=""/>
+            </p>
+            <p><strong>Description</strong>
+              <input type="text" name="attr_armDesc1" value=""/>
+            </p>
+          </div>
+        </fieldset>
       </div>
       <div class="sheet-mycolbrd sheet-borderBottom" style="width: 100%;">
         <div class="sheet-ligne">
@@ -484,35 +496,6 @@
               </div>
               <textarea type="text" name="attr_capaProuesse" style="margin: 0px; width: 350px; height: 63px; display: inline;" placeholder="Prouesse"></textarea>
             </div>
-          </fieldset>
-        </div>
-      </div>
-      <div class="sheet-mycolbrd" style="width: 100%;">
-        <div class="sheet-mycol" style="width: 49%;">
-          <div class="sheet-ligne">
-            <div class="sheet-libel3" style="width: 100%;">Inventaire</div>
-          </div>
-          <div class="sheet-ligne">
-            <textarea class="sheet-text2col" name="attr_equip"></textarea>
-          </div>
-          <div class="sheet-ligne">
-            <div class="sheet-mycol">
-              <div class="sheet-libel1" style="text-align: left; width: 200px;">Points de trésor (commun)</div>
-              <input type="text" name="attr_po" style="width: 40px; text-align: center;" value="0"/>
-            </div>
-          </div>
-        </div>
-        <div class="sheet-mycol" style="width: 49%;">
-          <div class="sheet-ligne">
-            <div class="sheet-libel3" style="width: 100%;">Langues, Talents</div>
-          </div>
-          <div class="sheet-ligne">
-            <textarea class="sheet-text2col" name="attr_bonus"></textarea>
-          </div>
-        </div>
-        <div class="sheet-ligne">
-          <fieldset class="repeating_talents">
-            <input type="text" name="attr_talent"/>
           </fieldset>
         </div>
       </div>

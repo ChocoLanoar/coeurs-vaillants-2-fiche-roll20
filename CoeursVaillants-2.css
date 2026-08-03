@@ -132,7 +132,8 @@ h4 {
 }
 
 .header--edit,
-.central--edit {
+.central--edit,
+.battle--edit {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -591,6 +592,13 @@ h4 {
     margin-right: 4px;
     opacity: 0.8; /* optionnel : léger */
 }
+
+.central--edit .repcontainer[data-groupname="repeating_talents"] {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 
 .repcontainer[data-groupname="repeating_prouesses"] {
     display: flex;

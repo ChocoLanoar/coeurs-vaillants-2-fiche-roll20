@@ -66,29 +66,37 @@
       {
         name: 'vit_tips2',
         label: 'Double : -2 Déf'
+      },
+      {
+        name: 'talent'
       }
     ],
     fields: [
       {
         name: 'bonusCombat',
-        label: 'Bonus aux jets de combat : ',
-        type: 'number'
+        label: 'Bonus aux jets de combat',
+        type: 'number',
+        value: '0'
       },
       {
         name: 'initiative',
-        label: 'Jet d’initiative',
-        type: 'text'
+        label: 'Initiative',
+        type: 'text',
+        value: '1d8'
       },
       {
         name: 'mvt',
-        label: 'Vitesse : ',
-        type: 'numper',
-        suffix: 'pas'
+        label: 'Vitesse',
+        type: 'number',
+        suffix: ' pas',
+        value: '6'
       }
     ],
     repeating: [
       {
-        name: 'talent'
+        name: 'talent',
+        repeater_name: 'talents',
+        type: 'text'
       }
     ]
   }
