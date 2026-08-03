@@ -133,7 +133,8 @@ h4 {
 
 .header--edit,
 .central--edit,
-.battle--edit {
+.battle--edit,
+.ressources--edit {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -492,9 +493,19 @@ h4 {
     font-size: 11px;
 }
 
+/* --- Origine --- */
+.ressources--edit .column-left {
+    width: 100%;
+}
+
 /* --- Metier repeater --- */
 .ressources--view .repcontrol {
     display: none !important;
+}
+
+.ressources--edit .repcontainer,
+.ressources--edit .repitem {
+    width: 100%;
 }
 
 .ressources--view .repcontrol_add,
