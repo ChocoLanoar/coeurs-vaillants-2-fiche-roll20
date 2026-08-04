@@ -1,0 +1,90 @@
+-
+  structure.bestiary.traits = {
+    view: [
+      {
+        name: 'character_name'
+      },
+      {
+        name: 'pnjNiv',
+        label: 'Niv'
+      },
+      {
+        name: 'pnjpv',
+        label: 'PV'
+      },
+      {
+        name: 'pnjpv_max'
+      },
+      {
+        name: 'pnjDef',
+        label: 'Déf'
+      },
+      {
+        name: 'pnjVts',
+        label: 'Vitesse'
+      },
+      {
+        name: 'jetsvgpnj',
+        roll_name: 'roll_jetsvgpnj',
+        label: 'Sauvegarde',
+        type: 'roll',
+        css_roll: 'sheet-btRoll20niv',
+        value: '@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=Sauvegarde PNJ}} {{carac=[[@{pnjsvg}]]}} {{rollResult1=[[1d20+@{pnjNiv}]]}} {{rollResult2=[[1d20+@{pnjNiv}]]}}'
+      },
+      {
+        name: 'testinit',
+        roll_name: 'roll_testinit',
+        label: 'Initiative',
+        css_roll: 'sheet-btRoll8',
+        value: '@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=Initiative PNJ}} {{rollResult1=[[@{initiative}+[[{ {@{pnjNiv}}, {12}}kl1]] &{tracker}]]}}'
+      }
+    ],
+    fields: [
+      {
+        name: 'character_name',
+        label: 'Nom',
+        type: 'text'
+      },
+      {
+        name: 'pnjNiv',
+        label: 'Niveau',
+        type: 'number',
+        value: '1'
+      },
+      {
+        name: 'pnjpv_max',
+        label: 'Points de Vie max',
+        type: 'number'
+      },
+      {
+        name: 'pnjPvBonus',
+        label: 'Points de Vie bonus',
+        type: 'number',
+        value: '0'
+      },
+      {
+        name: 'pnjDef',
+        label: 'Défense',
+        type: 'number',
+        value: '10'
+      },
+      {
+        name: 'pnjVts',
+        label: 'Vitesse',
+        type: 'text',
+        value: '6'
+      },
+      {
+        name: 'pnjsvg',
+        label: 'Seuil de sauvegarde',
+        type: 'number',
+        value: '18'
+      },
+      {
+        name: 'initiative',
+        label: 'Jet d’initiative',
+        type: 'text',
+        value: '1d8'
+      }
+    ]
+  }
