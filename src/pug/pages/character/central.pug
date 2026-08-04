@@ -50,7 +50,7 @@ mixin counters-view(struct)
 mixin talents-view(struct)
   - const talents_repeater = fieldDictionary(struct.repeating, '')
   - const talents_view = fieldDictionary(struct.view, '')
-  strong Talents :
+  strong Talents et Compensations :
   +display-repeater(talents_repeater.talent.repeater_name)
     .talents-view
       +display-value(talents_view.talent)
@@ -107,7 +107,7 @@ mixin counter-edit(struct)
 
 mixin talents-edit(combat_struct)
   - const talents_repeater = fieldDictionary(combat_struct.repeating, '')
-  h4 Talents
+  h4 Talents et Compensations
   +display-repeater(talents_repeater.talent.repeater_name)
     +display-value(talents_repeater.talent)
 

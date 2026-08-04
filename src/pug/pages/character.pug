@@ -3,6 +3,7 @@ include character/central
 include character/battle
 include character/ressources
 include character/equipement
+include character/legacy
 
 mixin character-view(struct)
   section.sheet-personnage--view
@@ -18,3 +19,4 @@ mixin character-edit(struct)
     +central-edit(struct)
     +battle-edit(struct)
     +ressources-edit(struct)
+    +legacy-edit(struct)

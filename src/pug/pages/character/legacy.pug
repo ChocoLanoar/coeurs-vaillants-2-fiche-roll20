@@ -1,0 +1,5 @@
+mixin legacy-edit(character_struct)
+  .legacy--edit
+    h4 Anciens champs
+    each field in character_struct.legacy.fields
+      +display-input(field)
