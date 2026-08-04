@@ -99,6 +99,8 @@ mixin counter-edit(struct)
   .row-top.border-bottom
     each field in struct.defense.fields
       +display-input(field)
+    each field in struct.sauvegarde.fields
+      +display-input(field)
 
   h4 Mouvement
   .row-top.border-bottom
