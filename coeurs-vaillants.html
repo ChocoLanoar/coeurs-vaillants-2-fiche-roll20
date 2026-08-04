@@ -340,14 +340,14 @@
         <p>
           <button class="sheet-btRoll6 sheet-btMid" type="roll" name="roll_rollCarac" title="Tirer une nouvelle série de caracs" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Tirage de Caractéristiques}} {{tSerie1=[[3d6]] [[3d6]] [[3d6]] [[3d6]]}} {{tSerie2=[[3d6]] [[3d6]] [[3d6]] [[3d6]]}} {{tRollDesc=Plus c’est bas mieux c’est !}}">Caractéristiques</button>
         </p>
-        <p>Cocher en face de chaque Caractéristique pour le talent Compétent.</p>
         <div class="row-top border-bottom">
           <p>
             <p><strong>Vigueur</strong>
               <input type="number" name="attr_vig" value="10"/>
             </p>
             <p>
-              <input type="checkbox" name="attr_CompVig" value="1" title="Cocher pour le talent Compétent"/>
+              <input class="check-button check-buttonComp" type="checkbox" id="checkCompVig" value="1" name="attr_CompVig"/>
+              <label for="checkCompVig">Compétent</label>
             </p>
           </p>
           <p>
@@ -355,7 +355,8 @@
               <input type="number" name="attr_dex" value="10"/>
             </p>
             <p>
-              <input type="checkbox" name="attr_CompDex" value="1" title="Cocher pour le talent Compétent"/>
+              <input class="check-button check-buttonComp" type="checkbox" id="checkCompDex" value="1" name="attr_CompDex"/>
+              <label for="checkCompDex">Compétent</label>
             </p>
           </p>
           <p>
@@ -363,7 +364,8 @@
               <input type="number" name="attr_int" value="10"/>
             </p>
             <p>
-              <input type="checkbox" name="attr_CompInt" value="1" title="Cocher pour le talent Compétent"/>
+              <input class="check-button check-buttonComp" type="checkbox" id="checkCompInt" value="1" name="attr_CompInt"/>
+              <label for="checkCompInt">Compétent</label>
             </p>
           </p>
           <p>
@@ -371,7 +373,8 @@
               <input type="number" name="attr_cha" value="10"/>
             </p>
             <p>
-              <input type="checkbox" name="attr_CompCha" value="1" title="Cocher pour le talent Compétent"/>
+              <input class="check-button check-buttonComp" type="checkbox" id="checkCompCha" value="1" name="attr_CompCha"/>
+              <label for="checkCompCha">Compétent</label>
             </p>
           </p>
         </div>
@@ -416,8 +419,9 @@
           <p><strong>Seuil de mouvement (avec armure)</strong>
             <input type="number" name="attr_mouvement" value="10"/>
           </p>
-          <p><strong>Compétent : </strong>
-            <input type="checkbox" name="attr_CompMou" value="1" title="Cocher pour le talent Compétent"/>
+          <p>
+            <input class="check-button check-buttonComp" type="checkbox" id="checkCompMou" value="1" name="attr_CompMou"/>
+            <label for="checkCompMou">Compétent</label>
           </p>
         </div>
         <h4>Talents et Compensations</h4>

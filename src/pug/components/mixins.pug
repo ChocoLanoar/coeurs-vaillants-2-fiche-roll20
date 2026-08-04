@@ -74,3 +74,11 @@ mixin display-input(blob)
 mixin display-repeater(fieldset)
   fieldset(class=`repeating_${fieldset}`)
     block
+
+mixin display-toggle-button(name, button_label)
+  - const button_id = `check${name}`
+  - const button_attr = `attr_${name}`
+  p
+    input.check-button.check-buttonComp(type="checkbox", id=button_id, value="1", name=button_attr)
+    label(for=button_id)= button_label
+  

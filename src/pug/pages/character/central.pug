@@ -66,20 +66,19 @@ mixin central-view(struct)
 mixin caracs-edit(carac_struct)
   - const caracs_edit = fieldDictionary(carac_struct.fields, '')
   +display-value(caracs_edit.rollCarac)
-  p Cocher en face de chaque Caractéristique pour le talent Compétent.
   .row-top.border-bottom
     p
       +display-input(caracs_edit.vig)
-      +display-input(caracs_edit.CompVig)
+      +display-toggle-button(caracs_edit.CompVig.name, caracs_edit.CompVig.label)
     p
       +display-input(caracs_edit.dex)
-      +display-input(caracs_edit.CompDex)
+      +display-toggle-button(caracs_edit.CompDex.name, caracs_edit.CompDex.label)
     p
       +display-input(caracs_edit.int)
-      +display-input(caracs_edit.CompInt)
+      +display-toggle-button(caracs_edit.CompInt.name, caracs_edit.CompInt.label)
     p
       +display-input(caracs_edit.cha)
-      +display-input(caracs_edit.CompCha)
+      +display-toggle-button(caracs_edit.CompCha.name, caracs_edit.CompCha.label)
 
 mixin counter-edit(struct)
   .row-top.border-bottom
@@ -104,8 +103,10 @@ mixin counter-edit(struct)
 
   h4 Mouvement
   .row-top.border-bottom
-    each field in struct.mouvement.fields
-      +display-input(field)
+    - const mouvement_edit = fieldDictionary(struct.mouvement.fields, '')
+    +display-input(mouvement_edit.mouvementBase)
+    +display-input(mouvement_edit.mouvement)
+    +display-toggle-button(mouvement_edit.CompMou.name, mouvement_edit.CompMou.label)
 
 mixin talents-edit(combat_struct)
   - const talents_repeater = fieldDictionary(combat_struct.repeating, '')
