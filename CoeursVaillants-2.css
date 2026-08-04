@@ -16,13 +16,13 @@ div{
     text-align: center;
 }
 main{
-    padding: 4px;
+    /*padding: 4px;*/
     width: 850px;
     text-align:center;
     font-family: 'Verdana';
-    border-width: 1px;
+    /*border-width: 1px;
     border-style: solid;
-    border-color: #AAAAAA;
+    border-color: #AAAAAA;*/
 }
 
 /* ------------------ */
@@ -49,6 +49,10 @@ h4 {
     padding: 12px;
     margin-bottom: 16px;
     background: #fafafa;
+}
+
+.sheet-personnage--edit textarea {
+    height: 80px;
 }
 
 /* --- Section title --- */
@@ -418,6 +422,16 @@ header .column-middle {
     margin: 0;
     padding: 0;
     gap: 4px;
+}
+
+/* --- Central repeaters --- */
+.central--edit .repcontainer {
+    width: 50%;
+}
+
+.central--edit .repitem,
+.central--edit .repitem input {
+    width: 100%;
 }
 
 /* --- Weapons repeater --- */
@@ -836,12 +850,12 @@ textarea.sheet-text2col {
     width: 400px;
 }
 textarea.sheet-text3col {
-    width: 95%;
+    width: 100%;
 }
 
 .sheet-text3col,
 .sheet-text3col textarea {
-    width: 95%;
+    width: 100%;
 }
 
 input[type="checkbox"].check-button {

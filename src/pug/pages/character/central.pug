@@ -109,8 +109,7 @@ mixin talents-edit(combat_struct)
   - const talents_repeater = fieldDictionary(combat_struct.repeating, '')
   h4 Talents
   +display-repeater(talents_repeater.talent.repeater_name)
-    .talents-edit
-      +display-value(talents_repeater.talent)
+    +display-value(talents_repeater.talent)
 
 mixin central-edit(character_struct)
   .central--edit
