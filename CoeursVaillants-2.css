@@ -114,7 +114,8 @@ h4 {
 .central--view,
 .battle--view,
 .ressources--view,
-.inventaire--view {
+.inventaire--view,
+.bestiary-traits--view {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -128,7 +129,8 @@ h4 {
 
 .ressources--view,
 .inventaire--view,
-.central--view {
+.central--view,
+.bestiary-traits--view {
     flex-direction: column;
 }
 
@@ -139,6 +141,10 @@ h4 {
 
 .charsheet .header--view span {
     text-align: justify;
+}
+
+.bestiary-traits--view .row-top p > * {
+    margin-right: 4px;
 }
 
 .header--edit,

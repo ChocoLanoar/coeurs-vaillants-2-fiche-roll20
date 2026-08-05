@@ -1,6 +1,7 @@
 include structure/structure
 include components/mixins
 include pages/character
+include pages/bestiary.pug
 
 +hidden_attr("attr_sheet_version", "")
 +hidden_attr("attr_pvmax", "")
@@ -28,7 +29,8 @@ include pages/character
     +character-edit(structure.character)
 
   main.sheet-bestiaire
-    include pages/bestiary.pug
+    +bestiary-view(structure.bestiary)
+    +bestiary-edit(structure.bestiary)
 
 script(type='text/worker')
   include ../js/migration.js

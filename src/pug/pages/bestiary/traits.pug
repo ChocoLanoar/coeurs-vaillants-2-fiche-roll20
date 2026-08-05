@@ -1,0 +1,18 @@
+mixin bestiary-traits-view(struct)
+  .bestiary-traits--view
+    - const traits_view = fieldDictionary(struct.traits.view, '')
+    .row-top
+      +display-value(traits_view.character_name)
+    .row-top
+      +display-value(traits_view.pnjNiv)
+      p
+        +display-value(traits_view.pnjpv)
+        strong /
+        +display-value(traits_view.pnjpv_max)
+      +display-value(traits_view.pnjDef)
+      +display-value(traits_view.pnjVts)
+      +display-value(traits_view.jetsvgpnj)
+      +display-value(traits_view.testinit)
+
+mixin bestiary-traits-edit(struct)
+  span toto

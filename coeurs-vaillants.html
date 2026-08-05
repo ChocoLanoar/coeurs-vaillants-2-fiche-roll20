@@ -523,7 +523,34 @@
     </section>
   </main>
   <main class="sheet-bestiaire">
-    <section class="sheet-bestiaire--view"><span>tata</span></section>
+    <section class="sheet-bestiaire--view">
+      <div class="bestiary-traits--view">
+        <div class="row-top">
+          <p class="trait-nom"><span name="attr_character_name"></span>
+          </p>
+        </div>
+        <div class="row-top">
+          <p><strong>Niv</strong><span name="attr_pnjNiv"></span>
+          </p>
+          <p>
+            <p><strong>PV</strong><span name="attr_pnjpv"></span>
+            </p><strong>/</strong>
+            <p><span name="attr_pnjpv_max"></span>
+            </p>
+          </p>
+          <p><strong>Déf</strong><span name="attr_pnjDef"></span>
+          </p>
+          <p><strong>Vitesse</strong><span name="attr_pnjVts"></span><strong>pas</strong>
+          </p>
+          <p>
+            <button class="sheet-btRoll20niv" type="roll" name="roll_jetsvgpnj" value="@{jetCache} &amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Sauvegarde PNJ}} {{carac=[[@{pnjsvg}]]}} {{rollResult1=[[1d20+@{pnjNiv}]]}} {{rollResult2=[[1d20+@{pnjNiv}]]}}">Sauvegarde</button>
+          </p>
+          <p>
+            <button class="sheet-btRoll8" type="roll" name="roll_testinit" value="@{jetCache} &amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Initiative PNJ}} {{rollResult1=[[@{initiative}+[[{ {@{pnjNiv}}, {12}}kl1]] &amp;{tracker}]]}}">Initiative</button>
+          </p>
+        </div>
+      </div>
+    </section>
     <section class="sheet-bestiaire--edit">
       <div class="sheet-ligne">
         <div class="sheet-libel2" style="width: 65px;">Nom</div>
