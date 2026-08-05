@@ -1,0 +1,80 @@
+-
+  structure.bestiary.attaques = {
+    view: [
+      {
+        name: 'testpnjcombat',
+        roll_name: 'roll_testpnjcombat',
+        type: 'roll',
+        css_roll: 'sheet-btRoll20niv',
+        value: '@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjarm}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgarm}]]}} {{desdegats=@{pnjdmgarm}}} {{tRollDesc=@{pnjArmDesc}}}'
+      },
+      {
+        name: 'pnjatt'
+      },
+      {
+        name: 'pnjdmgatt'
+      },
+      {
+        name: 'pnjAttDesc'
+      }
+    ],
+    fields: [
+      {
+        name: 'pnjatt',
+        label: 'Attaque',
+        type: 'text'
+      },
+      {
+        name: 'pnjdmgatt',
+        label: 'Dégâts',
+        type: 'text',
+        css: 'text-short'
+      },
+      {
+        name: 'pnjAttDesc',
+        label: 'Description',
+        type: 'text'
+      }
+    ],
+    repeater_name: 'bestiary-attaques'
+  }
+
+  structure.bestiary.otheractions = {
+    view: [
+      {
+        name: 'testpnjaction',
+        roll_name: 'roll_testpnjaction',
+        type: 'roll',
+        css_roll: 'sheet-btRoll20niv',
+        value: '@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=@{pnjact}}} {{rollResult1=[[@{pnjrollact}]]}} {{tRollDesc=@{pnjactdesc}}}'
+      },
+      {
+        name: 'pnjact'
+      },
+      {
+        name: 'pnjrollact'
+      },
+      {
+        name: 'pnjactdesc'
+      }
+    ],
+    fields: [
+     {
+        name: 'pnjact',
+        label: 'Action',
+        type: 'text'
+      },
+      {
+        name: 'pnjrollact',
+        label: 'Jet',
+        type: 'text',
+        css: 'text-short'
+      },
+      {
+        name: 'pnjactdesc',
+        label: 'Description',
+        type: 'text'
+      }
+    ],
+    repeater_name: 'bestiary-otheractions'
+  }

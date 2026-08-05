@@ -11,9 +11,9 @@
 div{
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
-    vertical-align: top;
-    display: inline-block;
-    text-align: center;
+    /*vertical-align: top;*/
+    /*display: inline-block;*/
+    /*text-align: center;*/
 }
 main{
     /*padding: 4px;*/
@@ -119,7 +119,8 @@ h4 {
 .battle--view,
 .ressources--view,
 .inventaire--view,
-.bestiary-traits--view {
+.bestiary-traits--view,
+.bestiary-action--view {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -134,7 +135,8 @@ h4 {
 .ressources--view,
 .inventaire--view,
 .central--view,
-.bestiary-traits--view {
+.bestiary-traits--view,
+.bestiary-action--view {
     flex-direction: column;
 }
 
@@ -156,7 +158,8 @@ h4 {
 .battle--edit,
 .ressources--edit,
 .legacy--edit,
-.bestiary-traits--edit {
+.bestiary-traits--edit,
+.bestiary-action--edit {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -446,24 +449,33 @@ header .column-middle {
     width: 100%;
 }
 
-/* --- Weapons repeater --- */
-.battle--view .repcontrol {
+/* --- view mode repeater --- */
+.sheet-personnage--view .repcontrol,
+.sheet-bestiaire--view .repcontrol {
     display: none !important;
 }
 
-.battle--view .repcontrol_add,
-.battle--view .repcontrol_edit,
-.battle--view .repcontrol_del,
-.battle--view .repcontrol_move {
+.sheet-personnage--view .repcontrol_add,
+.sheet-personnage--view .repcontrol_edit,
+.sheet-personnage--view .repcontrol_del,
+.sheet-personnage--view .repcontrol_move,
+.sheet-bestiaire--view .repcontrol_add,
+.sheet-bestiaire--view .repcontrol_edit,
+.sheet-bestiaire--view .repcontrol_del,
+.sheet-bestiaire--view .repcontrol_move {
     display: none !important;
 }
 
-.battle--view fieldset {
+.sheet-personnage--view fieldset,
+.sheet-bestiaire--view fieldset {
     border: none;
     padding: 0;
     margin: 0;
 }
 
+/* --- edit mode repeater --- */
+
+/* --- Weapons repeater --- */
 .battle--view .repcontainer[data-groupname="repeating_inventory"] {
     display: flex;
     flex-direction: column;
@@ -540,26 +552,9 @@ header .column-middle {
 }
 
 /* --- Metier repeater --- */
-.ressources--view .repcontrol {
-    display: none !important;
-}
-
 .ressources--edit .repcontainer,
 .ressources--edit .repitem {
     width: 100%;
-}
-
-.ressources--view .repcontrol_add,
-.ressources--view .repcontrol_edit,
-.ressources--view .repcontrol_del,
-.ressources--view .repcontrol_move {
-    display: none !important;
-}
-
-.ressources--view fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
 }
 
 .check-utilUsuel {
@@ -609,23 +604,6 @@ header .column-middle {
 
 
 /* --- Talents repeater --- */
-.central--view .repcontrol {
-    display: none !important;
-}
-
-.central--view .repcontrol_add,
-.central--view .repcontrol_edit,
-.central--view .repcontrol_del,
-.central--view .repcontrol_move {
-    display: none !important;
-}
-
-.central--view fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
 .central--view .repcontainer[data-groupname="repeating_talents"] {
     display: flex;
     flex-direction: row;

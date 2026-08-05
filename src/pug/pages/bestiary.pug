@@ -1,12 +1,15 @@
 include bestiary/traits
+include bestiary/actions
 
 mixin bestiary-view(struct)
   section.sheet-bestiaire--view
     +bestiary-traits-view(struct)
+    +bestiary-action-view(struct)
 
 mixin bestiary-edit(struct)
   section.sheet-bestiaire--edit
     +bestiary-traits-edit(struct)
+    +bestiary-action-edit(struct)
     .sheet-ligne
       .sheet-libel2 ACTIONS
 

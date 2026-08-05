@@ -1,0 +1,16 @@
+mixin bestiary-action-view(struct)
+  .bestiary-action--view
+    span toto
+
+mixin bestiary-action-edit(struct)
+  .bestiary-action--edit
+    h4 Attaques
+    +display-repeater(struct.attaques.repeater_name)
+      .row-top
+        each field in struct.attaques.fields
+          +display-input(field)
+    h4 Autres actions
+    +display-repeater(struct.otheractions.repeater_name)
+      .row-top
+        each field in struct.otheractions.fields
+          +display-input(field)
