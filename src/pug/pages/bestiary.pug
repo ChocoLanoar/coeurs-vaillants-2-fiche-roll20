@@ -6,50 +6,7 @@ mixin bestiary-view(struct)
 
 mixin bestiary-edit(struct)
   section.sheet-bestiaire--edit
-    .sheet-ligne
-      div.sheet-libel2(style="width: 65px;") Nom
-      input.sheet-long(type="text", name="attr_character_name")
-
-    //- Données chiffrées 1
-    .sheet-ligne
-      .sheet-libel1(style="width: 30px;") Niv
-      input.sheet-inpnum2cbig(type="number", name="attr_pnjNiv", style="width: 45px;", value='1', min="0")
-      .sheet-libel1(style="width: 30px;") PV+
-      input.sheet-short(type="number", name="attr_pnjPvBonus", value='0', min="0")
-      button.sheet-btRoll8(
-        type='roll'
-        name='roll_jetpvpnj'
-        value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=PV du PNJ}} {{rollResult1=[[{@{pnjNiv}d8,1d4}kh1+@{pnjPvBonus}]]}}'
-      )
-      .sheet-libel1(style="width: 20px;") PV
-      input.sheet-extrashort(type="number", name="attr_pnjpv", value='0')
-      span /
-      input.sheet-extrashort(type="number", name="attr_pnjpv_max", value='0')
-      select(name="attr_jetCache", id="attr_jetCache", style="width: 110px; margin-left: 15px;")
-        option(value="/w gm ") Jets cachés
-        option(value=" ") Jets publics
-
-    //- Données chiffrées 2
-    .sheet-ligne(style="margin-bottom: 10px;")
-      .sheet-libel1(style="width: 30px;") Déf
-      input.sheet-short(type="number", name="attr_pnjDef", value='10')
-      .sheet-libel1(style="width: 35px;") Vit
-      input.sheet-medium(type="text", name="attr_pnjVts", value='6')
-      .sheet-libel1(style="width: 40px; margin-left: 5px;") Svg
-      input.sheet-short(type="number", name="attr_pnjsvg", value='18')
-      button.sheet-btRoll20niv(
-        type='roll'
-        name='roll_jetsvgpnj'
-        value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=Sauvegarde PNJ}} {{carac=[[@{pnjsvg}]]}} {{rollResult1=[[1d20+@{pnjNiv}]]}} {{rollResult2=[[1d20+@{pnjNiv}]]}}'
-      )
-      .sheet-libel1(style="width: 75px;") Initiative
-      input.sheet-short(type="text", name="attr_initiative", value="1d8")
-      button.sheet-btRoll8(
-        type='roll'
-        name='roll_testinit'
-        value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=Initiative PNJ}} {{rollResult1=[[@{initiative}+[[{ {@{pnjNiv}}, {12}}kl1]] &{tracker}]]}}'
-      )
-
+    +bestiary-traits-edit(struct)
     .sheet-ligne
       .sheet-libel2 ACTIONS
 

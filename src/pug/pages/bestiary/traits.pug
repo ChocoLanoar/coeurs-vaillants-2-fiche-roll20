@@ -3,10 +3,14 @@ mixin bestiary-traits-view(struct)
     - const traits_view = fieldDictionary(struct.traits.view, '')
     .row-top
       +display-value(traits_view.character_name)
+      p
+        select(name="attr_jetCache", id="attr_jetCache", style="width: 110px; margin-left: 15px;")
+          option(value="/w gm ") Jets cachés
+          option(value=" ") Jets publics
     .row-top
       +display-value(traits_view.pnjNiv)
       p
-        +display-value(traits_view.pnjpv)
+        +display-input(traits_view.pnjpv)
         strong /
         +display-value(traits_view.pnjpv_max)
       +display-value(traits_view.pnjDef)
@@ -15,4 +19,21 @@ mixin bestiary-traits-view(struct)
       +display-value(traits_view.testinit)
 
 mixin bestiary-traits-edit(struct)
-  span toto
+  .bestiary-traits--edit
+    - const traits_edit = fieldDictionary(struct.traits.fields, '')
+    .row-top
+      +display-input(traits_edit.character_name)
+      p
+        select(name="attr_jetCache", id="attr_jetCache", style="width: 110px; margin-left: 15px;")
+          option(value="/w gm ") Jets cachés
+          option(value=" ") Jets publics
+    .row-top
+      +display-input(traits_edit.pnjNiv)
+      +display-input(traits_edit.pnjpv_max)
+      +display-input(traits_edit.pnjPvBonus)
+      +display-value(traits_edit.jetpvpnj)
+    .row-top
+      +display-input(traits_edit.pnjDef)
+      +display-input(traits_edit.pnjVts)
+      +display-input(traits_edit.pnjsvg)
+      +display-input(traits_edit.initiative)

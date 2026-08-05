@@ -7,11 +7,14 @@
       },
       {
         name: 'pnjNiv',
-        label: 'Niv'
+        label: 'Niv',
+        css: 'niveau-valeur'
       },
       {
         name: 'pnjpv',
-        label: 'PV'
+        label: 'PV',
+        type: 'number',
+        value: '0'
       },
       {
         name: 'pnjpv_max'
@@ -46,7 +49,8 @@
       {
         name: 'character_name',
         label: 'Nom',
-        type: 'text'
+        type: 'text',
+        css: 'trait-nom'
       },
       {
         name: 'pnjNiv',
@@ -66,6 +70,14 @@
         value: '0'
       },
       {
+        name: 'jetpvpnj',
+        roll_name: 'roll_jetpvpnj',
+        label: 'Jet PV max',
+        type: 'roll',
+        css_roll: 'sheet-btRoll8',
+        value: '@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=PV du PNJ}} {{rollResult1=[[{@{pnjNiv}d8,1d4}kh1+@{pnjPvBonus}]]}}'
+      },
+      {
         name: 'pnjDef',
         label: 'Défense',
         type: 'number',
@@ -75,7 +87,8 @@
         name: 'pnjVts',
         label: 'Vitesse',
         type: 'text',
-        value: '6'
+        value: '6',
+        css: 'text-short'
       },
       {
         name: 'pnjsvg',
@@ -87,7 +100,8 @@
         name: 'initiative',
         label: 'Jet d’initiative',
         type: 'text',
-        value: '1d8'
+        value: '1d8',
+        css: 'text-short'
       }
     ]
   }
