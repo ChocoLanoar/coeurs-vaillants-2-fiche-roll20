@@ -557,7 +557,59 @@
           </p>
         </div>
       </div>
-      <div class="bestiary-action--view"><span>toto</span></div>
+      <div class="bestiary-action--view">
+        <h4>Actions</h4>
+        <div class="row-top">
+          <fieldset class="repeating_bestiary-attaques">
+            <div class="weapons-view">
+              <p>
+                <button class="sheet-btRoll20niv" type="roll" name="roll_testpnjcombat" value="@{jetCache} &amp;{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjatt}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgatt}]]}} {{desdegats=@{pnjdmgatt}}} {{tRollDesc=@{pnjAttDesc}}}"></button>
+              </p>
+              <p><span name="attr_pnjatt"></span>
+              </p>
+              <p><span name="attr_pnjdmgatt"></span>
+              </p>
+              <p><span name="attr_pnjAttDesc"></span>
+              </p>
+            </div>
+            <div class="weapons-edit">
+              <p><strong>Attaque</strong>
+                <input type="text" name="attr_pnjatt" value=""/>
+              </p>
+              <p class="text-short"><strong>Dégâts</strong>
+                <input type="text" name="attr_pnjdmgatt" value=""/>
+              </p>
+              <p><strong>Description</strong>
+                <input type="text" name="attr_pnjAttDesc" value=""/>
+              </p>
+            </div>
+          </fieldset>
+          <fieldset class="repeating_bestiary-otheractions">
+            <div class="weapons-view">
+              <p>
+                <button class="sheet-btRoll20niv" type="roll" name="roll_testpnjaction" value="@{jetCache} &amp;{template:jet} {{characterName=@{character_name}}} {{rollname=@{pnjact}}} {{rollResult1=[[@{pnjrollact}]]}} {{tRollDesc=@{pnjactdesc}}}"></button>
+              </p>
+              <p><span name="attr_pnjact"></span>
+              </p>
+              <p><span name="attr_pnjrollact"></span>
+              </p>
+              <p><span name="attr_pnjactdesc"></span>
+              </p>
+            </div>
+            <div class="weapons-edit">
+              <p><strong>Action</strong>
+                <input type="text" name="attr_pnjact" value=""/>
+              </p>
+              <p class="text-short"><strong>Jet</strong>
+                <input type="text" name="attr_pnjrollact" value=""/>
+              </p>
+              <p><strong>Description</strong>
+                <input type="text" name="attr_pnjactdesc" value=""/>
+              </p>
+            </div>
+          </fieldset>
+        </div>
+      </div>
     </section>
     <section class="sheet-bestiaire--edit">
       <div class="bestiary-traits--edit">

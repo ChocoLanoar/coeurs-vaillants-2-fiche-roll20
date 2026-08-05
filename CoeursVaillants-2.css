@@ -488,19 +488,22 @@ header .column-middle {
 }
 
 .battle--view .weapons-view,
-.battle--view .armure-view {
+.battle--view .armure-view,
+.bestiary-action--view .weapons-view {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 12px;
 }
 
-.battle--view .weapons-view p {
+.battle--view .weapons-view p,
+.bestiary-action--view .weapons-view p {
     margin: 0;
     padding: 0;
 }
 
-.sheet-personnage--view .weapons-edit {
+.sheet-personnage--view .weapons-edit,
+.bestiary-action--view .weapons-edit {
     display: none !important;
 }
 
