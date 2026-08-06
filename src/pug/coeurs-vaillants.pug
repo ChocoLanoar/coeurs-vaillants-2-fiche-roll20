@@ -12,8 +12,7 @@ include pages/bestiary.pug
 .coeurs-vaillants
   header
     .column-left
-      label Mode édition
-        input.edit_mode(id="edit_mode", name="attr_edit_mode", title="Activer/désactiver le mode édition", type="checkbox", checked)
+      +display-toggle-button('edit_mode','Mode édition')
       select.sheet-block_switch(name="attr_type_fiche")
         option(selected="selected", value="personnage") Personnage
         option(value="bestiaire") Bestiaire
