@@ -30,7 +30,7 @@ mixin counters-view(struct)
           +display-value(aventure_view.aventure)
           strong /
           +display-value(aventure_view.aventure_max)
-        +display-repeater('prouesses')
+        +display-repeater(struct.aventure.repeater_name)
           .tips-list
             +display-value(aventure_view.aventure_prouesse)
     .row-bottom
@@ -89,9 +89,8 @@ mixin counter-edit(struct)
   .row-top.border-bottom
     - const aventure_edit = fieldDictionary(struct.aventure.fields, '')
     +display-input(aventure_edit.aventure_max)
-    each field in struct.aventure.repeating
-      +display-repeater(field.repeater_name)
-        +display-input(field)
+    +display-repeater(struct.aventure.repeater_name)
+      +display-input(aventure_edit.aventure_prouesse)
 
   h4 Défense
   .row-top.border-bottom
