@@ -47,13 +47,12 @@ mixin counters-view(struct)
           +display-value(mouvement_view.mouvement)
           +display-value(mouvement_view.mouvementBase)
 
-mixin talents-view(struct)
-  - const talents_repeater = fieldDictionary(struct.repeating, '')
-  - const talents_view = fieldDictionary(struct.view, '')
+mixin talents-view(talents_struct)
   strong Talents et Compensations :
-  +display-repeater(talents_repeater.talent.repeater_name)
+  +display-repeater(talents_struct.repeater_name)
     .talents-view
-      +display-value(talents_view.talent)
+      each field in talents_struct.view
+        +display-value(field)
 
 mixin central-view(struct)
   .central--view
@@ -61,7 +60,7 @@ mixin central-view(struct)
       +caracs-view(struct.caracs)
       +counters-view(struct)
     .row-bottom
-      +talents-view(struct.combat)
+      +talents-view(struct.talents)
 
 mixin caracs-edit(carac_struct)
   - const caracs_edit = fieldDictionary(carac_struct.fields, '')
@@ -108,14 +107,14 @@ mixin counter-edit(struct)
     +display-input(mouvement_edit.mouvement)
     +display-toggle-button(mouvement_edit.CompMou.name, mouvement_edit.CompMou.label)
 
-mixin talents-edit(combat_struct)
-  - const talents_repeater = fieldDictionary(combat_struct.repeating, '')
+mixin talents-edit(talents_struct)
   h4 Talents et Compensations
-  +display-repeater(talents_repeater.talent.repeater_name)
-    +display-value(talents_repeater.talent)
+  +display-repeater(talents_struct.repeater_name)
+    each field in talents_struct.fields
+      +display-input(field)
 
 mixin central-edit(character_struct)
   .central--edit
     +caracs-edit(character_struct.caracs)
     +counter-edit(character_struct)
-    +talents-edit(character_struct.combat)
+    +talents-edit(character_struct.talents)

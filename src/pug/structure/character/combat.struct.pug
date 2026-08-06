@@ -92,12 +92,20 @@
         suffix: ' pas',
         value: '6'
       }
+    ]
+  }
+
+  structure.character.talents = {
+    view: [
+      {
+        name: 'talent'
+      }
     ],
-    repeating: [
+    fields: [
       {
         name: 'talent',
-        repeater_name: 'talents',
         type: 'text'
       }
-    ]
+    ],
+    repeater_name: 'talents'
   }
