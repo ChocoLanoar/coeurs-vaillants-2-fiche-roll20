@@ -1,6 +1,7 @@
 include bestiary/traits
 include bestiary/actions
 include bestiary/capacites
+include bestiary/legacy
 
 mixin bestiary-view(struct)
   section.sheet-bestiaire--view
@@ -13,45 +14,4 @@ mixin bestiary-edit(struct)
     +bestiary-traits-edit(struct)
     +bestiary-action-edit(struct)
     +bestiary-capacites-edit(struct)
-    .sheet-ligne
-      .sheet-libel2 ACTIONS
-
-    .sheet-ligne
-      input(type="text", name="attr_pnjarm1", style="width: 30%;", placeholder="Arme/Attaque")
-      input.sheet-medium(type="text", name="attr_pnjdmgarm1", placeholder="1d8")
-      button.sheet-btRoll20niv(
-        type='roll'
-        name='roll_testpnjcombat1'
-        value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjarm1}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgarm1}]]}} {{desdegats=@{pnjdmgarm1}}} {{tRollDesc=@{pnjArmDesc1}}}'
-      )
-      input(type="text", name="attr_pnjArmDesc1", style="width: 50%;", placeholder="Description")
-
-    .sheet-ligne
-      input(type="text", name="attr_pnjarm2", style="width: 30%;", placeholder="Arme/Attaque")
-      input.sheet-medium(type="text", name="attr_pnjdmgarm2", placeholder="1d8")
-      button.sheet-btRoll20niv(
-        type='roll'
-        name='roll_testpnjcombat2'
-        value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjarm2}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgarm2}]]}} {{desdegats=@{pnjdmgarm2}}} {{tRollDesc=@{pnjArmDesc2}}}'
-      )
-      input(type="text", name="attr_pnjArmDesc2", style="width: 50%;", placeholder="Description")
-
-    .sheet-ligne
-      input(type="text", name="attr_pnjarm4", style="width: 30%;", placeholder="Arme/Attaque")
-      input.sheet-medium(type="text", name="attr_pnjdmgarm4", placeholder="1d8")
-      button.sheet-btRoll20niv(
-        type='roll'
-        name='roll_testpnjcombat4'
-        value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjarm4}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgarm4}]]}} {{desdegats=@{pnjdmgarm4}}} {{tRollDesc=@{pnjArmDesc4}}}'
-      )
-      input(type="text", name="attr_pnjArmDesc4", style="width: 50%;", placeholder="Description")
-
-    .sheet-ligne
-      input(type="text", name="attr_pnjarm3", style="width: 30%;", placeholder="Autre action")
-      input.sheet-medium(type="text", name="attr_pnjdmgarm3", placeholder="macro")
-      button.sheet-btRoll20niv(
-        type='roll'
-        name='roll_testpnjcombat3'
-        value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=@{pnjarm3}}} {{rollResult1=[[@{pnjdmgarm3}]]}} {{tRollDesc=@{pnjArmDesc3}}}'
-      )
-      input(type="text", name="attr_pnjArmDesc3", style="width: 50%;", placeholder="Description")
+    +bestiary-legacy-edit()

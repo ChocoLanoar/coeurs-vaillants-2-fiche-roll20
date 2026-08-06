@@ -2,20 +2,22 @@ mixin bestiary-action-view(struct)
   .bestiary-action--view
     h4 Actions
     .row-top
-      +display-repeater(struct.attaques.repeater_name)
-        .weapons-view
-          each field in struct.attaques.view
-            +display-value(field)
-        .weapons-edit
-          each field in struct.attaques.fields
-            +display-input(field)
-      +display-repeater(struct.otheractions.repeater_name)
-        .weapons-view
-          each field in struct.otheractions.view
-            +display-value(field)
-        .weapons-edit
-          each field in struct.otheractions.fields
-            +display-input(field)
+      .column-left
+        +display-repeater(struct.attaques.repeater_name)
+          .weapons-view
+            each field in struct.attaques.view
+              +display-value(field)
+          .weapons-edit
+            each field in struct.attaques.fields
+              +display-input(field)
+      .column-left
+        +display-repeater(struct.otheractions.repeater_name)
+          .weapons-view
+            each field in struct.otheractions.view
+              +display-value(field)
+          .weapons-edit
+            each field in struct.otheractions.fields
+              +display-input(field)
 
 mixin bestiary-action-edit(struct)
   .bestiary-action--edit
