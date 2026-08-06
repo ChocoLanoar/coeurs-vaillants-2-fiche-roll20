@@ -76,17 +76,17 @@
                 <h4>Points de Vie</h4>
                 <div class="life-counter">
                   <p>
-                    <input type="number" name="attr_pv"/>
+                    <input type="number" name="attr_pv" value="0"/>
                   </p><strong>/</strong>
                   <p><span name="attr_pv_max"></span>
                   </p>
                 </div>
                 <div class="life-temp-aggr">
                   <p><strong>PV temp.</strong>
-                    <input type="number" name="attr_pvTemp" title="Points de Vie temporaires"/>
+                    <input type="number" name="attr_pvTemp" value="0" title="Points de Vie temporaires"/>
                   </p>
                   <p>
-                    <input type="number" name="attr_pvAggr" title="Dégâts aggravés"/><strong>Dgts Aggr.</strong>
+                    <input type="number" name="attr_pvAggr" value="0" title="Dégâts aggravés"/><span>Dgts Aggr.</span>
                   </p>
                 </div>
                 <div class="life-rolls">
@@ -102,7 +102,7 @@
                 <h4>Points d’Aventure</h4>
                 <div class="aventure-counter">
                   <p>
-                    <input type="number" name="attr_aventure"/>
+                    <input type="number" name="attr_aventure" value="1"/>
                   </p><strong>/</strong>
                   <p><span name="attr_aventure_max"></span>
                   </p>
@@ -192,7 +192,7 @@
         <div class="column-middle">
           <h4>
             <div>Combat</div>
-            <p><strong>(+</strong><span name="attr_bonusCombat"></span><strong>)</strong>
+            <p><strong>(bonus +</strong><span name="attr_bonusCombat"></span><strong>)</strong>
             </p>
           </h4>
           <p>
@@ -380,7 +380,7 @@
         </div>
         <div class="row-top border-bottom">
           <p><strong>Total Points de Vie max</strong>
-            <input type="number" name="attr_pv_max" value=""/>
+            <input type="number" name="attr_pv_max" value="0"/>
           </p>
           <p>
             <button class="sheet-btRoll8 sheet-btMid" type="roll" name="roll_jetdv" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Nouveaux PV}} {{rollResult1=[[@{niveau}d8+@{bonusPv}]]}}">Jet PV max</button>

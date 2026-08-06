@@ -14,12 +14,12 @@ mixin counters-view(struct)
         - const life_view = fieldDictionary(struct.life.view, '')
         h4 Points de Vie
         .life-counter
-          +display-value(life_view.pv)
+          +display-input(life_view.pv)
           strong /
           +display-value(life_view.pv_max)
         .life-temp-aggr
-          +display-value(life_view.pvTemp)
-          +display-value(life_view.pvAggr)
+          +display-input(life_view.pvTemp)
+          +display-input(life_view.pvAggr)
         .life-rolls
           +display-value(life_view.roll_testRepit)
           +display-value(life_view.roll_testSecSouffle)
@@ -27,7 +27,7 @@ mixin counters-view(struct)
         - const aventure_view = fieldDictionary(struct.aventure.view, '')
         h4 Points d’Aventure
         .aventure-counter
-          +display-value(aventure_view.aventure)
+          +display-input(aventure_view.aventure)
           strong /
           +display-value(aventure_view.aventure_max)
         +display-repeater(struct.aventure.repeater_name)
