@@ -6,20 +6,13 @@ mixin equipement-view(struct)
       +display-value(armor_view.nameArmu)
       +display-value(armor_view.bonusArmu)
       +display-value(armor_view.descArmu)
-    - const weapons_repeater = fieldDictionary(struct.weapons.repeating, '')
-    - const weapons_view = fieldDictionary(struct.weapons.view, '')
-    +display-repeater(weapons_repeater.invReapeaterName.repeater_name)
+    +display-repeater(struct.weapons.repeater_name)
       .weapons-view
-        +display-value(weapons_view.testcombat1)
-        +display-value(weapons_view.invArme1)
-        +display-value(weapons_view.bonusArme1)
-        +display-value(weapons_view.dmgArme1)
-        +display-value(weapons_view.armDesc1)
+        each field in struct.weapons.view
+          +display-value(field)
       .weapons-edit
-        +display-input(weapons_view.invArme1)
-        +display-input(weapons_view.bonusArme1)
-        +display-input(weapons_view.dmgArme1)
-        +display-input(weapons_view.armDesc1)
+        each field in struct.weapons.fields
+          +display-input(field)
 
 mixin battle-data-view(struct)
   .column-middle
@@ -57,13 +50,10 @@ mixin equipement-edit(struct)
   .row-top
     each field in struct.armure.fields
       +display-input(field)
-  - const weapons_repeater = fieldDictionary(struct.weapons.repeating, '')
-  +display-repeater(weapons_repeater.invReapeaterName.repeater_name)
+  +display-repeater(struct.weapons.repeater_name)
     .row-top
-      +display-input(weapons_repeater.invArme1)
-      +display-input(weapons_repeater.bonusArme1)
-      +display-input(weapons_repeater.dmgArme1)
-      +display-input(weapons_repeater.armDesc1)
+      each field in struct.weapons.fields
+        +display-input(field)
 
 mixin battle-edit(character_struct)
   .battle--edit
