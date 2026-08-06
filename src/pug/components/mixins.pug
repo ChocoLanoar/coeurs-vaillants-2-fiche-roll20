@@ -27,6 +27,8 @@ mixin display-value(blob)
             button(class=default_roll_class type=blob.type, name=blob.roll_name, title=blob.title, value=blob.value)= blob.label ? blob.label : ''
           if blob.display_attr
             span(name=attr, title=blob.title)
+        when 'textarea'
+          textarea(name=attr, title=blob.title, placeholder=blob.placeholder readonly)=default_value
         default
           if blob.icon
             img(class='default-icon', src=blob.icon alt='')

@@ -105,7 +105,7 @@ h4 {
 }
 
 .text-short > input {
-    width: 60px;
+    width: 80px;
 }
 
 /* --- Borders --- */
@@ -120,7 +120,8 @@ h4 {
 .ressources--view,
 .inventaire--view,
 .bestiary-traits--view,
-.bestiary-action--view {
+.bestiary-action--view,
+.bestiary-capacites--view {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -159,7 +160,8 @@ h4 {
 .ressources--edit,
 .legacy--edit,
 .bestiary-traits--edit,
-.bestiary-action--edit {
+.bestiary-action--edit,
+.bestiary-capacites--edit {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -437,6 +439,25 @@ header .column-middle {
     margin: 0;
     padding: 0;
     gap: 4px;
+}
+
+/* --- Bestiary textareas --- */
+.bestiary-capacites--edit textarea {
+    resize: vertical;
+    height: 300px;
+}
+
+.resize-wrapper {
+    display: block;
+    width: 100%;
+}
+
+.text-noedit textarea {
+    width: 100%;
+    height: 300px;
+    resize: vertical;
+    background: #fafafa;
+    border-color: #fafafa;
 }
 
 /* --- Central repeaters --- */

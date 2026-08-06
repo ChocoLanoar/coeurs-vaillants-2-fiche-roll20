@@ -610,6 +610,11 @@
           </fieldset>
         </div>
       </div>
+      <div class="bestiary-capacites--view">
+        <p class="text-noedit resize-wrapper">
+          <textarea name="attr_pnjPermanent" readonly="readonly"></textarea>
+        </p>
+      </div>
     </section>
     <section class="sheet-bestiaire--edit">
       <div class="bestiary-traits--edit">
@@ -683,6 +688,12 @@
           </div>
         </fieldset>
       </div>
+      <div class="bestiary-capacites--edit">
+        <h4>Capacités</h4>
+        <p class="sheet-text3col resize-wrapper">
+          <textarea name="attr_pnjPermanent"></textarea>
+        </p>
+      </div>
       <div class="sheet-ligne">
         <div class="sheet-libel2">ACTIONS</div>
       </div>
@@ -709,10 +720,6 @@
         <input class="sheet-medium" type="text" name="attr_pnjdmgarm3" placeholder="macro"/>
         <button class="sheet-btRoll20niv" type="roll" name="roll_testpnjcombat3" value="@{jetCache} &amp;{template:jet} {{characterName=@{character_name}}} {{rollname=@{pnjarm3}}} {{rollResult1=[[@{pnjdmgarm3}]]}} {{tRollDesc=@{pnjArmDesc3}}}"></button>
         <input type="text" name="attr_pnjArmDesc3" style="width: 50%;" placeholder="Description"/>
-      </div>
-      <div class="sheet-ligne">
-        <div class="sheet-libel2">Capacités</div>
-        <textarea class="sheet-text3col" name="attr_pnjPermanent" style="resize: vertical; height: 300px;" placeholder="Capacités"></textarea>
       </div>
     </section>
   </main>

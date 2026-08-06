@@ -1,0 +1,10 @@
+mixin bestiary-capacites-view(struct)
+  .bestiary-capacites--view
+    each field in struct.capacites.view
+      +display-value(field)
+
+mixin bestiary-capacites-edit(struct)
+  .bestiary-capacites--edit
+    h4 Capacités
+    each field in struct.capacites.fields
+      +display-input(field)

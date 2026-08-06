@@ -1,15 +1,18 @@
 include bestiary/traits
 include bestiary/actions
+include bestiary/capacites
 
 mixin bestiary-view(struct)
   section.sheet-bestiaire--view
     +bestiary-traits-view(struct)
     +bestiary-action-view(struct)
+    +bestiary-capacites-view(struct)
 
 mixin bestiary-edit(struct)
   section.sheet-bestiaire--edit
     +bestiary-traits-edit(struct)
     +bestiary-action-edit(struct)
+    +bestiary-capacites-edit(struct)
     .sheet-ligne
       .sheet-libel2 ACTIONS
 
@@ -52,7 +55,3 @@ mixin bestiary-edit(struct)
         value='@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=@{pnjarm3}}} {{rollResult1=[[@{pnjdmgarm3}]]}} {{tRollDesc=@{pnjArmDesc3}}}'
       )
       input(type="text", name="attr_pnjArmDesc3", style="width: 50%;", placeholder="Description")
-
-    .sheet-ligne
-      .sheet-libel2 Capacités
-      textarea.sheet-text3col(name="attr_pnjPermanent", style="resize: vertical; height: 300px;", placeholder="Capacités")
