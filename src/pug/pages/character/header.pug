@@ -8,14 +8,14 @@ mixin niveau-view(niveau_struct)
     - const niveau_view = fieldDictionary(niveau_struct.view, '')
     .niveau
       +display-value(niveau_view.niveau)
-      +display-value(niveau_view.xp)
+      +display-input(niveau_view.xp)
       strong /
       +display-value(niveau_view.xpTotal)
     .tips-list
-      +display-value(niveau_view.niveau_tips1)
-      +display-value(niveau_view.niveau_tips2)
-      +display-value(niveau_view.niveau_tips3)
-      +display-value(niveau_view.niveau_tips4)
+      +display-tip(niveau_view.niveau_tips1)
+      +display-tip(niveau_view.niveau_tips2)
+      +display-tip(niveau_view.niveau_tips3)
+      +display-tip(niveau_view.niveau_tips4)
 
 mixin header-view(character_struct)
   .header--view

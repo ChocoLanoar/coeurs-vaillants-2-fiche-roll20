@@ -33,20 +33,16 @@
             <p class="niveau-valeur"><strong>Niv</strong><span name="attr_niveau"></span>
             </p>
             <p><strong>XP</strong>
-              <input type="number" name="attr_xp"/>
+              <input type="number" name="attr_xp" value="0"/>
             </p><strong>/</strong>
             <p><span name="attr_xpTotal"></span>
             </p>
           </div>
           <div class="tips-list">
-            <p class="tips"><strong>1 XP : relancer avec Avantage</strong><span name="attr_niveau_tips1"></span>
-            </p>
-            <p class="tips"><strong>3 XP × Niveau : gain de niveau</strong><span name="attr_niveau_tips2"></span>
-            </p>
-            <p class="tips"><strong>6 XP : apprendre un nouveau Métier</strong><span name="attr_niveau_tips3"></span>
-            </p>
-            <p class="tips"><strong>6 XP : Point d’Aventure supplémentaire</strong><span name="attr_niveau_tips4"></span>
-            </p>
+            <p class="tips"><strong>1 XP : relancer avec Avantage</strong></p>
+            <p class="tips"><strong>3 XP × Niveau : gain de niveau</strong></p>
+            <p class="tips"><strong>6 XP : apprendre un nouveau Métier</strong></p>
+            <p class="tips"><strong>6 XP : Point d’Aventure supplémentaire</strong></p>
           </div>
         </div>
       </div>
@@ -86,7 +82,7 @@
                     <input type="number" name="attr_pvTemp" value="0" title="Points de Vie temporaires"/>
                   </p>
                   <p>
-                    <input type="number" name="attr_pvAggr" value="0" title="Dégâts aggravés"/><span>Dgts Aggr.</span>
+                    <input type="number" name="attr_pvAggr" value="0" title="Dégâts aggravés"/><strong>Dgts Aggr.</strong>
                   </p>
                 </div>
                 <div class="life-rolls">
@@ -317,10 +313,10 @@
             <input type="number" name="attr_niveau" value=""/>
           </p>
           <p><strong>Points d’expérience</strong>
-            <input type="number" name="attr_xp" value=""/>
+            <input type="number" name="attr_xp" value="0"/>
           </p>
           <p><strong>Total XP acquis</strong>
-            <input type="number" name="attr_xpTotal" value=""/>
+            <input type="number" name="attr_xpTotal" value="0"/>
           </p>
         </div>
         <p>Pense-bête de montée de niveau : points de vie, points d’aventure, défense (½Niv), mouvement (½Niv), sauvegarde, usuels, talent.</p>
@@ -441,7 +437,7 @@
             <input type="text" name="attr_initiative" value="1d8"/>
           </p>
           <p><strong>Vitesse</strong>
-            <input type="number" name="attr_mvt" value="6"/><span> pas</span>
+            <input type="number" name="attr_mvt" value="6"/><strong> pas</strong>
           </p>
         </div>
         <h4>Équipement</h4>
@@ -565,11 +561,11 @@
               <p>
                 <button class="sheet-btRoll20niv" type="roll" name="roll_testpnjcombat" value="@{jetCache} &amp;{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjatt}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgatt}]]}} {{desdegats=@{pnjdmgatt}}} {{tRollDesc=@{pnjAttDesc}}}"></button>
               </p>
-              <p><span name="attr_pnjatt"></span>
+              <p class="text-strong"><span name="attr_pnjatt"></span>
               </p>
               <p><span name="attr_pnjdmgatt"></span>
               </p>
-              <p><span name="attr_pnjAttDesc"></span>
+              <p class="text-italic"><span name="attr_pnjAttDesc"></span>
               </p>
             </div>
             <div class="weapons-edit">
@@ -589,11 +585,11 @@
               <p>
                 <button class="sheet-btRoll20niv" type="roll" name="roll_testpnjaction" value="@{jetCache} &amp;{template:jet} {{characterName=@{character_name}}} {{rollname=@{pnjact}}} {{rollResult1=[[@{pnjrollact}]]}} {{tRollDesc=@{pnjactdesc}}}"></button>
               </p>
-              <p><span name="attr_pnjact"></span>
+              <p class="text-strong"><span name="attr_pnjact"></span>
               </p>
               <p><span name="attr_pnjrollact"></span>
               </p>
-              <p><span name="attr_pnjactdesc"></span>
+              <p class="text-italic"><span name="attr_pnjactdesc"></span>
               </p>
             </div>
             <div class="weapons-edit">

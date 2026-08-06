@@ -9,13 +9,15 @@
         value: '@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjatt}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgatt}]]}} {{desdegats=@{pnjdmgatt}}} {{tRollDesc=@{pnjAttDesc}}}'
       },
       {
-        name: 'pnjatt'
+        name: 'pnjatt',
+        css: 'text-strong'
       },
       {
         name: 'pnjdmgatt'
       },
       {
-        name: 'pnjAttDesc'
+        name: 'pnjAttDesc',
+        css: 'text-italic'
       }
     ],
     fields: [
@@ -49,13 +51,15 @@
         value: '@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{rollname=@{pnjact}}} {{rollResult1=[[@{pnjrollact}]]}} {{tRollDesc=@{pnjactdesc}}}'
       },
       {
-        name: 'pnjact'
+        name: 'pnjact',
+        css: 'text-strong'
       },
       {
         name: 'pnjrollact'
       },
       {
-        name: 'pnjactdesc'
+        name: 'pnjactdesc',
+        css: 'text-italic'
       }
     ],
     fields: [
