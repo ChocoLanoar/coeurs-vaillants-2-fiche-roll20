@@ -712,6 +712,7 @@ header .column-middle {
 /* --- Talents repeater --- */
 .central--view .repcontainer[data-groupname="repeating_talents"] {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 4px;
 }
