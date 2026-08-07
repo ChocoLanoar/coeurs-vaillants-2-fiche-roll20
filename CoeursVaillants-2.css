@@ -35,6 +35,10 @@ h4 {
     gap: 10px;
 }
 
+.sheet-darkmode h4 {
+    color: #e6e6e6;
+}
+
 .sheet-personnage--edit textarea {
     height: 80px;
 }
@@ -121,6 +125,20 @@ h4 {
     margin-bottom: 16px;
 }
 
+.sheet-darkmode .header--view,
+.sheet-darkmode .central--view,
+.sheet-darkmode .buttons--view,
+.sheet-darkmode .battle--view,
+.sheet-darkmode .ressources--view,
+.sheet-darkmode .inventaire--view,
+.sheet-darkmode .bestiary-traits--view,
+.sheet-darkmode .bestiary-action--view,
+.sheet-darkmode .bestiary-capacites--view {
+    border: 1px solid #444;
+    background: #1e1e1e;
+    color: #e6e6e6;
+}
+
 .ressources--view,
 .inventaire--view,
 .central--view,
@@ -160,6 +178,20 @@ h4 {
     border-radius: 6px;
     background: #fcfcfc;
     margin-bottom: 16px;
+}
+
+.sheet-darkmode .header--edit,
+.sheet-darkmode .central--edit,
+.sheet-darkmode .battle--edit,
+.sheet-darkmode .ressources--edit,
+.sheet-darkmode .legacy--edit,
+.sheet-darkmode .bestiary-traits--edit,
+.sheet-darkmode .bestiary-action--edit,
+.sheet-darkmode .bestiary-capacites--edit,
+.sheet-darkmode .bestiary-legacy--edit {
+    border: 1px solid #444;
+    background: #1e1e1e;
+    color: #e6e6e6;
 }
 
 /* --- Top columns --- */
@@ -634,6 +666,10 @@ header .column-middle {
     margin-right: 6px;
     flex-shrink: 0;
     opacity: 0.9;
+}
+
+.sheet-darkmode .default-icon {
+    filter: invert(1) brightness(1.2);
 }
 
 /* ------------------------ */
