@@ -585,9 +585,11 @@
             <fieldset class="repeating_bestiary-attaques">
               <div class="weapons-view">
                 <p>
-                  <button class="sheet-btRoll20niv" type="roll" name="roll_testpnjcombat" value="@{jetCache} &amp;{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjatt}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgatt}]]}} {{desdegats=@{pnjdmgatt}}} {{tRollDesc=@{pnjAttDesc}}}"></button>
+                  <button class="sheet-btRoll20niv" type="roll" name="roll_testpnjcombat" value="@{jetCache} &amp;{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjatt}}} {{rollResult1=[[1d20[D20]+[[@{pnjAttBonus}]][Bonus]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[@{pnjAttBonus}]][Bonus]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgatt}]]}} {{desdegats=@{pnjdmgatt}}} {{tRollDesc=@{pnjAttDesc}}}"></button>
                 </p>
                 <p class="text-strong"><span name="attr_pnjatt"></span>
+                </p>
+                <p><strong>+</strong><span name="attr_pnjAttBonus"></span>
                 </p>
                 <p><span name="attr_pnjdmgatt"></span>
                 </p>
@@ -597,6 +599,9 @@
               <div class="weapons-edit">
                 <p><strong>Attaque</strong>
                   <input type="text" name="attr_pnjatt" value=""/>
+                </p>
+                <p class="text-short"><strong>Bonus</strong>
+                  <input type="text" name="attr_pnjAttBonus" value="0"/>
                 </p>
                 <p class="text-short"><strong>Dégâts</strong>
                   <input type="text" name="attr_pnjdmgatt" value=""/>
@@ -689,6 +694,9 @@
           <div class="row-top">
             <p><strong>Attaque</strong>
               <input type="text" name="attr_pnjatt" value=""/>
+            </p>
+            <p class="text-short"><strong>Bonus</strong>
+              <input type="text" name="attr_pnjAttBonus" value="0"/>
             </p>
             <p class="text-short"><strong>Dégâts</strong>
               <input type="text" name="attr_pnjdmgatt" value=""/>

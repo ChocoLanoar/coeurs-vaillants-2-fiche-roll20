@@ -6,11 +6,15 @@
         roll_name: 'roll_testpnjcombat',
         type: 'roll',
         css_roll: 'sheet-btRoll20niv',
-        value: '@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjatt}}} {{rollResult1=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgatt}]]}} {{desdegats=@{pnjdmgatt}}} {{tRollDesc=@{pnjAttDesc}}}'
+        value: '@{jetCache} &{template:jet} {{characterName=@{character_name}}} {{arme=@{pnjatt}}} {{rollResult1=[[1d20[D20]+[[@{pnjAttBonus}]][Bonus]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{rollResult2=[[1d20[D20]+[[@{pnjAttBonus}]][Bonus]+[[{ {@{pnjNiv}}, {12}}kl1]]]]}} {{coup=[[@{pnjdmgatt}]]}} {{desdegats=@{pnjdmgatt}}} {{tRollDesc=@{pnjAttDesc}}}'
       },
       {
         name: 'pnjatt',
         css: 'text-strong'
+      },
+      {
+        name: 'pnjAttBonus',
+        label: '+'
       },
       {
         name: 'pnjdmgatt'
@@ -25,6 +29,13 @@
         name: 'pnjatt',
         label: 'Attaque',
         type: 'text'
+      },
+      {
+        name: 'pnjAttBonus',
+        label: 'Bonus',
+        type: 'text',
+        css: 'text-short',
+        value: '0'
       },
       {
         name: 'pnjdmgatt',
