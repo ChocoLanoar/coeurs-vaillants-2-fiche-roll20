@@ -2,14 +2,57 @@
   structure.character.sauvegarde = {
     view: [
       {
-        name: 'sauvegarde_testSave',
-        label: 'Sauvegarde',
-        type: 'roll'
+        name: 'testDemiNiv',
+        roll_name: 'roll_testDemiNiv',
+        label: 'd20+½Niv',
+        type: 'roll',
+        css_roll: 'sheet-btRoll20deminiv sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=1D20 + ½Niv}} {{rollResult1=[[1d20+[[floor(@{niveau}/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor(@{niveau}/2)]][Bonus]]]}}'
       },
       {
-        name: 'sauvegarde_exalte',
+        name: 'testNiv',
+        roll_name: 'roll_testNiv',
+        label: 'd20+Niv',
+        type: 'roll',
+        css_roll: 'sheet-btRoll20niv sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=1D20 + Niv}} {{rollResult1=[[1d20+@{niveau}[Bonus]]]}} {{rollResult2=[[1d20+@{niveau}[Bonus]]]}}'
+      },
+      {
+        name: 'testSave',
+        roll_name: 'roll_testSave',
+        label: 'Sauvegarde',
+        type: 'roll',
+        css_roll: 'sheet-btRoll20niv sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de sauvegarde}} {{carac=[[@{svg}]]}} {{rollResult1=[[1d20+@{niveau}]]}} {{rollResult2=[[1d20+@{niveau}]]}}'
+      },
+      {
+        name: 'exalte',
         label: 'Exalté',
         type: 'checkbox'
+      },
+      {
+        name: 'testChance',
+        roll_name: 'roll_testChance',
+        label: 'Dé de chance',
+        type: 'roll',
+        css_roll: 'sheet-btRoll6 sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de chance}} {{jetChance=[[1d6]]}}'
+      },
+      {
+        name: 'jetD8',
+        roll_name: 'roll_jetD8',
+        label: 'd8',
+        type: 'roll',
+        css_roll: 'sheet-btRoll8 sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet D8}} {{rollResult1=[[1d8]]}}'
+      },
+      {
+        name: 'jetD4',
+        roll_name: 'roll_jetD4',
+        label: 'd4',
+        type: 'roll',
+        css_roll: 'sheet-btRoll4 sheet-btMid',
+        value: '&{template:jet} {{characterName=@{character_name}}} {{rollname=Jet D4}} {{rollResult1=[[1d4]]}}'
       }
     ],
     fields: [

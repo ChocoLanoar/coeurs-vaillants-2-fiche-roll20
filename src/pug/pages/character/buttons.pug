@@ -1,0 +1,10 @@
+mixin buttons-view(struct)
+  .buttons--view
+    - const buttons_view = fieldDictionary(struct.sauvegarde.view, '')
+    +display-value(buttons_view.testDemiNiv)
+    +display-value(buttons_view.testNiv)
+    +display-value(buttons_view.testSave)
+    +display-toggle-button(buttons_view.exalte.name, buttons_view.exalte.label)
+    +display-value(buttons_view.testChance)
+    +display-value(buttons_view.jetD8)
+    +display-value(buttons_view.jetD4)

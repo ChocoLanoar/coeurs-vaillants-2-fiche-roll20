@@ -1,5 +1,6 @@
 include character/header
 include character/central
+include character/buttons
 include character/battle
 include character/ressources
 include character/equipement
@@ -9,6 +10,7 @@ mixin character-view(struct)
   section.sheet-personnage--view
     +header-view(struct)
     +central-view(struct)
+    +buttons-view(struct)
     +battle-view(struct)
     +ressources-view(struct)
     +inventaire-view(struct)

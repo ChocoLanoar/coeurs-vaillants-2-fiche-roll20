@@ -145,15 +145,39 @@
           </fieldset>
         </div>
       </div>
+      <div class="buttons--view">
+        <p>
+          <button class="sheet-btRoll20deminiv sheet-btMid" type="roll" name="roll_testDemiNiv" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=1D20 + ½Niv}} {{rollResult1=[[1d20+[[floor(@{niveau}/2)]][Bonus]]]}} {{rollResult2=[[1d20+[[floor(@{niveau}/2)]][Bonus]]]}}">d20+½Niv</button>
+        </p>
+        <p>
+          <button class="sheet-btRoll20niv sheet-btMid" type="roll" name="roll_testNiv" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=1D20 + Niv}} {{rollResult1=[[1d20+@{niveau}[Bonus]]]}} {{rollResult2=[[1d20+@{niveau}[Bonus]]]}}">d20+Niv</button>
+        </p>
+        <p>
+          <button class="sheet-btRoll20niv sheet-btMid" type="roll" name="roll_testSave" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de sauvegarde}} {{carac=[[@{svg}]]}} {{rollResult1=[[1d20+@{niveau}]]}} {{rollResult2=[[1d20+@{niveau}]]}}">Sauvegarde</button>
+        </p>
+        <p>
+          <input class="check-button check-buttonComp" type="checkbox" id="checkexalte" value="1" name="attr_exalte"/>
+          <label for="checkexalte">Exalté</label>
+        </p>
+        <p>
+          <button class="sheet-btRoll6 sheet-btMid" type="roll" name="roll_testChance" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet de chance}} {{jetChance=[[1d6]]}}">Dé de chance</button>
+        </p>
+        <p>
+          <button class="sheet-btRoll8 sheet-btMid" type="roll" name="roll_jetD8" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet D8}} {{rollResult1=[[1d8]]}}">d8</button>
+        </p>
+        <p>
+          <button class="sheet-btRoll4 sheet-btMid" type="roll" name="roll_jetD4" value="&amp;{template:jet} {{characterName=@{character_name}}} {{rollname=Jet D4}} {{rollResult1=[[1d4]]}}">d4</button>
+        </p>
+      </div>
       <div class="battle--view">
         <div class="column-left">
           <h4>Équipement</h4>
           <div class="armure-view">
-            <p><strong>Armure : </strong><span name="attr_nameArmu"></span>
+            <p class="text-strong"><span name="attr_nameArmu"></span>
             </p>
-            <p><span name="attr_bonusArmu"></span>
+            <p><strong>+</strong><span name="attr_bonusArmu"></span>
             </p>
-            <p><span name="attr_descArmu"></span>
+            <p class="text-italic"><span name="attr_descArmu"></span>
             </p>
           </div>
           <fieldset class="repeating_inventory">
@@ -759,10 +783,10 @@
     {{#rollResult1}}{{#rollResult2}}
     <div class="sheet-enableCrit">Résultat : {{rollResult1}} | {{rollResult2}}</div>{{/rollResult2}}{{/rollResult1}}
     {{#jetChance}}
-    {{#rollGreater() jetChance 4}}
-    <div class="sheet-noCrit">Résultat :<span class="sheet-template-success">{{jetChance}}, Oui !</span></div>{{/rollGreater() jetChance 4}}
-    {{#rollLess() jetChance 5}}
-    <div class="sheet-noCrit">Résultat :<span class="sheet-template-failure">{{jetChance}}, Non !</span></div>{{/rollLess() jetChance 5}}
+    {{#rollGreater() jetChance 3}}
+    <div class="sheet-noCrit">Résultat :<span class="sheet-template-success">{{jetChance}}, Oui !</span></div>{{/rollGreater() jetChance 3}}
+    {{#rollLess() jetChance 4}}
+    <div class="sheet-noCrit">Résultat :<span class="sheet-template-failure">{{jetChance}}, Non !</span></div>{{/rollLess() jetChance 4}}
     {{/jetChance}}
     {{/arme}}{{/carac}}
     {{#carac}}

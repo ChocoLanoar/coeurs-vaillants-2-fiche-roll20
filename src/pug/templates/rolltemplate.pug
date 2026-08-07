@@ -16,14 +16,14 @@ rolltemplate.sheet-rolltemplate-jet
     div.sheet-enableCrit Résultat : {{rollResult1}} | {{rollResult2}}
     | {{/rollResult2}}{{/rollResult1}}
     | {{#jetChance}}
-    | {{#rollGreater() jetChance 4}}
+    | {{#rollGreater() jetChance 3}}
     div.sheet-noCrit Résultat :
       span.sheet-template-success {{jetChance}}, Oui !
-    | {{/rollGreater() jetChance 4}}
-    | {{#rollLess() jetChance 5}}
+    | {{/rollGreater() jetChance 3}}
+    | {{#rollLess() jetChance 4}}
     div.sheet-noCrit Résultat :
       span.sheet-template-failure {{jetChance}}, Non !
-    | {{/rollLess() jetChance 5}}
+    | {{/rollLess() jetChance 4}}
     | {{/jetChance}}
     | {{/arme}}{{/carac}}
     | {{#carac}}
